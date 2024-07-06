@@ -1,0 +1,356 @@
+﻿<Window x:Class="Keysticks.AppConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:p="clr-namespace:Keysticks.Properties"
+        xmlns:local="clr-namespace:Keysticks.UserControls" 
+        ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+        Title="{x:Static p:Resources.Options_Title}" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Loaded="Window_Loaded" Closing="Window_Closing"
+        Icon="/Keysticks;component/KeysticksLogo.ico" Height="360" Width="550">
+    <Window.Resources>
+        <Style x:Key="CellEditStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+                            Value="{Binding RelativeSource={RelativeSource Self},
+                                    Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <!--        <TextBlock Name="HeadingTextBlock" Grid.Row="0" Height="30" Margin="5" TextWrapping="Wrap">Here, you can edit personal options which apply to all the profiles you use.</TextBlock> -->
+        <TabControl Name="OptionsTabControl" Grid.Row="0" Margin="5">
+            <TabItem Name="GeneralTab" Header="{x:Static p:Resources.Options_GeneralTab}">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Name="StartWhenWindowsStartsCheckbox" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">_Start when Windows starts</CheckBox>
+                    <CheckBox Name="AutoLoadCheckbox" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">_Load last-used profile</CheckBox>
+                    <CheckBox Name="AllowBackgroundRunningCheckbox" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Checked="PreviewableControl_Changed" Unchecked="PreviewableControl_Changed">_Allow running in the background</CheckBox>
+                    <CheckBox Name="ShowTrayNotificationsCheckbox" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Checked="PreviewableControl_Changed" Unchecked="PreviewableControl_Changed">Show _tray notifications</CheckBox>
+                    <CheckBox Name="ShowControlsWindowCheckbox" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1">_Open controller windows automatically</CheckBox>
+                    <CheckBox Name="ShowHeldModifierKeysCheckbox" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Checked="PreviewableControl_Changed" Unchecked="PreviewableControl_Changed">S_how held modifier keys graphic</CheckBox>
+                    <CheckBox Name="ShowHeldMouseButtonsCheckbox" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Checked="PreviewableControl_Changed" Unchecked="PreviewableControl_Changed">Sho_w held mouse buttons graphic</CheckBox>
+                    <CheckBox Name="CheckForUpdatesCheckbox" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Checked="PreviewableControl_Changed" Unchecked="PreviewableControl_Changed">Check for program _updates</CheckBox>
+                </Grid>
+            </TabItem>
+            <TabItem Name="ColoursTab" Header="{x:Static p:Resources.Options_ColoursTab}">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">Controller window opacity (%):</TextBlock>
+                    <local:CustomSliderControl x:Name="CurrentControlsOpacitySlider" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Width="200" IsLogScale="False" Minimum="1.0" Maximum="100.0" Value="90.0" SmallChange="1" LargeChange="5" DecimalPlaces="0" ValueChanged="PreviewableControl_ValueChanged" />
+                    <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">Keyboard window opacity (%):</TextBlock>
+                    <local:CustomSliderControl x:Name="InteractiveControlsOpacitySlider" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="200" IsLogScale="False" Minimum="1.0" Maximum="100.0" Value="90.0" SmallChange="1" LargeChange="5" DecimalPlaces="0" ValueChanged="PreviewableControl_ValueChanged" />
+                    <DataGrid Name="PlayerColoursTable" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2" AutoGenerateColumns="False" ItemsSource="{Binding}"
+                          CanUserAddRows="False" CanUserDeleteRows="False" CanUserSortColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" SelectionMode="Single"
+                           HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD" HeadersVisibility="Column">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{x:Static p:Resources.String_Colour}" Binding="{Binding Path=Name}" Width="200">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                        <Setter Property="Margin" Value="5,0,0,0" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.String_Player1}" Width="70">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <local:ColourPickerControl Width="50" HorizontalAlignment="Left" Margin="5,0" SelectedColour="{Binding Player1Colour, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedColourChanged="PreviewableControl_SelectionChanged" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.String_Player2}" Width="70">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <local:ColourPickerControl Width="50" HorizontalAlignment="Left" Margin="5,0" SelectedColour="{Binding Player2Colour, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedColourChanged="PreviewableControl_SelectionChanged" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.String_Player3}" Width="70">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <local:ColourPickerControl Width="50" HorizontalAlignment="Left" Margin="5,0" SelectedColour="{Binding Player3Colour, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedColourChanged="PreviewableControl_SelectionChanged" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.String_Player4}" Width="70">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <local:ColourPickerControl Width="50" HorizontalAlignment="Left" Margin="5,0" SelectedColour="{Binding Player4Colour, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedColourChanged="PreviewableControl_SelectionChanged" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Name="StyleTab" Header="{x:Static p:Resources.Options_StyleTab}">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Text="{x:Static p:Resources.Options_Style_Magnification}"></TextBlock>
+                    <local:CustomSliderControl x:Name="ZoomFactorSlider" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Width="200" IsLogScale="False" Minimum="25" Maximum="400" Value="100.0" SmallChange="1" LargeChange="5" DecimalPlaces="0" ValueChanged="PreviewableControl_ValueChanged" />
+                    <CheckBox Name="CompactControlsWindowCheckbox" Content="{x:Static p:Resources.Options_Style_CompactController}" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="PreviewableControl_Changed" Unchecked="PreviewableControl_Changed" />
+                    <CheckBox Name="KeepControlsWindowOnTopCheckbox" Content="{x:Static p:Resources.Options_Style_KeepOnTop}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Checked="PreviewableControl_Changed" Unchecked="PreviewableControl_Changed" />
+                    <CheckBox Name="AnimateControlsCheckbox" Content="{x:Static p:Resources.Options_Style_AnimateControls}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Checked="PreviewableControl_Changed" Unchecked="PreviewableControl_Changed"/>
+                    <CheckBox Name="ShowTitleBarCheckbox" Content="{x:Static p:Resources.Options_Style_ShowTitleBar}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="PreviewableControl_Changed" Unchecked="PreviewableControl_Changed" />
+                    <CheckBox Name="ShowFooterCheckbox" Content="{x:Static p:Resources.Options_Style_ShowFooter}" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="PreviewableControl_Changed" Unchecked="PreviewableControl_Changed" />
+                </Grid>
+            </TabItem>
+            <TabItem Name="InputTab" Header="{x:Static p:Resources.Options_InputTab}">
+                <Grid Margin="5" MaxWidth="550" MaxHeight="250">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Name="OverrideDeadZonesCheckbox" Content="{x:Static p:Resources.Options_Input_OverrideDeadZones}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  Checked="UseDefaultSensitivityCheckbox_Changed" Unchecked="UseDefaultSensitivityCheckbox_Changed"></CheckBox>
+                    <TextBlock Name="TriggerDeadZoneLabel" Text="{x:Static p:Resources.Options_Input_TriggerSliderDeadZoneLabel}" Grid.Row="1" Grid.Column="0" IsEnabled="False" VerticalAlignment="Center" Margin="18,0"></TextBlock>
+                    <local:CustomSliderControl x:Name="TriggerDeadZoneSlider" Grid.Row="1" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Width="200" IsLogScale="False" Minimum="0.001" Maximum="0.999" Value="0.1" SmallChange="0.01" LargeChange="0.05" DecimalPlaces="2" ValueChanged="PreviewableControl_ValueChanged"/>
+                    <TextBlock Name="ThumbstickDeadZoneLabel" Text="{x:Static p:Resources.Options_Input_StickAxisDeadZoneLabel}" Grid.Row="2" Grid.Column="0" IsEnabled="False" VerticalAlignment="Center" Margin="18,0"></TextBlock>
+                    <local:CustomSliderControl x:Name="ThumbstickDeadZoneSlider" Grid.Row="2" Grid.Column="1" IsEnabled="False" HorizontalAlignment="Left" Width="200" IsLogScale="False" Minimum="0.001" Maximum="0.999" Value="0.25" SmallChange="0.01" LargeChange="0.05" DecimalPlaces="2" ValueChanged="PreviewableControl_ValueChanged"/>
+                </Grid>
+            </TabItem>
+            <TabItem Name="OutputTab" Header="{x:Static p:Resources.Options_OutputTab}">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{x:Static p:Resources.Options_Output_PointerSpeedLabel}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <local:CustomSliderControl x:Name="MousePointerSpeedSlider" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Width="200" IsLogScale="False" Minimum="0.1" Maximum="3.0" Value="1.0" SmallChange="0.01" LargeChange="0.1" DecimalPlaces="2" ValueChanged="PreviewableControl_ValueChanged"/>
+                    <TextBlock Text="{x:Static p:Resources.Options_Output_PointerAccelerationLabel}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <local:CustomSliderControl x:Name="MousePointerAccelerationSlider" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="200" IsLogScale="False" Minimum="0.0" Maximum="20.0" Value="5.0" SmallChange="0.01" LargeChange="0.1" DecimalPlaces="2" ValueChanged="PreviewableControl_ValueChanged"/>
+                    <TextBlock Text="{x:Static p:Resources.Options_Output_ClickLengthLabel}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <local:CustomSliderControl x:Name="DefaultMouseClickTimeSlider" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Width="200" IsLogScale="False" Minimum="0.02" Maximum="0.25" Value="0.10" SmallChange="0.001" LargeChange="0.01" DecimalPlaces="3" ValueChanged="PreviewableControl_ValueChanged"/>
+                    <TextBlock Text="{x:Static p:Resources.Options_Output_KeyStrokeLengthLabel}" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <local:CustomSliderControl x:Name="DefaultKeyStrokeTimeSlider" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Width="200" IsLogScale="False" Minimum="0.02" Maximum="0.25" Value="0.10" SmallChange="0.001" LargeChange="0.01" DecimalPlaces="3" ValueChanged="PreviewableControl_ValueChanged"/>
+                    <TextBlock Text="{x:Static p:Resources.Options_Output_EmulationType}" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1">
+                        <RadioButton Name="VirtualKeysRadioButton" Content="{x:Static p:Resources.Options_Output_VirtualKeys}" GroupName="KeyPressType" VerticalAlignment="Center" Checked="PreviewableControl_Changed"/>
+                        <RadioButton Name="ScanCodesRadioButton" Content="{x:Static p:Resources.Options_Output_ScanCodes}" GroupName="KeyPressType" VerticalAlignment="Center" Checked="PreviewableControl_Changed" Margin="10,0"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Name="WordPredictionTab" Header="{x:Static p:Resources.Options_PredictionTab}">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Name="EnableWordPredictionCheckbox" Content="{x:Static p:Resources.Options_Prediction_EnablePrediction}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Checked="EnableWordPredictionCheckbox_Changed" Unchecked="EnableWordPredictionCheckbox_Changed"/>
+                    <CheckBox Name="AutoInsertSpaceCheckbox" Content="{x:Static p:Resources.Options_Prediction_AutoSpace}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" IsEnabled="False"></CheckBox>
+                    <CheckBox Name="LearnNewWordsCheckbox" Content="{x:Static p:Resources.Options_Prediction_LearnWords}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" IsEnabled="False"></CheckBox>
+                    <DataGrid Name="LanguagesTable" Grid.Row="4" Grid.Column="0" Grid.RowSpan="2"  Grid.ColumnSpan="2" IsEnabled="False" AutoGenerateColumns="False" ItemsSource="{Binding}"
+                          CanUserAddRows="False" CanUserDeleteRows="False" CanUserSortColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False"  SelectionMode="Single"
+                           HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD" CanUserResizeColumns="False" HeadersVisibility="Column">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{x:Static p:Resources.String_Language}" Binding="{Binding Path=Name}" Width="*">
+                            </DataGridTextColumn>
+                            <DataGridCheckBoxColumn Header="{x:Static p:Resources.String_Enabled}" Binding="{Binding Path=IsEnabled}" Width="60">                                
+                            </DataGridCheckBoxColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Name="UpDownButtonsPanel" Orientation="Vertical" Grid.Row="5" Grid.Column="2" IsEnabled="False" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <Button Name="MoveUpButton" ToolTip="{x:Static p:Resources.String_MoveUpPriorityToolTip}" Width="25" Height="25" Click="MoveUpButton_Click" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource image_arrow_up}" Stretch="None" />
+                            </StackPanel>
+                        </Button>
+                        <Button Name="MoveDownButton" ToolTip="{x:Static p:Resources.String_MoveDownPriorityToolTip}" Width="25" Height="25" Margin="0,5,0,0" Click="MoveDownButton_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource image_arrow_down}" Stretch="None" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                    <GroupBox Name="DownloadLanguagesGroupBox" Header="{x:Static p:Resources.Options_Prediction_AddLanguages}" Grid.Row="4" Grid.Column="3" Grid.RowSpan="2" IsEnabled="False" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Grid Grid.Row="6" Grid.Column="3" Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <!--<ColumnDefinition Width="80"/>-->
+                            </Grid.ColumnDefinitions>
+                            <ComboBox Name="LanguageComboBox" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Grid.ColumnSpan="2" ItemsSource="{Binding}" DisplayMemberPath="Name" SelectedValuePath="ID" SelectionChanged="LanguageComboBox_SelectionChanged" />
+                            <Button Name="AddLanguageButton" ToolTip="{x:Static p:Resources.Options_Prediction_AddLanguageToolTip}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"  Click="AddLanguageButton_Click">
+                                <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource image_add}" Stretch="None" />
+                                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.Options_Prediction_AddLanguageButton}"/>
+                                </StackPanel>
+                        </Button>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Name="MessagesTab" Header="{x:Static p:Resources.Options_MessagesTab}">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{x:Static p:Resources.Options_Messages_AskLabel}" Grid.Row="0" VerticalAlignment="Center"></TextBlock>
+                    <CheckBox Content="{x:Static p:Resources.Options_Messages_ApplyingActions}" Name="ConfirmApplyTemplatesCheckbox" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"></CheckBox>
+                    <CheckBox Content="{x:Static p:Resources.Options_Messages_ClearingActions}" Name="ConfirmClearActionsCheckbox" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"></CheckBox>
+                    <CheckBox Content="{x:Static p:Resources.Options_Messages_DeletingKeyboards}" Name="ConfirmDeleteKeyboardCheckbox" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0"></CheckBox>
+                    <CheckBox Content="{x:Static p:Resources.Options_Messages_DeletingControlSets}" Name="ConfirmDeleteControlSetsCheckbox" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0"></CheckBox>
+                    <CheckBox Content="{x:Static p:Resources.Options_Messages_DeletingControlSetPages}" Name="ConfirmDeletePagesCheckbox" VerticalAlignment="Center" Grid.Row="5" Grid.Column="0"></CheckBox>
+                    <CheckBox Content="{x:Static p:Resources.Options_Messages_DeletingControls}" Name="ConfirmDeleteVirtualControlsCheckbox" VerticalAlignment="Center" Grid.Row="6" Grid.Column="0"></CheckBox>
+                    <CheckBox Content="{x:Static p:Resources.Options_Messages_DeletingPlayers}" Name="ConfirmDeletePlayerCheckbox" VerticalAlignment="Center" Grid.Row="7" Grid.Column="0"></CheckBox>
+                </Grid>
+            </TabItem>
+            <TabItem Name="FoldersTab" Header="{x:Static p:Resources.Options_FoldersTab}">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{x:Static p:Resources.Options_Folders_ProfilesFolderLabel}" Grid.Row="0" VerticalAlignment="Center"></TextBlock>
+                    <TextBox Name="ProfilesFolderTextBox" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" MaxLength="512"/>
+                    <Button Name="BrowseButton" Grid.Row="1" Grid.Column="1" ToolTip="{x:Static p:Resources.Options_Folders_ChooseFolderToolTip}" HorizontalAlignment="Right" VerticalAlignment="Center" Click="BrowseButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource image_folder_explore}" Stretch="None" />
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Name="SecurityTab" Header="{x:Static p:Resources.Options_SecurityTab}">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="15"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <!--<TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Maximum action list length:</TextBlock>
+                    <local:CustomSliderControl x:Name="MaxActionListLengthSlider" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Width="200" IsLogScale="False" Minimum="1" Maximum="10" Value="3" SmallChange="1" LargeChange="1" DecimalPlaces="0"/>-->
+                    <CheckBox Name="DisallowShiftDeleteCheckBox" Content="{x:Static p:Resources.Options_Security_DisallowShiftDelete}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Checked="PreviewableControl_Changed" Unchecked="PreviewableControl_Changed"></CheckBox>
+                    <CheckBox Name="DisallowDangerousControlsCheckBox" Content="{x:Static p:Resources.Options_Security_DisallowDangerousControls}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Checked="DisallowDangerousControlsCheckBox_Changed" Unchecked="DisallowDangerousControlsCheckBox_Changed"></CheckBox>
+                    <TextBlock Text="{x:Static p:Resources.Options_Security_MaxActionsLabel}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <local:CustomSliderControl x:Name="MaxActionListLengthSlider" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Width="200" IsEnabled="False" IsLogScale="False" Minimum="1" Maximum="20" Value="3" SmallChange="1" LargeChange="1" DecimalPlaces="0" ValueChanged="PreviewableControl_ValueChanged" />
+                    <TextBlock Text="{x:Static p:Resources.Options_Security_RulesLabel}" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                    <DataGrid Name="CommandRulesTable" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" AutoGenerateColumns="False" ItemsSource="{Binding}"
+                          CanUserAddRows="True" CanUserDeleteRows="True" CanUserSortColumns="True" CanUserReorderColumns="False" CanUserResizeRows="False" SelectionMode="Single"
+                           HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="{x:Static p:Resources.Options_Security_CommandColumn}" EditingElementStyle="{StaticResource CellEditStyle}"
+                                                Binding="{Binding Path=Command, Mode=TwoWay, ValidatesOnExceptions=True}" Width="*">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                        <Setter Property="Margin" Value="5,0,0,0" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.Options_Security_ActionColumn}" Width="90">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox ItemsSource="{Binding Path=Choices}" DisplayMemberPath="Name" SelectedItem="{Binding Path=ActionItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <local:ErrorMessageControl x:Name="ErrorMessage" Margin="5,0" Grid.Row="1" VerticalAlignment="Center"/>
+        <Button Name="RestoreDefaultsButton" ToolTip="{x:Static p:Resources.Options_ResetToolTip}" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="90" Margin="5" Click="RestoreDefaultsButton_Click" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{StaticResource image_table_lightning}" Stretch="None" />
+                <TextBlock Margin="5,0" Text="{x:Static p:Resources.Options_ResetButton}"></TextBlock>
+            </StackPanel>
+        </Button>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button Name="OKButton" Width="70" Margin="5,0" Click="OKButton_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource image_accept}" Stretch="None" />
+                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_OK}"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="CancelButton" Width="70" IsCancel="True" Click="CancelButton_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource image_cancel}" Stretch="None" />
+                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_Cancel}"></TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,36 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Keysticks.chm
+Contents file=Table of Contents.hhc
+Default Font=,10,0
+Default Window=MainWindowType
+Default topic=Getting-Started.htm
+Display compile progress=No
+Index file=Index.hhk
+Language=0x809 English (United Kingdom)
+Title=Keysticks Help
+
+[WINDOWS]
+MainWindowType="Keysticks Help","Table of Contents.hhc","Index.hhk","Getting-Started.htm",,,,,,0x42120,280,0x300e,[50,50,800,600],,,,,,,0
+
+
+[FILES]
+Getting-Started.htm
+Choosing-A-Profile.htm
+Using-Keysticks-Controls.htm
+Program-Options.htm
+Creating-Your-Own-Controls.htm
+Types-of-action.htm
+Keyboard-Features.htm
+Downloading-Profiles.htm
+Sharing-Profiles.htm
+Profile-Designer-Controls.htm
+Profile-Designer-Keyboard.htm
+Profile-Designer-Settings.htm
+Profile-Designer-Inputs.htm
+Profile-Designer-Summary.htm
+Advanced-Action-Editing.htm
+Diagnosing-Issues.htm
+
+[INFOTYPES]
+

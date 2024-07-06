@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Keysticks.UserControls.MoveThePointerControl"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:p="clr-namespace:Keysticks.Properties"
+            xmlns:local="clr-namespace:Keysticks.UserControls"
+            mc:Ignorable="d" 
+            d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="{x:Static p:Resources.MovePointerAction_XValueLabel}"></Label>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+            <local:CustomSliderControl x:Name="XAmountSlider" MinWidth="130" Minimum="0" Maximum="100" Value="50" SmallChange="1" LargeChange="5" DecimalPlaces="2"/>
+            <TextBlock VerticalAlignment="Center" Name="XUnitsLabel" Margin="5,0" Width="20">%</TextBlock>
+        </StackPanel>
+        <Label Grid.Row="1" Grid.Column="0" Content="{x:Static p:Resources.MovePointerAction_YValueLabel}"></Label>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <local:CustomSliderControl x:Name="YAmountSlider" MinWidth="130" Minimum="0" Maximum="100" Value="2" SmallChange="1" LargeChange="5" DecimalPlaces="2"/>
+            <TextBlock VerticalAlignment="Center" Name="YUnitsLabel" Margin="5,0" Width="20">%</TextBlock>
+        </StackPanel>
+        <Label Grid.Row="2" Grid.Column="0" Content="{x:Static p:Resources.MovePointerAction_UnitsLabel}"></Label>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Name="UnitsPanel">
+            <RadioButton Name="PercentRadioButton" GroupName="UnitsRadioButtons" IsChecked="True" Width="80" VerticalAlignment="Center" Content="{x:Static p:Resources.String_Percent}" Checked="UnitsRadioButton_Checked"></RadioButton>
+            <RadioButton Name="PixelsRadioButton" GroupName="UnitsRadioButtons" VerticalAlignment="Center" Content="{x:Static p:Resources.String_Pixels}" Checked="UnitsRadioButton_Checked"></RadioButton>
+        </StackPanel>
+        <Label Grid.Row="3" Grid.Column="0" Content="{x:Static p:Resources.MovePointerAction_TypeOfMove}"></Label>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Name="TypeOfMovePanel">
+            <RadioButton Name="AbsoluteRadioButton" GroupName="AbsoluteOrRelativeButtons" IsChecked="True" Width="80" VerticalAlignment="Center" Content="{x:Static p:Resources.String_Absolute}" ToolTip="{x:Static p:Resources.MovePointerAction_AbsoluteToolTip}" Checked="MoveTypeRadioButton_Checked"></RadioButton>
+            <RadioButton Name="RelativeRadioButton" GroupName="AbsoluteOrRelativeButtons" VerticalAlignment="Center" Content="{x:Static p:Resources.String_Relative}" ToolTip="{x:Static p:Resources.MovePointerAction_RelativeToolTip}" Checked="MoveTypeRadioButton_Checked"></RadioButton>
+        </StackPanel>
+        <Label Grid.Row="4" Grid.Column="0" Content="{x:Static p:Resources.MovePointerAction_WithRespectToLabel}"></Label>
+        <StackPanel Name="WithRespectToPanel" Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+            <RadioButton Name="CurrentWindowRadioButton" GroupName="OffsetRadioButtons" Content="{x:Static p:Resources.String_Window}" IsChecked="True" Width="80" VerticalAlignment="Center"></RadioButton>
+            <RadioButton Name="DesktopRadioButton" GroupName="OffsetRadioButtons" Content="{x:Static p:Resources.String_Desktop}" VerticalAlignment="Center"></RadioButton>
+        </StackPanel>
+    </Grid>
+</UserControl>

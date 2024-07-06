@@ -1,0 +1,48 @@
+﻿<local:KxUserControl x:Class="Keysticks.UserControls.ProfileSummaryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:Keysticks.Properties"
+             xmlns:local="clr-namespace:Keysticks.UserControls" 
+             mc:Ignorable="d" Loaded="UserControl_Loaded"
+             d:DesignHeight="320" d:DesignWidth="400" MaxWidth="550" MaxHeight="450">
+    <Grid Name="OuterPanel">
+        <GroupBox Header="{x:Static p:Resources.ProfileSummary_Header}" Margin="5" FocusManager.IsFocusScope="True">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.ProfileSummary_GameLabel}"></TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="1" Name="TargetAppNameTextBlock" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Name="TargetAppNameTextBox" VerticalAlignment="Center" Visibility="Collapsed" MaxLength="50"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.ProfileSummary_URLLabel}"></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Name="TargetAppURLContainer">
+                    <Hyperlink Name="TargetAppURLHyperlink" RequestNavigate="Hyperlink_RequestNavigate" Cursor="Hand"><TextBlock Name="TargetAppURLTextBlock"></TextBlock></Hyperlink>
+                </TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="1" Name="TargetAppURLTextBox" VerticalAlignment="Center" Visibility="Collapsed" MaxLength="100"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.ProfileSummary_NumPlayersLabel}"></TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="1" Name="NumPlayersTextBlock" VerticalAlignment="Center" TextTrimming="None"></TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.ProfileSummary_KeyboardTypesLabel}"></TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="1" Name="KeyboardTypesTextBlock" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"></TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.ProfileSummary_ProgramsLabel}"></TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="1" Name="ProgramActionsTextBlock" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"></TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.ProfileSummary_ActivatesControlsLabel}"></TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="1" Name="AutoActivationTextBlock" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"></TextBlock>
+                <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.ProfileSummary_NotesLabel}"></TextBlock>
+                <TextBox Grid.Row="7" Grid.ColumnSpan="2" Name="ProfileNotesTextBox" AcceptsReturn="True" MaxLength="900" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</local:KxUserControl>

@@ -1,0 +1,92 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="Styles/Styles.css" rel="stylesheet" type="text/css" />
+    <title>Keysticks - Diagnosing issues</title>
+</head>
+<body>
+    <div class="header">
+        <img src="Images/KeysticksLogo64.png" alt="Keysticks logo" border="none" class="logo" />
+        <div class="title">
+            KEYSTICKS</div>
+    </div>
+    <div style="margin: 20px;">
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Diagnosing issues</span>
+        </div>
+        <hr />
+        <p>
+        </p>
+        <p>
+            Keysticks has a Message Log window which displays real-time diagnostic information about
+            the controller events that Keysticks detects and the actions it performs in your current session.
+            To access the Message Log, choose 'View message log...' from the Keysticks main menu.
+        </p>
+        <div style="text-align:center;">
+            <img alt="Message log - current session" src="Images/Message-log.jpg" style="margin:5px;" />
+        </div>
+        <p>
+            The example above shows that the logging level is set to show error messages plus diagnostic information such as controller events and mouse and keyboard actions. There is also a logging level 'All' for logging
+            additional debug information which may be useful to developers.
+            Here, the user pressed Button 4 on their controller (the Y button) which triggered
+            Keysticks to perform a left click then type the key combination Alt+Up. The two Source events
+            at the beginning and end represent the physical press and release of the button. If you are trying
+            to understand why your profile is not doing what you want, this is the first thing to look for:
+            whether the controller events are being detected. If they are are not, you need to use the
+            <a href="Profile-Designer-Inputs.htm" title="Profile Designer - Inputs">Inputs tab</a>
+            of the Profile Designer window to check your controller is connected and mapped correctly.
+        </p>
+        <p>
+            Next, the message log shows two Mouse Button State events representing the mouse down and mouse up events which
+            make up a left click. The four Key events show the pressing down of Alt (which appears with the perhaps slightly 
+            cryptic name 'Menu'),
+            then Up, followed by the release of Up, then Alt. You will also see Keyboard State events appear when Keysticks
+            changes the state of the modifier keys (Alt, Ctrl, Shift, Win) or the toggle keys (CapsLock, NumLock, ScrollLock, Insert).
+            In this case, the keyboard state of "Menu, None" means the Alt modifier key is pressed down but no toggle keys are toggled on.
+        </p>
+        <p>
+            If the actions you expected are being logged in the message log but nothing is happening in the application
+            or game you are using, there could be a number of possible reasons for that. A common issue is that Keysticks
+            does have the authority to send input to your application. This can sometimes be resolved by running Keysticks
+            as Administrator. Another possible situation is when the application overrides what Keysticks is trying to do. For example,
+            some games fix or hide the mouse cursor as part of their camera / movement functionality.
+            Also, some games read their input at a lower level than Keysticks ('raw input')
+            and therefore do not detect Keysticks actions. In these cases, unfortunately, there is nothing that can be done.
+            Occasionally, you might find that some controls work but others do not. This can be the case when a particular
+            key or key combination is already in use by the application or is mapped by another piece of software. In this case,
+            see whether you can map a different key or key combination in your application and update your Keysticks profile
+            accordingly.
+        </p>
+        <p>
+            You can use the 'Save' button to save the log of your current session to a text file.
+            Clicking 'Clear' clears the list, which is useful for starting afresh and analysing the next controller action you perform.
+        </p>
+        <p>
+            On the (hopefully) rare occasions an error occurs in Keysticks or a warning is raised,
+            the information is logged to the Keysticks log file,
+            and the contents of that log can be viewed by selecting "Error history" in the Message Log window.
+            Keysticks also briefly displays the error message in its title bar and shows a warning icon.
+            Double clicking the icon opens the message log.
+            In the error history view, the Message Details panel shows any additional technical information (such as the stack trace)
+            which may help to diagnose the error. Clicking Clear
+            deletes the log file but does not affect the current session view.
+        </p>
+        <div style="text-align:center;">
+            <img alt="Message log - error history" src="Images/Message-log-error-log.jpg" style="margin:5px;" />
+        </div>
+        <div style="text-align:center;">
+            <img alt="Message log - warning icon" src="Images/Message-log-warning-icon.jpg" style="margin:5px;" />
+        </div>
+        <hr />
+        <!--        <p>
+                <b>Next topic:</b> <a href="Page.htm" title="Page title">Page title</a>
+            </p>
+    -->
+        <br />
+        <p style="font-size:smaller;">
+            Microsoft, Windows, Xbox and Xbox 360 are either registered trademarks or trademarks of Microsoft Corporation
+            in the United States and/or other countries. Keysticks.net is not affiliated with Microsoft.
+        </p>
+    </div>
+</body>
+</html>

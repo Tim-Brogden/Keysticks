@@ -1,0 +1,47 @@
+﻿<local:KxUserControl x:Class="Keysticks.UserControls.SituationSettingsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:Keysticks.Properties"
+             xmlns:local="clr-namespace:Keysticks.UserControls"
+             mc:Ignorable="d" Loaded="UserControl_Loaded" d:DesignHeight="219" d:DesignWidth="413">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="SelectionBrush" Color="LightSalmon" />
+    </UserControl.Resources>
+    <Grid Name="OuterPanel" Focusable="True" Grid.Style="{StaticResource NoFocusBorder}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="110"></ColumnDefinition>
+            <ColumnDefinition Width="110"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" FontWeight="Bold" Text="{x:Static p:Resources.String_Control}"></TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="1" FontWeight="Bold" Text="{x:Static p:Resources.String_DirectionMode}"></TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" FontWeight="Bold" Text="{x:Static p:Resources.String_HoldRepeat}"></TextBlock>
+        <ItemsControl Name="ControlsTable" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=Name}" Height="20" Margin="0,1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <ItemsControl Name="DirectionModesTable" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <local:ControlAnnotationControl Width="90" Height="20" Margin="0,1" HorizontalAlignment="Left" SelectionBrush="{DynamicResource SelectionBrush}" IsDesignMode="{Binding Path=IsDesignMode}" CurrentText="{Binding Path=Text}" ToolTip="{Binding Path=ToolTip}" AnnotationClicked="Annotation_Clicked" AnnotationRightClicked="Annotation_RightClicked" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <ItemsControl Name="TimingsTable" Grid.Row="1" Grid.Column="2" ItemsSource="{Binding}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <local:ControlAnnotationControl Width="90" Height="20" Margin="0,1" HorizontalAlignment="Left" SelectionBrush="{DynamicResource SelectionBrush}" IsDesignMode="{Binding Path=IsDesignMode}" CurrentText="{Binding Path=Text}" ToolTip="{Binding Path=ToolTip}"  AnnotationClicked="Annotation_Clicked" AnnotationRightClicked="Annotation_RightClicked" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</local:KxUserControl>

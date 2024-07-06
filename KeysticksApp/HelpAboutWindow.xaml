@@ -1,0 +1,84 @@
+﻿<Window x:Class="Keysticks.HelpAboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" ShowInTaskbar="True" ResizeMode="NoResize" WindowStyle="ToolWindow"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:p="clr-namespace:Keysticks.Properties"
+        xmlns:local="clr-namespace:Keysticks.UserControls"
+        Loaded="Window_Loaded" Closing="Window_Closing" Icon="/Keysticks;component/KeysticksLogo.ico"
+        Title="{x:Static p:Resources.About_Keysticks}" WindowStartupLocation="CenterScreen" SizeToContent="Height" Width="450">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="BannerGradientBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Color="AliceBlue" Offset="0"/>
+            <GradientStop Color="SkyBlue" Offset="1"/>
+        </LinearGradientBrush>
+        <!--<Storyboard x:Key="Spin360" Storyboard.TargetName="ProgressIcon" Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)">
+            <DoubleAnimation From="0" To="360" BeginTime="0:0:0" Duration="0:0:1" RepeatBehavior="Forever" />
+        </Storyboard>-->
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource BannerGradientBrush}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{StaticResource image_keysticks_logo_48}" Stretch="None" Margin="5,0"/>
+                <TextBlock Name="TitleTextBlock" Text="{x:Static p:Resources.About_KeysticksEllipsis}" FontSize="24" Foreground="#4682b4" VerticalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <GroupBox Header="{x:Static p:Resources.String_Version}" Margin="5">
+                <Grid Margin="5">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                        <TextBlock Name="VersionTextBlock">Keysticks vX.X</TextBlock>
+                        <TextBlock Name="CopyrightTextBlock">Copyright &#x00A9; Year Author</TextBlock>
+                        <TextBlock VerticalAlignment="Center"><Hyperlink Name="WebsiteHyperlink" NavigateUri="https://keysticks.net" RequestNavigate="Hyperlink_RequestNavigate" Cursor="Hand" ToolTip="https://keysticks.net"><TextBlock Name="WebsiteTextBlock">Keysticks.net</TextBlock></Hyperlink></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="{x:Static p:Resources.About_CreditsTab}" Margin="5">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="22"/>
+                        <RowDefinition Height="22"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="22"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="22"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" VerticalAlignment="Center" Text="{x:Static p:Resources.About_ThirdPartyInfo}"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center">
+                        <Image Source="{StaticResource image_bullet_star}" Stretch="None" Margin="3,0"/>
+                        <TextBlock>Silk icon set 1.3 -</TextBlock>
+                        <TextBlock Margin="5,0"><Hyperlink NavigateUri="http://www.famfamfam.com/lab/icons/silk/" RequestNavigate="Hyperlink_RequestNavigate" Cursor="Hand" ToolTip="http://www.famfamfam.com/lab/icons/silk/"><TextBlock>www.famfamfam.com/lab/icons/silk/</TextBlock></Hyperlink></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center">
+                        <Image Source="{StaticResource image_bullet_star}" Stretch="None" Margin="3,0"/>
+                        <TextBlock>SlimDX -</TextBlock>
+                        <TextBlock Margin="5,0"><Hyperlink NavigateUri="http://slimdx.org" RequestNavigate="Hyperlink_RequestNavigate" Cursor="Hand" ToolTip="http://slimdx.org"><TextBlock>slimdx.org</TextBlock></Hyperlink></TextBlock>
+                    </StackPanel>
+                    <TextBlock Grid.Row="3" VerticalAlignment="Center" Text="{x:Static p:Resources.About_WordPrediction}"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Row="4" VerticalAlignment="Center">
+                        <Image Source="{StaticResource image_bullet_star}" Stretch="None" Margin="3,0"/>
+                        <TextBlock>OpenAdaptxt -</TextBlock>
+                        <!-- Trademark superscripts &#x1D40;&#x1D39;-->
+                        <TextBlock Margin="5,0"><Hyperlink NavigateUri="http://www.openadaptxt.org" RequestNavigate="Hyperlink_RequestNavigate" Cursor="Hand" ToolTip="http://www.openadaptxt.org"><TextBlock>www.openadaptxt.org</TextBlock></Hyperlink></TextBlock>
+                    </StackPanel>
+                    <TextBlock Grid.Row="5" VerticalAlignment="Center" Text="{x:Static p:Resources.About_InstallerInfo}"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Row="6" VerticalAlignment="Center">
+                        <Image Source="{StaticResource image_bullet_star}" Stretch="None" Margin="3,0"/>
+                        <TextBlock>Nullsoft Scriptable Install System (NSIS) -</TextBlock>
+                        <TextBlock Margin="5,0"><Hyperlink NavigateUri="http://nsis.sourceforge.net" RequestNavigate="Hyperlink_RequestNavigate" Cursor="Hand" ToolTip="http://nsis.sourceforge.net"><TextBlock>nsis.sourceforge.net</TextBlock></Hyperlink></TextBlock>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+        <Button Name="OKButton" Grid.Row="2" Margin="5" Width="90" HorizontalAlignment="Right" VerticalAlignment="Bottom" ToolTip="Close this window"  Click="OKButton_Click" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{StaticResource image_accept}" Stretch="None" />
+                <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_OK}"></TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,65 @@
+﻿<local:KxUserControl x:Class="Keysticks.UserControls.InputsListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:Keysticks.Properties"
+             xmlns:kxui="clr-namespace:Keysticks.UI"
+             xmlns:local="clr-namespace:Keysticks.UserControls"
+             mc:Ignorable="d" Loaded="UserControl_Loaded"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="HighlightBrush" Color="Yellow" />
+        <!--<kxui:InvertBooleanBindingConverter x:Key="InvertBooleanConverter"/>-->  
+        <kxui:VisibilityBindingConverter x:Key="VisibilityConverter"/>
+    </UserControl.Resources>
+    <GroupBox Name="InputsGroupBox" Header="{x:Static p:Resources.String_Inputs}">
+        <Grid Margin="5">
+            <ScrollViewer Name="InputsContainer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <ItemsControl Name="InputsView" ItemsSource="{Binding InputItems}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Expander Header="{Binding ItemData.Name}" IsExpanded="{Binding IsExpanded}">
+                                <StackPanel Orientation="Vertical" Margin="0,5">
+                                    <StackPanel Orientation="Horizontal" Visibility="{Binding IsDesignMode, Converter={StaticResource VisibilityConverter}}">
+                                        <ComboBox Name="AvailableInputsComboBox" VerticalAlignment="Center" Width="120" ItemsSource="{Binding Path=AvailableInputs}" DisplayMemberPath="FullName" SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="{x:Static p:Resources.InputsList_AvailableInputsToolTip}"></ComboBox>
+                                        <Button Name="RefreshInputsButton" ToolTip="{x:Static p:Resources.InputsList_RefreshToolTip}" Margin="5,0" VerticalAlignment="Center" Click="RefreshInputsButton_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Source="{StaticResource image_browser_refresh}" Stretch="None" />
+                                            </StackPanel>
+                                        </Button>
+                                        <Button Name="DeleteInputButton" Tag="{Binding ID}" ToolTip="{x:Static p:Resources.InputsList_DeleteInputToolTip}" VerticalAlignment="Center" Click="DeleteInputButton_Click">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Source="{StaticResource image_delete}" Stretch="None" />
+                                            </StackPanel>
+                                        </Button>
+                                    </StackPanel>
+                                    <ItemsControl Name="ControlsView" Margin="0,5,0,0" ItemsSource="{Binding Children}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="40"/>
+                                                        <ColumnDefinition Width="80"/>
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <local:ControlAnnotationControl Width="35" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" IsDesignMode="False" CurrentText="{Binding ItemData.ShortName}" IsHighlighted="{Binding IsHighlighted}" HighlightBrush="{DynamicResource HighlightBrush}" />
+                                                    <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{Binding Name}" />
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="2" Visibility="{Binding DeadZoneVisibility}" >
+                                                        <TextBlock VerticalAlignment="Center" Text="{x:Static p:Resources.InputsList_DeadZoneLabel}" Margin="5,0"></TextBlock>
+                                                        <TextBox VerticalAlignment="Center" Width="40" IsEnabled="{Binding IsDesignMode}" ToolTip="{x:Static p:Resources.InputsList_DeadZoneToolTip}" Text="{Binding DeadZone}" />
+                                                    </StackPanel>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </Expander>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+            <Button Name="AddInputButton" Style="{StaticResource HyperlinkButtonStyle}" Content="{x:Static p:Resources.InputsList_AddInput}" ToolTip="{x:Static p:Resources.InputsList_AddInputToolTip}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="Blue" Click="AddInputButton_Click"/>
+        </Grid>
+    </GroupBox>
+</local:KxUserControl>

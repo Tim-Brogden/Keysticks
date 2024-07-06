@@ -1,0 +1,25 @@
+﻿<local:KxUserControl x:Class="Keysticks.UserControls.AutoActivationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="clr-namespace:Keysticks.Properties"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Keysticks.UserControls" 
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="200" Loaded="UserControl_Loaded">
+    <GroupBox Name="ActivationGroupBox" Header="{x:Static p:Resources.String_ActivateControlSet}">
+        <Grid Name="ActivationGrid" Margin="5" IsEnabled="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <RadioButton Name="ManualRadioButton" GroupName="Activation" Grid.Row="0" VerticalAlignment="Center" Content="{x:Static p:Resources.AutoActivation_Manually}" ToolTip="{x:Static p:Resources.AutoActivation_ManuallyToolTip}" Checked="RadioButton_Checked" />
+            <RadioButton Name="DefaultRadioButton" GroupName="Activation" Grid.Row="1" VerticalAlignment="Center" Content="{x:Static p:Resources.AutoActivation_ByDefault}" ToolTip="{x:Static p:Resources.AutoActivation_ByDefaultToolTip}" Checked="RadioButton_Checked" />
+            <RadioButton Name="ProgramRadioButton" GroupName="Activation" Grid.Row="2" VerticalAlignment="Center" Content="{x:Static p:Resources.AutoActivation_SpecificWindows}" ToolTip="{x:Static p:Resources.AutoActivation_SpecificWindowsToolTip}" Checked="RadioButton_Checked" />
+            <Button Grid.Row="2" Name="EditActivationsButton" Style="{StaticResource HyperlinkButtonStyle}" Foreground="Blue" Content="{x:Static p:Resources.String_Choose}" ToolTip="{x:Static p:Resources.AutoActivation_ChooseToolTip}" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="Hidden" Click="EditActivationsButton_Click"/>
+            <TextBlock Grid.Row="3" Name="ActivationSummary" VerticalAlignment="Top" Margin="18,0,0,0" FontStyle="Italic" TextTrimming="CharacterEllipsis"></TextBlock>
+        </Grid>
+    </GroupBox>
+</local:KxUserControl>

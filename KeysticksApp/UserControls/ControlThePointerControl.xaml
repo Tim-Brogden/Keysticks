@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Keysticks.UserControls.ControlThePointerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:Keysticks.Properties"
+             xmlns:local="clr-namespace:Keysticks.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="350" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+            <RadioButton Name="SpeedModeRadioButton" VerticalAlignment="Center" Content="{x:Static p:Resources.ControlPointer_SpeedMode}" GroupName="SpeedOrPosition" Checked="SpeedOrPositionButton_Checked"/>
+            <RadioButton Name="PositionModeRadioButton" Margin="10,0" VerticalAlignment="Center" Content="{x:Static p:Resources.ControlPointer_PositionMode}" GroupName="SpeedOrPosition" Checked="SpeedOrPositionButton_Checked"/>
+        </StackPanel>
+        <Grid Name="SpeedPanel" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="20,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
+            </Grid.RowDefinitions>
+            <CheckBox Name="FixedSpeedCheckBox" Content="{x:Static p:Resources.ControlPointer_FixedSpeed}" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <StackPanel Name="SpeedMultiplierPanel" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Text="{x:Static p:Resources.ControlPointer_SpeedMultiplierLabel}"/>
+                <local:CustomSliderControl x:Name="SpeedMultiplierSlider" MinWidth="130" Margin="10,0,0,0" IsLogScale="True" Minimum="0.2" Maximum="5.0" Value="1.0" SmallChange="0.01" LargeChange="0.1" DecimalPlaces="2" />
+            </StackPanel>
+        </Grid>
+        <Grid Name="PositionPanel" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="20,0,0,0" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <RadioButton Name="RelativeModeRadioButton" Content="{x:Static p:Resources.String_Relative}" GroupName="AbsoluteOrRelative" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="AbsoluteOrRelativeButton_Checked"/>
+                <RadioButton Name="AbsoluteModeRadioButton" Margin="10,0" Content="{x:Static p:Resources.String_Absolute}" GroupName="AbsoluteOrRelative" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="AbsoluteOrRelativeButton_Checked"/>
+            </StackPanel>
+            <StackPanel Name="RadiusPanel" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Text="{x:Static p:Resources.ControlPointer_RadiusLabel}"/>
+                <local:CustomSliderControl x:Name="RadiusSlider" MinWidth="130" Margin="10,0,0,0" IsLogScale="False" Minimum="0.0" Maximum="100.0" Value="10.0" SmallChange="1" LargeChange="5" DecimalPlaces="0" />
+            </StackPanel>
+        </Grid>
+        <StackPanel Name="XAxisPanel" Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+            <CheckBox Name="XOnlyCheckBox" Content="{x:Static p:Resources.ControlPointer_XAxisOnly}" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="XOnlyCheckBox_Changed" Unchecked="XOnlyCheckBox_Changed"/>
+            <CheckBox Name="InvertXCheckBox" Margin="10,0,0,0" Content="{x:Static p:Resources.ControlPointer_InvertXAxis}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Name="YAxisPanel" Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
+            <CheckBox Name="YOnlyCheckBox" Content="{x:Static p:Resources.ControlPointer_YAxisOnly}" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="YOnlyCheckBox_Changed" Unchecked="YOnlyCheckBox_Changed"/>
+            <CheckBox Name="InvertYCheckBox" Margin="10,0,0,0" Content="{x:Static p:Resources.ControlPointer_InvertYAxis}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

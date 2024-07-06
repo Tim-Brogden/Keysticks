@@ -1,0 +1,308 @@
+﻿<Window x:Class="Keysticks.OpenProfileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Loaded="Window_Loaded" Closing="Window_Closing"
+        xmlns:kx="clr-namespace:Keysticks" xmlns:kxui="clr-namespace:Keysticks.UI" xmlns:local="clr-namespace:Keysticks.UserControls" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:p="clr-namespace:Keysticks.Properties"
+        Icon="/Keysticks;component/KeysticksLogo.ico" Title="{x:Static p:Resources.ProfileBrowser_Title}" 
+        mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="580" Width="680">
+    <Window.Resources>
+        <kxui:DateBindingConverter x:Key="DateConverter"/>
+        <kxui:ImageBindingConverter x:Key="ImageConverter"/>
+        <Storyboard x:Key="Spin360" Storyboard.TargetName="ProgressIcon" Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)">
+            <DoubleAnimation From="0" To="360" BeginTime="0:0:0" Duration="0:0:1" RepeatBehavior="Forever" />
+        </Storyboard>
+        <Style x:Key="MyDataGridCellStyle" TargetType="{x:Type DataGridCell}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Border Padding="3,0,3,0">
+                                <ContentPresenter VerticalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        </Style>
+        <Style x:Key="MyDataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <ContextMenu x:Key="LocalProfilesContextMenu" x:Shared="True">
+            <MenuItem Name="LoadMenuItem" Header="{x:Static p:Resources.String_Load}" Click="LoadButton_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_accept}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="ShareMenuItem" Header="{x:Static p:Resources.String_ShareEllipsis}" Click="ShareMenuItem_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_world_add}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="RenameMenuItem" Header="{x:Static p:Resources.String_RenameEllipsis}" InputGestureText="F2" Click="RenameCommand_Executed">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_textfield_rename}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="CopyMenuItem" Header="{x:Static p:Resources.String_CopyEllipsis}" Click="CopyMenuItem_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_page_copy}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="DeleteMenuItem" Header="{x:Static p:Resources.String_DeleteEllipsis}" InputGestureText="Del" Click="DeleteCommand_Executed">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_delete}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+        <ContextMenu x:Key="OnlineProfilesContextMenu" x:Shared="True">
+            <MenuItem Name="DownloadMenuItem" Header="{x:Static p:Resources.String_Download}" Click="DownloadButton_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_download}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="RemoveMenuItem" Header="{x:Static p:Resources.String_RemoveEllipsis}" InputGestureText="Del" Click="DeleteCommand_Executed">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_world_delete}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <TabControl Name="ProfilesTabControl" SelectionChanged="ProfilesTabControl_SelectionChanged">
+            <TabItem Header="{x:Static p:Resources.ProfileBrowser_MyProfiles}">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <DataGrid Name="MyProfilesTable" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding}" SelectedValuePath="ID" GridLinesVisibility="Horizontal" RowHeight="24"
+                          CanUserAddRows="False" CanUserDeleteRows="True" CanUserSortColumns="True" CanUserReorderColumns="False" HeadersVisibility="Column" CanUserResizeRows="False" SelectionMode="Single"
+                           ContextMenu="{StaticResource LocalProfilesContextMenu}" SelectionChanged="MyProfilesTable_SelectionChanged" ContextMenuOpening="LocalProfilesContextMenu_ContextMenuOpening" 
+                          HorizontalGridLinesBrush="#FFDDDDDD"  MouseDoubleClick="LoadButton_Click"
+                          CellStyle="{StaticResource MyDataGridCellStyle}">
+                        <DataGrid.CommandBindings>
+                            <CommandBinding Command="Delete" 
+                            Executed="DeleteCommand_Executed" 
+                            CanExecute="DeleteCommand_CanExecute" />
+                            <CommandBinding Command="{x:Static kx:OpenProfileWindow.RenameCommand}"
+                            Executed="RenameCommand_Executed"
+                            CanExecute="RenameCommand_CanExecute" />
+                        </DataGrid.CommandBindings>
+                        <DataGrid.InputBindings>
+                            <KeyBinding Command="{x:Static kx:OpenProfileWindow.RenameCommand}" Gesture="F2" />
+                        </DataGrid.InputBindings>
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Header="" Width="24">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding Status, Converter={StaticResource ImageConverter}}" Stretch="None"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="{x:Static p:Resources.ProfileBrowser_RefColumn}" Width="40" HeaderStyle="{StaticResource MyDataGridColumnHeaderStyle}" SortMemberPath="ID">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock HorizontalAlignment="Center" Text="{Binding Path=ProfileRef, Mode=OneWay}" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="{x:Static p:Resources.ProfileBrowser_NameColumn}" Binding="{Binding Path=ShortName, Mode=OneWay}" Width="*" SortMemberPath="ShortName"/>
+                            <DataGridTextColumn Header="{x:Static p:Resources.ProfileBrowser_LastModifiedColumn}" Binding="{Binding Path=FileModifiedDate, Mode=OneWay, Converter={StaticResource DateConverter}}" Width="85" SortMemberPath="FileModifiedDate"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <TextBlock Grid.Row="1" Text="{x:Static p:Resources.ProfileBrowser_DownloadMoreInfo}" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="{x:Static p:Resources.ProfileBrowser_DownloadArea}">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Name="WelcomePanel" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical">
+                        <TextBlock FontWeight="Bold" Text="{x:Static p:Resources.String_Welcome}"></TextBlock>
+                        <TextBlock Name="DownloadAreaWelcomeTextBlock" Margin="0,10" TextWrapping="Wrap"></TextBlock>
+                        <Button Name="EnterDownloadAreaButton" Width="150" Height="23" HorizontalAlignment="Left" Click="EnterDownloadAreaButton_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource image_tick}" Stretch="None" />
+                                <TextBlock Margin="5,0" Text="{x:Static p:Resources.ProfileBrowser_EnterDownloadArea}"></TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                    <Grid Name="LoginPanel" Visibility="Hidden">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <local:InfoMessageControl x:Name="LoginInfoMessage" Grid.Row="0" VerticalAlignment="Top" Text="" />
+                        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <GroupBox Header="{x:Static p:Resources.ProfileBrowser_LoginDetails}">
+                                <Grid Margin="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="50"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.ProfileBrowser_UsernameLabel}"></TextBlock>
+                                    <TextBox Name="UsernameTextBox" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" MaxLength="32"></TextBox>
+                                    <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.ProfileBrowser_PasswordLabel}"></TextBlock>
+                                    <PasswordBox Name="PasswordMaskBox" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" MaxLength="32"></PasswordBox>
+                                    <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.ProfileBrowser_RememberMeLabel}"></TextBlock>
+                                    <CheckBox Name="RememberMeCheckBox" Grid.Row="2" Grid.Column="1" Width="50" HorizontalAlignment="Left" VerticalAlignment="Center"></CheckBox>
+                                    <Button Name="LoginButton" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="90" Height="23" IsDefault="True" Click="LoginButton_Click">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="{StaticResource image_tick}" Stretch="None" />
+                                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.ProfileBrowser_Login}"></TextBlock>
+                                        </StackPanel>
+                                    </Button>
+                                </Grid>
+                            </GroupBox>
+                            <Button Name="NewUserButton" Style="{StaticResource HyperlinkButtonStyle}" Margin="0,5,0,20" Content="{x:Static p:Resources.ProfileBrowser_NewUserEllipsis}" ToolTip="{x:Static p:Resources.ProfileBrowser_WebsiteLinkToolTip}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Blue" Click="NewUserButton_Click"/>
+                        </StackPanel>
+                    </Grid>
+                    <Grid Name="DownloadPanel" Visibility="Visible">
+                        <DataGrid Name="OnlineProfilesTable" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding}" SelectedValuePath="ID" GridLinesVisibility="Horizontal" RowHeight="24" CanUserAddRows="False" CanUserDeleteRows="False" CanUserSortColumns="True" CanUserReorderColumns="False" HeadersVisibility="Column" CanUserResizeRows="False" SelectionMode="Single"
+                                ContextMenu="{StaticResource OnlineProfilesContextMenu}" SelectionChanged="OnlineProfilesTable_SelectionChanged" ContextMenuOpening="OnlineProfilesContextMenu_ContextMenuOpening" HorizontalGridLinesBrush="#FFDDDDDD"
+                                MouseDoubleClick="DownloadButton_Click" CellStyle="{StaticResource MyDataGridCellStyle}">
+                            <DataGrid.CommandBindings>
+                                <CommandBinding Command="Delete" 
+                            Executed="DeleteCommand_Executed" 
+                            CanExecute="DeleteCommand_CanExecute" />
+                            </DataGrid.CommandBindings>
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="" Width="24" SortMemberPath="Status">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Status, Mode=OneWay, Converter={StaticResource ImageConverter}}" Stretch="None"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="{x:Static p:Resources.ProfileBrowser_RefColumn}" Width="40" HeaderStyle="{StaticResource MyDataGridColumnHeaderStyle}" SortMemberPath="ID">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=ProfileRef, Mode=OneWay}" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Header="{x:Static p:Resources.ProfileBrowser_NameColumn}" Binding="{Binding Path=ShortName, Mode=OneWay}" Width="*" SortMemberPath="ShortName"/>
+                                <DataGridTextColumn Header="{x:Static p:Resources.ProfileBrowser_AddedByColumn}" Binding="{Binding Path=AddedBy, Mode=OneWay}" Width="110" SortMemberPath="AddedBy"/>
+                                <DataGridTextColumn Header="{x:Static p:Resources.ProfileBrowser_LastUpdatedColumn}" Binding="{Binding Path=LastModifiedDate, Mode=OneWay, Converter={StaticResource DateConverter}}" Width="85" SortMemberPath="LastModifiedDate"/>
+                                <DataGridTemplateColumn Width="40" HeaderStyle="{StaticResource MyDataGridColumnHeaderStyle}" SortMemberPath="Downloads">
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Image Source="{StaticResource image_download}" Stretch="None" ToolTip="{x:Static p:Resources.ProfileBrowser_DonwloadCountToolTip}" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <TextBlock HorizontalAlignment="Center" Text="{Binding Path=Downloads, Mode=OneWay}" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                    <TextBlock Name="LoginStatusTextBlock" Text="{x:Static p:Resources.ProfileBrowser_LoginToShareInfo}" Grid.Row="1" VerticalAlignment="Bottom" FontStyle="Italic"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <Button Name="GoToLoginButton" Style="{StaticResource HyperlinkButtonStyle}" Content="{x:Static p:Resources.ProfileBrowser_Log_in}" Foreground="Blue" Click="GoToLoginButton_Click"/>
+                        <Button Name="LogoutButton" Style="{StaticResource HyperlinkButtonStyle}" Content="{x:Static p:Resources.ProfileBrowser_Log_out}" Visibility="Collapsed" Foreground="Blue" Click="LogoutButton_Click"/>
+                        <Button Name="BackButton" Style="{StaticResource HyperlinkButtonStyle}" Content="{x:Static p:Resources.String_Back}" Visibility="Collapsed" Foreground="Blue" Click="BackButton_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Image Name="ProgressIcon" Source="{StaticResource image_indicator}" Stretch="None" Margin="0,0,5,0" RenderTransformOrigin="0.5, 0.5" Visibility="Collapsed">
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard Storyboard="{StaticResource Spin360}" />
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </Image.Triggers>
+                <Image.RenderTransform>
+                    <RotateTransform Angle="0" />
+                </Image.RenderTransform>
+            </Image>
+            <local:ErrorMessageControl x:Name="ErrorMessage" />
+        </StackPanel>
+        <local:InfoMessageControl x:Name="InfoMessage" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="Collapsed"/>
+        <GroupBox Name="DetailsGroupBox" Header="{x:Static p:Resources.String_Profile}" Grid.Row="2" VerticalAlignment="Bottom">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="15"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="285" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="190" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                    <Image Name="ProfileIcon" Source="{StaticResource image_klogo}" Stretch="None" Visibility="Collapsed"/>
+                    <TextBlock Name="ProfileNameTextBlock" Margin="5,0"  FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Name="VersionWarningTextBlock" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                    <Button Name="PreviewButton" Width="90" ToolTip="{x:Static p:Resources.ProfileBrowser_PreviewToolTip}" Click="PreviewButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource image_page_go}" Stretch="None" />
+                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.ProfileBrowser_PreviewEllipsis}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="ActionsButton" IsEnabled="False" Margin="5,0,0,0" Width="90" Click="ActionsButton_Click">
+                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                            <Image Source="{StaticResource image_bullet_arrow_up}" Stretch="None" />
+                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.ProfileBrowser_Actions}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="DownloadButton" Margin="5,0,0,0" ToolTip="{x:Static p:Resources.ProfileBrowser_DownloadToolTip}" IsEnabled="False" Width="90" Click="DownloadButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource image_download}" Stretch="None" />
+                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_Download}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <Button Name="ShowInOtherTabButton" Style="{StaticResource HyperlinkButtonStyle}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Visibility="Visible" Content="{x:Static p:Resources.String_ShowInDownloadArea}" VerticalAlignment="Center" Foreground="Blue" Click="ShowInOtherTabButton_Click"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                    <Button Name="LoadButton" ToolTip="{x:Static p:Resources.ProfileBrowser_LoadProfileToolTip}" Margin="0,0,5,0" IsEnabled="False" Width="90" Click="LoadButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource image_accept}" Stretch="None" />
+                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_Load}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="CancelButton" Width="90" IsCancel="True" Click="CancelButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource image_cancel}" Stretch="None" />
+                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_Cancel}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

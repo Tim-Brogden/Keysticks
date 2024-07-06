@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="FeetUp.UserControls.EditSituationsMenuButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="120">
+    <Button Name="EditSituationsButton" Grid.Row="1" HorizontalAlignment="Left" Width="120" Height="23" Click="EditSituationsButton_Click">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin="5,0">Edit situations</TextBlock>
+            <Image Source="{StaticResource image_bullet_arrow_up}" />
+        </StackPanel>
+        <Button.ContextMenu>
+            <ContextMenu Name="EditSituationsContextMenu" Opened="EditSituationsContextMenu_Opened">
+                <MenuItem Name="CreateModeButton" Header="Create a new mode" Click="CreateModeButton_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource image_add}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator Name="FirstSeparator"/>
+                <MenuItem Name="RenameModeButton" Header="Rename this mode" Click="RenameModeButton_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource image_textfield_rename}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="DeleteModeButton" Header="Delete this mode" Click="DeleteModeButton_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource image_delete}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="CreatePageButton" Header="Add a page" Click="CreatePageButton_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource image_add}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator Name="SecondSeparator"/>
+                <MenuItem Name="RenamePageButton" Header="Rename this page" Click="RenamePageButton_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource image_textfield_rename}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="DeletePageButton" Header="Delete this page" Click="DeletePageButton_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource image_delete}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator Name="ThirdSeparator"/>
+                <MenuItem Name="StartupSituationButton" Header="Set as initial situation" Click="StartupSituationButton_Click">
+                    <MenuItem.Icon>
+                        <Image Source="{StaticResource image_house_go}" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </ContextMenu>
+        </Button.ContextMenu>
+    </Button>
+</UserControl>

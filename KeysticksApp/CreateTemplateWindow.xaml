@@ -1,0 +1,67 @@
+﻿<Window x:Class="Keysticks.CreateTemplateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" WindowStartupLocation="CenterOwner"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:p="clr-namespace:Keysticks.Properties"
+        xmlns:local="clr-namespace:Keysticks.UserControls" 
+        ResizeMode="CanMinimize" Loaded="Window_Loaded" Icon="/Keysticks;component/KeysticksLogo.ico" 
+        Title="{x:Static p:Resources.Template_Title}" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="280" Width="665">
+        <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Grid VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="CreateItemNameLabel" Text="{x:Static p:Resources.Template_TemplateNameLabel}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+            <TextBox Name="CreateItemNameTextBox" Grid.Row="0" Grid.Column="1" MaxLength="50" LostKeyboardFocus="CreateItemNameTextBox_LostKeyboardFocus"></TextBox>
+            <TextBlock Name="InsertPosLabel" Text="{x:Static p:Resources.String_InsertAfterLabel}" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+            <ComboBox Name="InsertPosCombo" Grid.Row="0" Grid.Column="4" SelectedValuePath="ID" DisplayMemberPath="Name" SelectionChanged="InsertPosCombo_SelectionChanged"/>
+            <TextBlock Name="GroupLabel" Text="{x:Static p:Resources.Template_TemplateGroupLabel}" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+            <ComboBox Name="GroupCombo" Grid.Row="1" Grid.Column="4" SelectedValuePath="ID" DisplayMemberPath="Name" />
+            <TextBlock Name="GridTypeLabel" Text="{x:Static p:Resources.Template_GridTypeLabel}" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+            <ComboBox Name="GridTypeCombo" Grid.Row="3" Grid.Column="1" SelectedValuePath="ID" DisplayMemberPath="Name" />
+            <TextBlock Name="NavigationTypeLabel" Text="{x:Static p:Resources.Template_NavigationTypeLabel}" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+            <ComboBox Name="NavigationTypeCombo" Grid.Row="5" Grid.Column="1" SelectedValuePath="ID" DisplayMemberPath="Name" SelectionChanged="NavigationTypeCombo_SelectionChanged" />
+            <TextBlock Name="NavigationControlLabel" Text="{x:Static p:Resources.String_NavigateUsingLabel}" Grid.Row="5" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+            <ComboBox Name="NavigationControlCombo" Grid.Row="5" Grid.Column="4" SelectedValuePath="ID" DisplayMemberPath="Name" />
+            <TextBlock Name="SelectionTypeLabel" Text="{x:Static p:Resources.Template_SelectionTypeLabel}" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+            <ComboBox Name="SelectionTypeCombo" Grid.Row="6" Grid.Column="1" SelectedValuePath="ID" DisplayMemberPath="Name" SelectionChanged="SelectionTypeCombo_SelectionChanged" />
+            <TextBlock Name="SelectionControlLabel" Text="{x:Static p:Resources.String_SelectUsingLabel}" Grid.Row="6" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+            <ComboBox Name="SelectionControlCombo" Grid.Row="6" Grid.Column="4" SelectedValuePath="ID" DisplayMemberPath="Name" />
+            <TextBlock Name="RestrictionsLabel" Text="{x:Static p:Resources.Template_RestrictionsLabel}" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+            <ComboBox Name="RestrictionsCombo" Grid.Row="7" Grid.Column="1" SelectedValuePath="ID" DisplayMemberPath="Name" />
+        </Grid>
+        <local:ErrorMessageControl x:Name="ErrorMessage" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" MaxWidth="500"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button Name="OKButton" Width="70" Margin="5,0" Click="OKButton_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource image_accept}" Stretch="None" />
+                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_OK}"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="CancelButton" Width="70" IsCancel="True" Click="CancelButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource image_cancel}" Stretch="None" />
+                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_Cancel}"></TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

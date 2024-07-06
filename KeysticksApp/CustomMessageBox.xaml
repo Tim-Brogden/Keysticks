@@ -1,0 +1,26 @@
+﻿<Window x:Class="Keysticks.CustomMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" WindowStartupLocation="CenterOwner"
+        xmlns:p="clr-namespace:Keysticks.Properties"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="NoResize"
+        Icon="/Keysticks;component/KeysticksLogo.ico" Title="" mc:Ignorable="d" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        Loaded="Window_Loaded" Closing="Window_Closing" d:DesignHeight="120" d:DesignWidth="420" SizeToContent="WidthAndHeight">
+    <StackPanel Orientation="Vertical" Margin="5">
+        <StackPanel Background="White" Margin="0,0,0,20" Orientation="Horizontal">
+            <Image Name="QuestionIcon" Stretch="None" Source="{StaticResource image_help}" Margin="1" Grid.Column="0" VerticalAlignment="Top"/>
+            <Image Name="InformationIcon" Stretch="None" Source="{StaticResource image_information}" Margin="1" Visibility="Collapsed" Grid.Column="0" VerticalAlignment="Top"/>
+            <ScrollViewer Name="ScrollControl" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" MaxHeight="300">
+                <TextBox Name="CustomMessageTextBox" Margin="3,0" BorderThickness="0" Background="Transparent" IsReadOnly="True" MinWidth="360" MaxWidth="400" Grid.Column="1" VerticalAlignment="Top" TextWrapping="Wrap"/>
+            </ScrollViewer>
+        </StackPanel>
+        <Grid>
+            <CheckBox Name="DontAskAgainCheckBox" Content="{x:Static p:Resources.String_DontShowAgain}" HorizontalAlignment="Left" Margin="1,0" VerticalAlignment="Bottom"></CheckBox>
+            <StackPanel Name="ButtonsPanel" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="YesButton" Content="{x:Static p:Resources.String_Yes}" Width="70" Height="23" Margin="0,0,5,0" Visibility="Collapsed" Click="YesButton_Click"></Button>
+                <Button Name="NoButton" Content="{x:Static p:Resources.String_No}" Width="70" Height="23" Margin="0,0,5,0" Visibility="Collapsed" Click="NoButton_Click"></Button>
+                <Button Name="OKButton" Content="{x:Static p:Resources.String_OK}" Width="70" Height="23" Margin="0,0,5,0" Visibility="Collapsed" Click="OKButton_Click"></Button>
+                    <Button Name="CancelButton" Content="{x:Static p:Resources.String_Cancel}" Width="70" Height="23" Margin="0,0,5,0" IsCancel="True" Visibility="Collapsed" Click="CancelButton_Click"></Button>
+            </StackPanel>
+        </Grid>  
+    </StackPanel>
+</Window>

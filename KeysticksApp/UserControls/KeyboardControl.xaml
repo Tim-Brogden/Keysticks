@@ -1,0 +1,127 @@
+﻿<local:BaseGridControl x:Class="Keysticks.UserControls.KeyboardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Keysticks.UserControls" Loaded="UserControl_Loaded"
+             mc:Ignorable="d" d:DesignHeight="156" d:DesignWidth="604">
+    <UserControl.Resources>
+        <Color x:Key="BackgroundColor">LightSkyBlue</Color>
+    </UserControl.Resources>
+    <Border BorderBrush="Gray" BorderThickness="1" Grid.Row="0" Grid.Column="0">
+        <Border.Background>
+            <SolidColorBrush Color="{DynamicResource BackgroundColor}"/>
+        </Border.Background>
+        <Grid Margin="5" Background="Transparent" Name="OuterPanel" Focusable="True" Grid.Style="{StaticResource NoFocusBorder}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="24"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="592"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                <local:ControlAnnotationControl x:Name="Escape" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F1" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F2" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F3" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F4" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F5" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F6" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F7" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F8" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F9" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F10" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F11" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F12" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Insert" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="PrintScreen" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Delete" Width="35" Margin="1"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                <local:ControlAnnotationControl x:Name="Backtick" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="D1" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="D2" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="D3" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="D4" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="D5" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="D6" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="D7" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="D8" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="D9" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="D0" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="MinusSign" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="EqualsSign" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Backspace" Width="72" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Home" Width="35" Margin="1"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+                <local:ControlAnnotationControl x:Name="Tab" Width="72" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Q" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="W" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="E" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="R" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="T" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Y" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="U" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="I" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="O" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="P" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="LeftBracket" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="RightBracket" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Hash" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="PageUp" Width="35" Margin="1"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
+                <local:ControlAnnotationControl x:Name="CapsLock" Width="72" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="S" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="D" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="F" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="G" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="H" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="J" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="K" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="L" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Semicolon" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Apostrophe" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Return" Width="72" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="PageDown" Width="35" Margin="1"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                <local:ControlAnnotationControl x:Name="LShiftKey" Width="35"  Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Backslash" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Z" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="X" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="C" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="V" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="B" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="N" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="M" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Comma" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Fullstop" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Slash" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="RShiftKey" Width="72" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Up" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="End" Width="35" Margin="1"/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Orientation="Horizontal">
+                <local:ControlAnnotationControl x:Name="LControlKey" Width="72"  Margin="1"/>
+                <local:ControlAnnotationControl x:Name="LWin" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="LMenu" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Spacebar" Width="183"  Margin="1"/>
+                <local:ControlAnnotationControl x:Name="RMenu" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="RWin" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Apps" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="RControlKey" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Left" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="Down" Width="35" Margin="1" />
+                <local:ControlAnnotationControl x:Name="Right" Width="35" Margin="1"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</local:BaseGridControl>

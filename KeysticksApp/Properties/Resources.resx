@@ -1,0 +1,2943 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About_CreditsTab" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="About_InstallerInfo" xml:space="preserve">
+    <value>The installer was packaged using:</value>
+  </data>
+  <data name="About_Keysticks" xml:space="preserve">
+    <value>About Keysticks</value>
+  </data>
+  <data name="About_KeysticksEllipsis" xml:space="preserve">
+    <value>About Keysticks...</value>
+  </data>
+  <data name="About_ThirdPartyInfo" xml:space="preserve">
+    <value>Keysticks uses these excellent third-party components:</value>
+  </data>
+  <data name="About_WordPrediction" xml:space="preserve">
+    <value>The word prediction feature is powered by:</value>
+  </data>
+  <data name="ActionStrip_NumberOfCellsLabel" xml:space="preserve">
+    <value>Number of cells:</value>
+  </data>
+  <data name="Activate_EndsButton" xml:space="preserve">
+    <value>E_nds</value>
+  </data>
+  <data name="Activate_EqualsButton" xml:space="preserve">
+    <value>_Equals</value>
+  </data>
+  <data name="Activate_MinimiseIfActive" xml:space="preserve">
+    <value>_Minimise if active</value>
+  </data>
+  <data name="Activate_MinimiseToolTip" xml:space="preserve">
+    <value>Minimise the window if it is already active</value>
+  </data>
+  <data name="Activate_ProgramLabel" xml:space="preserve">
+    <value>Program:</value>
+  </data>
+  <data name="Activate_RefreshProgramsListToolTip" xml:space="preserve">
+    <value>Refresh the list of running programs / windows</value>
+  </data>
+  <data name="Activate_RestoreIfMinimised" xml:space="preserve">
+    <value>_Restore if minimised</value>
+  </data>
+  <data name="Activate_RestoreToolTip" xml:space="preserve">
+    <value>Restore the window if it is minimised</value>
+  </data>
+  <data name="Activate_StartsButton" xml:space="preserve">
+    <value>_Starts</value>
+  </data>
+  <data name="Activate_WindowTitleLabel" xml:space="preserve">
+    <value>Window title:</value>
+  </data>
+  <data name="Activations_AddActivation" xml:space="preserve">
+    <value>Add activation</value>
+  </data>
+  <data name="Activations_IntroLabel" xml:space="preserve">
+    <value>Activate 'X' controls automatically in these windows:</value>
+  </data>
+  <data name="Activations_ProgramColumn" xml:space="preserve">
+    <value>Program</value>
+  </data>
+  <data name="Activations_Title" xml:space="preserve">
+    <value>Edit activations</value>
+  </data>
+  <data name="Activations_WindowTitleColumn" xml:space="preserve">
+    <value>Window title</value>
+  </data>
+  <data name="AddControlSet_NameLabel" xml:space="preserve">
+    <value>Control set name:</value>
+  </data>
+  <data name="AddControlSet_Title" xml:space="preserve">
+    <value>Add a new control set</value>
+  </data>
+  <data name="AddKeyboard_Info" xml:space="preserve">
+    <value>Select a keyboard and choose the controls you want to navigate and select with.
+The Preview panel shows the controls that will be added.</value>
+  </data>
+  <data name="AddKeyboard_InvalidSelectionText" xml:space="preserve">
+    <value>Please select which controls you wish to navigate and select with.</value>
+  </data>
+  <data name="AddKeyboard_KeyboardLabel" xml:space="preserve">
+    <value>Keyboard:</value>
+  </data>
+  <data name="AddKeyboard_Title" xml:space="preserve">
+    <value>Add keyboard controls</value>
+  </data>
+  <data name="AutoActivation_ByDefault" xml:space="preserve">
+    <value>By default</value>
+  </data>
+  <data name="AutoActivation_ByDefaultToolTip" xml:space="preserve">
+    <value>Activate automatically in any window that doesn't match an activation rule</value>
+  </data>
+  <data name="AutoActivation_ChooseToolTip" xml:space="preserve">
+    <value>Choose programs / windows</value>
+  </data>
+  <data name="AutoActivation_Manually" xml:space="preserve">
+    <value>Manually</value>
+  </data>
+  <data name="AutoActivation_ManuallyToolTip" xml:space="preserve">
+    <value>Activate using your controller and 'Change control set' actions</value>
+  </data>
+  <data name="AutoActivation_SpecificWindows" xml:space="preserve">
+    <value>In specific windows</value>
+  </data>
+  <data name="AutoActivation_SpecificWindowsToolTip" xml:space="preserve">
+    <value>Activate automatically on switching to any of the specified windows</value>
+  </data>
+  <data name="Background_ChooseImageFileToolTip" xml:space="preserve">
+    <value>Choose image file</value>
+  </data>
+  <data name="Background_ColourBackground" xml:space="preserve">
+    <value>Colour background</value>
+  </data>
+  <data name="Background_DefaultBackground" xml:space="preserve">
+    <value>Default background</value>
+  </data>
+  <data name="Background_ImageBackground" xml:space="preserve">
+    <value>Image background</value>
+  </data>
+  <data name="Background_InfoLabel" xml:space="preserve">
+    <value>Set the controller size and background</value>
+  </data>
+  <data name="Background_SetAsDefaultToolTip" xml:space="preserve">
+    <value>Set this background as the default for all profiles</value>
+  </data>
+  <data name="Background_Title" xml:space="preserve">
+    <value>Controller background - Keysticks</value>
+  </data>
+  <data name="ControllerDesign_AddButton" xml:space="preserve">
+    <value>Add a button control</value>
+  </data>
+  <data name="ControllerDesign_AddDPad" xml:space="preserve">
+    <value>Add a DPad/POV control</value>
+  </data>
+  <data name="ControllerDesign_AddSlider" xml:space="preserve">
+    <value>Add a slider/trigger control</value>
+  </data>
+  <data name="ControllerDesign_AddStick" xml:space="preserve">
+    <value>Add a stick control</value>
+  </data>
+  <data name="ControllerDesign_ChooseBackground" xml:space="preserve">
+    <value>Choose background...</value>
+  </data>
+  <data name="ControllerDesign_ImportDesign" xml:space="preserve">
+    <value>Import design...</value>
+  </data>
+  <data name="ControllerDesign_Options" xml:space="preserve">
+    <value>Design options</value>
+  </data>
+  <data name="ControllerDesign_OptionsToolTip" xml:space="preserve">
+    <value>Change the controller design</value>
+  </data>
+  <data name="ControllerDesign_RemoveControl" xml:space="preserve">
+    <value>Remove selected control</value>
+  </data>
+  <data name="Controller_MessageLogToolTip" xml:space="preserve">
+    <value>Double-click to open the message log</value>
+  </data>
+  <data name="ControlPointer_FixedSpeed" xml:space="preserve">
+    <value>Fixed speed</value>
+  </data>
+  <data name="ControlPointer_InvertXAxis" xml:space="preserve">
+    <value>Invert X-axis</value>
+  </data>
+  <data name="ControlPointer_InvertYAxis" xml:space="preserve">
+    <value>Invert Y-axis</value>
+  </data>
+  <data name="ControlPointer_PositionMode" xml:space="preserve">
+    <value>Position mode</value>
+  </data>
+  <data name="ControlPointer_RadiusLabel" xml:space="preserve">
+    <value>Radius (%):</value>
+  </data>
+  <data name="ControlPointer_SpeedMode" xml:space="preserve">
+    <value>Speed mode</value>
+  </data>
+  <data name="ControlPointer_SpeedMultiplierLabel" xml:space="preserve">
+    <value>Speed multiplier:</value>
+  </data>
+  <data name="ControlPointer_XAxisOnly" xml:space="preserve">
+    <value>X-axis only</value>
+  </data>
+  <data name="ControlPointer_YAxisOnly" xml:space="preserve">
+    <value>Y-axis only</value>
+  </data>
+  <data name="ControlSetTree_EditControlSets" xml:space="preserve">
+    <value>Edit control sets</value>
+  </data>
+  <data name="ControlSetTree_EditToolTip" xml:space="preserve">
+    <value>Add, edit and delete control sets</value>
+  </data>
+  <data name="ControlSetTree_Header" xml:space="preserve">
+    <value>Control sets</value>
+  </data>
+  <data name="Designer_ApplyToolTip" xml:space="preserve">
+    <value>Apply changes and keep this window open</value>
+  </data>
+  <data name="Designer_CancelToolTip" xml:space="preserve">
+    <value>Discard any changes that haven't been applied and close the window</value>
+  </data>
+  <data name="Designer_OKToolTip" xml:space="preserve">
+    <value>Apply any changes and close the window</value>
+  </data>
+  <data name="Designer_Title" xml:space="preserve">
+    <value>Profile Designer - Keysticks</value>
+  </data>
+  <data name="DwellRepeat_HoldTime" xml:space="preserve">
+    <value>Hold time (s):</value>
+  </data>
+  <data name="DwellRepeat_RepeatInterval" xml:space="preserve">
+    <value>Auto-repeat interval (s):</value>
+  </data>
+  <data name="EditActions_ActionsToPerformLabel" xml:space="preserve">
+    <value>Actions to perform:</value>
+  </data>
+  <data name="EditActions_DeleteActionToolTip" xml:space="preserve">
+    <value>Delete the selected action</value>
+  </data>
+  <data name="EditActions_DisplayAs" xml:space="preserve">
+    <value>Display as</value>
+  </data>
+  <data name="EditActions_MoveDownToolTip" xml:space="preserve">
+    <value>Move the selected action down the list</value>
+  </data>
+  <data name="EditActions_MoveUpToolTip" xml:space="preserve">
+    <value>Move the selected action up the list</value>
+  </data>
+  <data name="EditActions_NewActionToolTip" xml:space="preserve">
+    <value>Add a new action</value>
+  </data>
+  <data name="EditActions_Title" xml:space="preserve">
+    <value>Edit actions - Keysticks</value>
+  </data>
+  <data name="EditActions_TypeOfActionLabel" xml:space="preserve">
+    <value>Type of action:</value>
+  </data>
+  <data name="EditActions_UpdateActionToolTip" xml:space="preserve">
+    <value>Update the selected action</value>
+  </data>
+  <data name="EditActions_WhenItIsLabel" xml:space="preserve">
+    <value>When it is:</value>
+  </data>
+  <data name="EditSituations_AddPage" xml:space="preserve">
+    <value>Add a new page...</value>
+  </data>
+  <data name="EditSituations_CopyControlSet" xml:space="preserve">
+    <value>Copy this control set...</value>
+  </data>
+  <data name="EditSituations_CopyPage" xml:space="preserve">
+    <value>Copy this page...</value>
+  </data>
+  <data name="EditSituations_CreateControlSet" xml:space="preserve">
+    <value>Add a new control set...</value>
+  </data>
+  <data name="EditSituations_DeleteControlSet" xml:space="preserve">
+    <value>Delete this control set...</value>
+  </data>
+  <data name="EditSituations_DeletePage" xml:space="preserve">
+    <value>Delete this page...</value>
+  </data>
+  <data name="EditSituations_ImportControlSets" xml:space="preserve">
+    <value>Import control sets...</value>
+  </data>
+  <data name="EditSituations_RenameControlSet" xml:space="preserve">
+    <value>Rename this control set...</value>
+  </data>
+  <data name="EditSituations_RenamePage" xml:space="preserve">
+    <value>Rename this page...</value>
+  </data>
+  <data name="EditSituations_ReorderControlSets" xml:space="preserve">
+    <value>Re-order control sets...</value>
+  </data>
+  <data name="EditSituations_ReorderPages" xml:space="preserve">
+    <value>Re-order pages...</value>
+  </data>
+  <data name="EnterName_NewNameLabel" xml:space="preserve">
+    <value>New item name:</value>
+  </data>
+  <data name="EnterName_Title" xml:space="preserve">
+    <value>Enter a name</value>
+  </data>
+  <data name="ErrorMessage_ToolTip" xml:space="preserve">
+    <value>View the details of this error</value>
+  </data>
+  <data name="E_ActionTypeChange" xml:space="preserve">
+    <value>Error while changing action type.</value>
+  </data>
+  <data name="E_ActivateWindow" xml:space="preserve">
+    <value>Error activating window.</value>
+  </data>
+  <data name="E_ActivationChange" xml:space="preserve">
+    <value>Error handling auto-activation setting change.</value>
+  </data>
+  <data name="E_AddAction" xml:space="preserve">
+    <value>Error adding new action.</value>
+  </data>
+  <data name="E_AddControlInControllerDesign" xml:space="preserve">
+    <value>Error adding new control.</value>
+  </data>
+  <data name="E_AddControlSet" xml:space="preserve">
+    <value>Error adding control set.</value>
+  </data>
+  <data name="E_AddKeyboard" xml:space="preserve">
+    <value>Error when adding keyboard controls.</value>
+  </data>
+  <data name="E_AddLanguage" xml:space="preserve">
+    <value>Error while adding prediction language.</value>
+  </data>
+  <data name="E_AddPage" xml:space="preserve">
+    <value>Error adding a new page of controls.</value>
+  </data>
+  <data name="E_AddPhysicalInput" xml:space="preserve">
+    <value>Error adding physical input.</value>
+  </data>
+  <data name="E_AddPlayer" xml:space="preserve">
+    <value>Error while adding a player.</value>
+  </data>
+  <data name="E_ApplyChanges" xml:space="preserve">
+    <value>Error applying changes.</value>
+  </data>
+  <data name="E_ApplyProfile" xml:space="preserve">
+    <value>Error applying profile.</value>
+  </data>
+  <data name="E_ApplyQuickEdit" xml:space="preserve">
+    <value>Error when applying quick-edit.</value>
+  </data>
+  <data name="E_AssessingDirectInputDevice" xml:space="preserve">
+    <value>Error while assessing DirectInput device.</value>
+  </data>
+  <data name="E_AssessingXInputDevice" xml:space="preserve">
+    <value>Error while assessing XInput device.</value>
+  </data>
+  <data name="E_BackgroundChange" xml:space="preserve">
+    <value>Error handling controller background option.</value>
+  </data>
+  <data name="E_BadCredentials" xml:space="preserve">
+    <value>Incorrect username or password.</value>
+  </data>
+  <data name="E_BindingProfile" xml:space="preserve">
+    <value>Error binding profile.</value>
+  </data>
+  <data name="E_ChangeAutoActivation" xml:space="preserve">
+    <value>Error changing auto-activation option.</value>
+  </data>
+  <data name="E_ChangeControlSetWithAutoRepeat" xml:space="preserve">
+    <value>You can't include an action that changes the current control set in an auto-repeat list with other actions.</value>
+  </data>
+  <data name="E_ChangeDeadZone" xml:space="preserve">
+    <value>Error changing dead zone value for control.</value>
+  </data>
+  <data name="E_ChangeProfilesFolder" xml:space="preserve">
+    <value>Error while changing profiles folder.</value>
+  </data>
+  <data name="E_ChangeProfileUnsavedChanges" xml:space="preserve">
+    <value>Unable to change profile because the current profile has unsaved changes.</value>
+  </data>
+  <data name="E_ClearActions" xml:space="preserve">
+    <value>Error when trying to clear actions.</value>
+  </data>
+  <data name="E_ClearLog" xml:space="preserve">
+    <value>Error clearing the message log.</value>
+  </data>
+  <data name="E_ClearProfilePreview" xml:space="preserve">
+    <value>Error clearing the profile preview.</value>
+  </data>
+  <data name="E_CloseTrayManager" xml:space="preserve">
+    <value>Error closing the system tray manager.</value>
+  </data>
+  <data name="E_CommandEmpty" xml:space="preserve">
+    <value>Command cannot be empty</value>
+  </data>
+  <data name="E_ConfigureActionEditor" xml:space="preserve">
+    <value>Error when trying to configure the action editor.</value>
+  </data>
+  <data name="E_ConfigureControllerWindow" xml:space="preserve">
+    <value>Error configuring controller window.</value>
+  </data>
+  <data name="E_ConfigureHoldStateWindow" xml:space="preserve">
+    <value>Error applying options to held keys and buttons window.</value>
+  </data>
+  <data name="E_ConfigureKeyboardWindow" xml:space="preserve">
+    <value>Error applying options to keyboard window.</value>
+  </data>
+  <data name="E_ConfigureStateManager" xml:space="preserve">
+    <value>Error configuring the state manager.</value>
+  </data>
+  <data name="E_ConfigureWordPrediction" xml:space="preserve">
+    <value>Error applying word prediction options.</value>
+  </data>
+  <data name="E_CopyControlSet" xml:space="preserve">
+    <value>Error copying control set.</value>
+  </data>
+  <data name="E_CopyPage" xml:space="preserve">
+    <value>Error copying a page of controls.</value>
+  </data>
+  <data name="E_CopyProfile" xml:space="preserve">
+    <value>Unable to copy profile.</value>
+  </data>
+  <data name="E_CopySampleProfiles" xml:space="preserve">
+    <value>Error copying sample profiles to user's profiles folder.</value>
+  </data>
+  <data name="E_CreateControllerWindow" xml:space="preserve">
+    <value>Error creating controller window.</value>
+  </data>
+  <data name="E_CreateHoldStateWindow" xml:space="preserve">
+    <value>Error creating held keys and buttons window.</value>
+  </data>
+  <data name="E_CreateKeyboardWindow" xml:space="preserve">
+    <value>Error creating keyboard window.</value>
+  </data>
+  <data name="E_CreateNewProfile" xml:space="preserve">
+    <value>Error creating new profile.</value>
+  </data>
+  <data name="E_CreateNewTemplate" xml:space="preserve">
+    <value>Error creating new template.</value>
+  </data>
+  <data name="E_CreateShortcut" xml:space="preserve">
+    <value>Unable to create startup shortcut.</value>
+  </data>
+  <data name="E_DeleteAction" xml:space="preserve">
+    <value>Error while deleting action.</value>
+  </data>
+  <data name="E_DeleteControlSet" xml:space="preserve">
+    <value>Error deleting control set.</value>
+  </data>
+  <data name="E_DeleteControlSetOrPage" xml:space="preserve">
+    <value>Error while deleting a control set or page.</value>
+  </data>
+  <data name="E_DeleteOrBackspaceCombo" xml:space="preserve">
+    <value>You can only combine delete and backspace actions with certain action types.</value>
+  </data>
+  <data name="E_DeletePage" xml:space="preserve">
+    <value>Error deleting a page of controls.</value>
+  </data>
+  <data name="E_DeletePhysicalInput" xml:space="preserve">
+    <value>Error deleting physical input.</value>
+  </data>
+  <data name="E_DeleteProfile" xml:space="preserve">
+    <value>Error deleting profile.</value>
+  </data>
+  <data name="E_DirectoryNotFound" xml:space="preserve">
+    <value>Couldn't find folder '{0}'.</value>
+  </data>
+  <data name="E_DisplayAction" xml:space="preserve">
+    <value>Error displaying selected action.</value>
+  </data>
+  <data name="E_DisplayActionsForControl" xml:space="preserve">
+    <value>Error displaying actions for selected control.</value>
+  </data>
+  <data name="E_DisplayControlSet" xml:space="preserve">
+    <value>Error displaying selected control set.</value>
+  </data>
+  <data name="E_DragInControllerDesign" xml:space="preserve">
+    <value>Error handling drag over in controller design view.</value>
+  </data>
+  <data name="E_EditActions" xml:space="preserve">
+    <value>Error when trying to edit actions.</value>
+  </data>
+  <data name="E_EditControllerDesign" xml:space="preserve">
+    <value>Error when editing the controller design.</value>
+  </data>
+  <data name="E_EditControlSets" xml:space="preserve">
+    <value>Error while editing control sets.</value>
+  </data>
+  <data name="E_EditCustomActions" xml:space="preserve">
+    <value>Error when trying to edit custom actions.</value>
+  </data>
+  <data name="E_EditInputMapping" xml:space="preserve">
+    <value>Error when changing an input mapping.</value>
+  </data>
+  <data name="E_EnterAName" xml:space="preserve">
+    <value>Please enter a name.</value>
+  </data>
+  <data name="E_EnterCredentials" xml:space="preserve">
+    <value>Please enter a username and password.</value>
+  </data>
+  <data name="E_ExitProgram" xml:space="preserve">
+    <value>Error exiting program.</value>
+  </data>
+  <data name="E_FileNotFound" xml:space="preserve">
+    <value>The file specified couldn't be found.</value>
+  </data>
+  <data name="E_FileSelection" xml:space="preserve">
+    <value>Error handling file selection.</value>
+  </data>
+  <data name="E_GetInputsList" xml:space="preserve">
+    <value>Error when getting the list of connected controllers.</value>
+  </data>
+  <data name="E_ImportControlSets" xml:space="preserve">
+    <value>Error importing control sets.</value>
+  </data>
+  <data name="E_IncorrectFileFormat" xml:space="preserve">
+    <value>Incorrect file format.</value>
+  </data>
+  <data name="E_IncorrectFileFormatMessage" xml:space="preserve">
+    <value>The file may contain templates instead of a profile.</value>
+  </data>
+  <data name="E_InitApplication" xml:space="preserve">
+    <value>Error initialising application.</value>
+  </data>
+  <data name="E_InitInstallUpdates" xml:space="preserve">
+    <value>Error while initialising 'Install updates' menu option.</value>
+  </data>
+  <data name="E_InitRemoteProfilesList" xml:space="preserve">
+    <value>Error initialising online profiles list.</value>
+  </data>
+  <data name="E_InitStateManager" xml:space="preserve">
+    <value>Error initialising state manager.</value>
+  </data>
+  <data name="E_InvalidDetails" xml:space="preserve">
+    <value>Error interpretting the details / selections.</value>
+  </data>
+  <data name="E_InvalidRegex" xml:space="preserve">
+    <value>Invalid regular expression.</value>
+  </data>
+  <data name="E_InvalidTemplate" xml:space="preserve">
+    <value>Error interpretting selected template.</value>
+  </data>
+  <data name="E_KeyboardLayoutChange" xml:space="preserve">
+    <value>Error handling change of keyboard layout.</value>
+  </data>
+  <data name="E_LoadControllerWindow" xml:space="preserve">
+    <value>Error loading controller window.</value>
+  </data>
+  <data name="E_LoadFromXml" xml:space="preserve">
+    <value>Unable to load profile from Xml.</value>
+  </data>
+  <data name="E_LoadHoldStateWindow" xml:space="preserve">
+    <value>Error loading held keys and buttons window.</value>
+  </data>
+  <data name="E_LoadProfile" xml:space="preserve">
+    <value>Error loading profile.</value>
+  </data>
+  <data name="E_LoadProfileAction" xml:space="preserve">
+    <value>Error performing load profile action.</value>
+  </data>
+  <data name="E_LoadTemplates" xml:space="preserve">
+    <value>Error loading templates.</value>
+  </data>
+  <data name="E_LoadWindow" xml:space="preserve">
+    <value>Error loading window.</value>
+  </data>
+  <data name="E_LoginResponse" xml:space="preserve">
+    <value>Error handling login response.</value>
+  </data>
+  <data name="E_MaximiseOrRestoreWindow" xml:space="preserve">
+    <value>Error maximising / restoring window.</value>
+  </data>
+  <data name="E_MaxNumberOfActions" xml:space="preserve">
+    <value>The maximum number of actions in a list has been reached.</value>
+  </data>
+  <data name="E_MinimiseWindow" xml:space="preserve">
+    <value>Error minimising window.</value>
+  </data>
+  <data name="E_NameInUse" xml:space="preserve">
+    <value>That name is already in use, please choose another.</value>
+  </data>
+  <data name="E_NewerProfile" xml:space="preserve">
+    <value>Profile was created with a newer version of {0}. Please install the latest version to open it.</value>
+  </data>
+  <data name="E_NoControlsFound" xml:space="preserve">
+    <value>Profile '{0}' doesn't have any controls for player {1}.</value>
+  </data>
+  <data name="E_NoDesignFound" xml:space="preserve">
+    <value>Profile '{0}' doesn't have a controller design for player {1}.</value>
+  </data>
+  <data name="E_OnEnterDownloadArea" xml:space="preserve">
+    <value>Error while entering the Download Area.</value>
+  </data>
+  <data name="E_OnLogOut" xml:space="preserve">
+    <value>Error while logging out.</value>
+  </data>
+  <data name="E_OnProfileDownload" xml:space="preserve">
+    <value>Error after downloading profile.</value>
+  </data>
+  <data name="E_OnRightClickState" xml:space="preserve">
+    <value>Error handling right-click in control set tree.</value>
+  </data>
+  <data name="E_OnStateSelection" xml:space="preserve">
+    <value>Error handling selection in control set tree.</value>
+  </data>
+  <data name="E_OnSubmitProfile" xml:space="preserve">
+    <value>Error after submitting profile.</value>
+  </data>
+  <data name="E_OpenAboutWindow" xml:space="preserve">
+    <value>Error opening program information.</value>
+  </data>
+  <data name="E_OpenActionMenu" xml:space="preserve">
+    <value>Error opening actions menu.</value>
+  </data>
+  <data name="E_OpenBackgroundEditor" xml:space="preserve">
+    <value>Error opening the background editor window.</value>
+  </data>
+  <data name="E_OpenDesigner" xml:space="preserve">
+    <value>Error opening the Profile Designer.</value>
+  </data>
+  <data name="E_OpenEditControlSetsMenu" xml:space="preserve">
+    <value>Error opening control set editing menu.</value>
+  </data>
+  <data name="E_OpenEditSituationsMenu" xml:space="preserve">
+    <value>Error while opening the control set editing menu.</value>
+  </data>
+  <data name="E_OpenHelp" xml:space="preserve">
+    <value>Error opening the online help.</value>
+  </data>
+  <data name="E_OpenLog" xml:space="preserve">
+    <value>Error opening message log viewer.</value>
+  </data>
+  <data name="E_OpenMenuInControllerDesign" xml:space="preserve">
+    <value>Error opening controller design options menu.</value>
+  </data>
+  <data name="E_OpenProfile" xml:space="preserve">
+    <value>Error opening profile.</value>
+  </data>
+  <data name="E_OpenProfilePreview" xml:space="preserve">
+    <value>Error opening preview window.</value>
+  </data>
+  <data name="E_OpenProfilesFolder" xml:space="preserve">
+    <value>Error opening Profiles folder.</value>
+  </data>
+  <data name="E_OpenProgramOptions" xml:space="preserve">
+    <value>Error opening program options window.</value>
+  </data>
+  <data name="E_OpenQuickEdit" xml:space="preserve">
+    <value>Error opening quick-edit menu.</value>
+  </data>
+  <data name="E_OpenRegistrationPage" xml:space="preserve">
+    <value>Error opening registration page in browser.</value>
+  </data>
+  <data name="E_OpenTemplate" xml:space="preserve">
+    <value>Error opening template.</value>
+  </data>
+  <data name="E_OverrideActions" xml:space="preserve">
+    <value>Error when trying to override actions.</value>
+  </data>
+  <data name="E_ParseDisplayText" xml:space="preserve">
+    <value>Error interpretting display text.</value>
+  </data>
+  <data name="E_ParseProfile" xml:space="preserve">
+    <value>Error reading profile file.</value>
+  </data>
+  <data name="E_PopulateStateTree" xml:space="preserve">
+    <value>Error populating control set tree.</value>
+  </data>
+  <data name="E_PositionControllerWindow" xml:space="preserve">
+    <value>Error positioning controller window.</value>
+  </data>
+  <data name="E_PositionHoldStateWindow" xml:space="preserve">
+    <value>Error positioning held keys and buttons window.</value>
+  </data>
+  <data name="E_PositioningInControllerDesign" xml:space="preserve">
+    <value>Error positioning control in controller design view.</value>
+  </data>
+  <data name="E_PositionKeyboardWindow" xml:space="preserve">
+    <value>Error while positioning keyboard window.</value>
+  </data>
+  <data name="E_PressLengthChange" xml:space="preserve">
+    <value>Error interpretting change of press length.</value>
+  </data>
+  <data name="E_ProfileDesignerOpen" xml:space="preserve">
+    <value>Unable to load a new profile while the Profile Designer is open.</value>
+  </data>
+  <data name="E_ProfileDownloadDisabled" xml:space="preserve">
+    <value>Downloads have been disabled for this profile.</value>
+  </data>
+  <data name="E_ProfileSharingDisabled" xml:space="preserve">
+    <value>Profile sharing has been disabled.</value>
+  </data>
+  <data name="E_ProgramAlreadyRunning" xml:space="preserve">
+    <value>{0} is already running</value>
+  </data>
+  <data name="E_ProgramUpdate" xml:space="preserve">
+    <value>Error during program update.</value>
+  </data>
+  <data name="E_ReadProfile" xml:space="preserve">
+    <value>Error reading profile - invalid header line format.</value>
+  </data>
+  <data name="E_ReasonChange" xml:space="preserve">
+    <value>Error interpretting change of reason.</value>
+  </data>
+  <data name="E_ReceiveLanguageData" xml:space="preserve">
+    <value>Error while acquiring prediction language data.</value>
+  </data>
+  <data name="E_ReceiveRemoteProfilesList" xml:space="preserve">
+    <value>Error receiving online profiles list.</value>
+  </data>
+  <data name="E_ReceiveRemoteProfileStats" xml:space="preserve">
+    <value>Error receiving online profile stats.</value>
+  </data>
+  <data name="E_ReceiveUpdates" xml:space="preserve">
+    <value>Error while receiving program updates.</value>
+  </data>
+  <data name="E_RefreshControllerLayout" xml:space="preserve">
+    <value>Error when refreshing the controller layout.</value>
+  </data>
+  <data name="E_RefreshDisplay" xml:space="preserve">
+    <value>Error refreshing display.</value>
+  </data>
+  <data name="E_RefreshInputsList" xml:space="preserve">
+    <value>Error refreshing the list of connected controllers.</value>
+  </data>
+  <data name="E_RefreshProfilePreview" xml:space="preserve">
+    <value>Error refreshing profile preview.</value>
+  </data>
+  <data name="E_RemoveControlFromControllerDesign" xml:space="preserve">
+    <value>Error removing control.</value>
+  </data>
+  <data name="E_RemoveKeyboardControls" xml:space="preserve">
+    <value>Error while removing keyboard controls.</value>
+  </data>
+  <data name="E_RemovePlayer" xml:space="preserve">
+    <value>Error while removing a player.</value>
+  </data>
+  <data name="E_RemoveRemoteProfile" xml:space="preserve">
+    <value>Error while removing profile from Download Area.</value>
+  </data>
+  <data name="E_RemoveShortcut" xml:space="preserve">
+    <value>Unable to remove startup shortcut.</value>
+  </data>
+  <data name="E_RenameControl" xml:space="preserve">
+    <value>Error when renaming a control.</value>
+  </data>
+  <data name="E_RenameControlSet" xml:space="preserve">
+    <value>Error renaming control set.</value>
+  </data>
+  <data name="E_RenameControlSetOrPage" xml:space="preserve">
+    <value>Error while renaming a control set or page.</value>
+  </data>
+  <data name="E_RenamePage" xml:space="preserve">
+    <value>Error renaming a page of controls.</value>
+  </data>
+  <data name="E_RenameProfile" xml:space="preserve">
+    <value>Error while renaming profile.</value>
+  </data>
+  <data name="E_ReorderControlSets" xml:space="preserve">
+    <value>Error re-ordering control sets.</value>
+  </data>
+  <data name="E_ReorderItems" xml:space="preserve">
+    <value>Error while reordering items.</value>
+  </data>
+  <data name="E_ReorderPages" xml:space="preserve">
+    <value>Error reordering pages of controls.</value>
+  </data>
+  <data name="E_ResetProgramOptions" xml:space="preserve">
+    <value>Error resetting program options.</value>
+  </data>
+  <data name="E_ResizeKeyboardWindow" xml:space="preserve">
+    <value>Error handling resize of keyboard window.</value>
+  </data>
+  <data name="E_RightClickInControllerDesign" xml:space="preserve">
+    <value>Error handling right-click of item in controller design view.</value>
+  </data>
+  <data name="E_RunCommand" xml:space="preserve">
+    <value>Error running command</value>
+  </data>
+  <data name="E_SaveCheck" xml:space="preserve">
+    <value>Error checking whether to save profile.</value>
+  </data>
+  <data name="E_SaveProfile" xml:space="preserve">
+    <value>Error saving profile.</value>
+  </data>
+  <data name="E_SelectControl" xml:space="preserve">
+    <value>Error handling control selection.</value>
+  </data>
+  <data name="E_SelectControls" xml:space="preserve">
+    <value>Please select how you wish to navigate and select actions in this control set.</value>
+  </data>
+  <data name="E_SelectControlSet" xml:space="preserve">
+    <value>Error handling change of control set.</value>
+  </data>
+  <data name="E_SelectGridType" xml:space="preserve">
+    <value>Please select a grid type for this template.</value>
+  </data>
+  <data name="E_SelectInput" xml:space="preserve">
+    <value>Error when selecting an input.</value>
+  </data>
+  <data name="E_SelectionChange" xml:space="preserve">
+    <value>Error handling selection change.</value>
+  </data>
+  <data name="E_SelectionInControllerDesign" xml:space="preserve">
+    <value>Error handling selection of item in controller design view.</value>
+  </data>
+  <data name="E_SelectNavAndSelect" xml:space="preserve">
+    <value>Please select the navigation and selection settings for this template.</value>
+  </data>
+  <data name="E_SelectPhysicalInput" xml:space="preserve">
+    <value>Error changing selected physical input.</value>
+  </data>
+  <data name="E_SelectPlayer" xml:space="preserve">
+    <value>Error while changing player.</value>
+  </data>
+  <data name="E_SelectPosition" xml:space="preserve">
+    <value>Please select where to insert the {0}.</value>
+  </data>
+  <data name="E_SelectTemplate" xml:space="preserve">
+    <value>Please select a template to base this control set on.</value>
+  </data>
+  <data name="E_SelectTemplateGroup" xml:space="preserve">
+    <value>Please select a template group.</value>
+  </data>
+  <data name="E_SetAppConfig" xml:space="preserve">
+    <value>Error applying program options.</value>
+  </data>
+  <data name="E_SetDefaultBackground" xml:space="preserve">
+    <value>Error setting the default controller background.</value>
+  </data>
+  <data name="E_SetProfileKeyboardWindow" xml:space="preserve">
+    <value>Error setting profile in keyboard window.</value>
+  </data>
+  <data name="E_SetProfileStateManager" xml:space="preserve">
+    <value>Error applying profile to state manager.</value>
+  </data>
+  <data name="E_SetState" xml:space="preserve">
+    <value>Error setting selection in control set tree.</value>
+  </data>
+  <data name="E_ShareProfile" xml:space="preserve">
+    <value>Error while sharing profile.</value>
+  </data>
+  <data name="E_ShiftDeleteDisabled" xml:space="preserve">
+    <value>Shift+Delete is disallowed by your Security settings.</value>
+  </data>
+  <data name="E_ShowControllerWindow" xml:space="preserve">
+    <value>Error showing controller window.</value>
+  </data>
+  <data name="E_ShowHeldKeysAndButtons" xml:space="preserve">
+    <value>Error displaying held keys and buttons.</value>
+  </data>
+  <data name="E_ShowLoginForm" xml:space="preserve">
+    <value>Error showing the login form.</value>
+  </data>
+  <data name="E_ShowOnlineProfiles" xml:space="preserve">
+    <value>Error returning to online profiles list.</value>
+  </data>
+  <data name="E_ShowOrHideControls" xml:space="preserve">
+    <value>Error showing / hiding controls.</value>
+  </data>
+  <data name="E_ShowProfile" xml:space="preserve">
+    <value>Error showing the selected profile.</value>
+  </data>
+  <data name="E_ShowProgramOptions" xml:space="preserve">
+    <value>Error displaying program options.</value>
+  </data>
+  <data name="E_StartProfileDownload" xml:space="preserve">
+    <value>Error starting profile download.</value>
+  </data>
+  <data name="E_SwitchTabs" xml:space="preserve">
+    <value>Error while switching tabs.</value>
+  </data>
+  <data name="E_UnhandledError" xml:space="preserve">
+    <value>An unhanded error was caught.</value>
+  </data>
+  <data name="E_UpdateAction" xml:space="preserve">
+    <value>Error while updating action.</value>
+  </data>
+  <data name="E_UpdateButtonDirectionality" xml:space="preserve">
+    <value>Error changing button directionality.</value>
+  </data>
+  <data name="E_UpdateControlName" xml:space="preserve">
+    <value>Error updating control name.</value>
+  </data>
+  <data name="E_UpdateInputMapping" xml:space="preserve">
+    <value>Error updating input mapping for control.</value>
+  </data>
+  <data name="E_UpdateInversionOption" xml:space="preserve">
+    <value>Error updating inversion option for input mapping.</value>
+  </data>
+  <data name="E_UpdateProfilePreview" xml:space="preserve">
+    <value>Error updating the profile preview.</value>
+  </data>
+  <data name="E_UpdateProgramOptions" xml:space="preserve">
+    <value>Error updating program options.</value>
+  </data>
+  <data name="E_UpdaterAlreadyRunning" xml:space="preserve">
+    <value>Please use the {0} updater window that is already open.</value>
+  </data>
+  <data name="E_UpgradeProfile" xml:space="preserve">
+    <value>Unable to upgrade profile to current version.</value>
+  </data>
+  <data name="E_ValidateCredentials" xml:space="preserve">
+    <value>Error while checking username and password.</value>
+  </data>
+  <data name="E_ViewInheritedActions" xml:space="preserve">
+    <value>Error when going to inherited actions.</value>
+  </data>
+  <data name="E_WordPredictionConfigureLearning" xml:space="preserve">
+    <value>Word prediction error while configuring learning option.</value>
+  </data>
+  <data name="E_WordPredictionInstallLanguages" xml:space="preserve">
+    <value>Word prediction error while configuring languages.</value>
+  </data>
+  <data name="E_WordPredictionSetDictionaries" xml:space="preserve">
+    <value>Word prediction error while setting the active languages.</value>
+  </data>
+  <data name="E_WordPredictionUninstallLanguages" xml:space="preserve">
+    <value>Word prediction error while uninstalling packages.</value>
+  </data>
+  <data name="E_WriteToXml" xml:space="preserve">
+    <value>Unable to write profile to Xml.</value>
+  </data>
+  <data name="GridType_ActionStrip" xml:space="preserve">
+    <value>Action strip</value>
+  </data>
+  <data name="GridType_Full" xml:space="preserve">
+    <value>Full grid</value>
+  </data>
+  <data name="GridType_Half" xml:space="preserve">
+    <value>Half grid</value>
+  </data>
+  <data name="GridType_StandardKeyboard" xml:space="preserve">
+    <value>Standard keyboard</value>
+  </data>
+  <data name="Import_AnotherProfileLabel" xml:space="preserve">
+    <value>Another profile:</value>
+  </data>
+  <data name="Import_FromPlayerLabel" xml:space="preserve">
+    <value>from player:</value>
+  </data>
+  <data name="Import_ImProfileLabel" xml:space="preserve">
+    <value>in profile:</value>
+  </data>
+  <data name="Import_ThisProfile" xml:space="preserve">
+    <value>This profile</value>
+  </data>
+  <data name="Info_ChooseProfilesFolder" xml:space="preserve">
+    <value>Choose the folder in which to store your {0} profiles</value>
+  </data>
+  <data name="Info_CommandDisallowed" xml:space="preserve">
+    <value>Command disallowed</value>
+  </data>
+  <data name="Info_CommandDisallowedMessage" xml:space="preserve">
+    <value>{0} cannot run this command because it disallowed by your security settings:{1}{1}{2}{1}{1}If you are sure that this command is safe to run, you can allow it in the Program options (Security tab).</value>
+  </data>
+  <data name="Info_ConnectionLost" xml:space="preserve">
+    <value>Connection to input lost</value>
+  </data>
+  <data name="Info_CreateAccount" xml:space="preserve">
+    <value>To create a user account, click 'New user...' to go to the website</value>
+  </data>
+  <data name="Info_DownloadArea" xml:space="preserve">
+    <value>The Download Area is where you can download and share profiles with other Keysticks users.{0}{0}All users can download profiles. Remember to preview the controls before using them to understand what they do.{0}{0}If you log in using your {1} user account, you can also add your own profiles to the Download Area.{0}{0}For more information, see the \"Downloading profiles\" and \"Sharing profiles\" topics in the Help file.</value>
+  </data>
+  <data name="Info_LoginForm" xml:space="preserve">
+    <value>Here, you can log in using your {0} username or email address. Once you have logged in, you will be able to add your own profiles to the Download Area.</value>
+  </data>
+  <data name="Info_LogInToShare" xml:space="preserve">
+    <value>To share profiles, please log in</value>
+  </data>
+  <data name="Info_NoActionsAssigned" xml:space="preserve">
+    <value>No actions assigned</value>
+  </data>
+  <data name="Info_NoProfiles" xml:space="preserve">
+    <value>No profiles found in folder</value>
+  </data>
+  <data name="Info_OnlineProfileAlreadyDownloaded" xml:space="preserve">
+    <value>This profile is online. You have downloaded it.</value>
+  </data>
+  <data name="Info_OnlineProfileNotYetDownloaded" xml:space="preserve">
+    <value>This profile is online. Click 'Download' to get it.</value>
+  </data>
+  <data name="Info_PerformsActionsForCell" xml:space="preserve">
+    <value>Performs actions for the selected keyboard cell</value>
+  </data>
+  <data name="Info_ProfileDesignerOpen" xml:space="preserve">
+    <value>Please close the Profile Designer before loading a new profile.</value>
+  </data>
+  <data name="Info_ProfileDownloadSuccess" xml:space="preserve">
+    <value>Successfully downloaded profile</value>
+  </data>
+  <data name="Info_ProfileIsLocal" xml:space="preserve">
+    <value>This profile is on your computer.</value>
+  </data>
+  <data name="Info_ProfileShareAndRenameSuccess" xml:space="preserve">
+    <value>Successfully shared profile, renamed as {0}</value>
+  </data>
+  <data name="Info_ProfileShareSuccess" xml:space="preserve">
+    <value>Profile successfully shared</value>
+  </data>
+  <data name="Info_ReceivedXUpdates" xml:space="preserve">
+    <value>Received {0} update(s)</value>
+  </data>
+  <data name="Info_SelectAControl" xml:space="preserve">
+    <value>Select a control to view the actions assigned to it</value>
+  </data>
+  <data name="Info_UpdaterAlreadyRunning" xml:space="preserve">
+    <value>The software updater is already running.</value>
+  </data>
+  <data name="Info_VisitWebsiteToUpdate" xml:space="preserve">
+    <value>To download it, please visit {0} and click the download button.</value>
+  </data>
+  <data name="InputConfig_ControlSettings" xml:space="preserve">
+    <value>Control settings</value>
+  </data>
+  <data name="InputConfig_InputLabel" xml:space="preserve">
+    <value>Input:</value>
+  </data>
+  <data name="InputConfig_NameLabel" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="InputsList_AddInput" xml:space="preserve">
+    <value>Add input</value>
+  </data>
+  <data name="InputsList_AddInputToolTip" xml:space="preserve">
+    <value>Add another controller for this player</value>
+  </data>
+  <data name="InputsList_AvailableInputsToolTip" xml:space="preserve">
+    <value>Choose a connected controller</value>
+  </data>
+  <data name="InputsList_DeadZoneLabel" xml:space="preserve">
+    <value>DZ:</value>
+  </data>
+  <data name="InputsList_DeadZoneToolTip" xml:space="preserve">
+    <value>Dead zone (between 0 and 1)</value>
+  </data>
+  <data name="InputsList_DeleteInputToolTip" xml:space="preserve">
+    <value>Remove this input</value>
+  </data>
+  <data name="InputsList_RefreshToolTip" xml:space="preserve">
+    <value>Refresh the list of connected controllers</value>
+  </data>
+  <data name="KeyAction_KeyToPressDownLabel" xml:space="preserve">
+    <value>Key to press down:</value>
+  </data>
+  <data name="KeyAction_KeyToReleaseLabel" xml:space="preserve">
+    <value>Key to release:</value>
+  </data>
+  <data name="KeyAction_KeyToToggleLabel" xml:space="preserve">
+    <value>Key to toggle:</value>
+  </data>
+  <data name="KeyAction_KeyToTypeLabel" xml:space="preserve">
+    <value>Key to type:</value>
+  </data>
+  <data name="KeyAction_ModifiersLabel" xml:space="preserve">
+    <value>Modifiers:</value>
+  </data>
+  <data name="KeyAction_VirtualKeyLabel" xml:space="preserve">
+    <value>Treat as virtual key:</value>
+  </data>
+  <data name="LoadProfile_ProfileToLoad" xml:space="preserve">
+    <value>Profile to load:</value>
+  </data>
+  <data name="Log_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Log_ClearToolTip" xml:space="preserve">
+    <value>Clear the message log</value>
+  </data>
+  <data name="Log_CurrentSession" xml:space="preserve">
+    <value>Current session</value>
+  </data>
+  <data name="Log_ErrorHistory" xml:space="preserve">
+    <value>Error history (log file)</value>
+  </data>
+  <data name="Log_LoggingLevelLabel" xml:space="preserve">
+    <value>Logging level:</value>
+  </data>
+  <data name="Log_MessageColumn" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Log_MessageDetails" xml:space="preserve">
+    <value>Message details</value>
+  </data>
+  <data name="Log_SaveEllipsis" xml:space="preserve">
+    <value>Save...</value>
+  </data>
+  <data name="Log_SaveToolTip" xml:space="preserve">
+    <value>Save the messages displayed to a file</value>
+  </data>
+  <data name="Log_TimeColumn" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="Log_Title" xml:space="preserve">
+    <value>Message Log - Keysticks</value>
+  </data>
+  <data name="Log_TypeColumn" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Menu_AboutToolTip" xml:space="preserve">
+    <value>View program information</value>
+  </data>
+  <data name="Menu_ChooseAProfile" xml:space="preserve">
+    <value>Choose a profile</value>
+  </data>
+  <data name="Menu_ChooseAProfileToolTip" xml:space="preserve">
+    <value>Choose a profile to load</value>
+  </data>
+  <data name="Menu_ChooseATemplate" xml:space="preserve">
+    <value>Choose a template</value>
+  </data>
+  <data name="Menu_ChooseATemplateToolTip" xml:space="preserve">
+    <value>Choose a template to load</value>
+  </data>
+  <data name="Menu_CreateNewProfile" xml:space="preserve">
+    <value>Create a new profile</value>
+  </data>
+  <data name="Menu_CreateNewProfileToolTip" xml:space="preserve">
+    <value>Create your own controls using the profile designer</value>
+  </data>
+  <data name="Menu_CreateNewTemplate" xml:space="preserve">
+    <value>Create a new template</value>
+  </data>
+  <data name="Menu_CreateNewTemplateToolTip" xml:space="preserve">
+    <value>Create your own set of control templates</value>
+  </data>
+  <data name="Menu_EditProfile" xml:space="preserve">
+    <value>Edit this profile</value>
+  </data>
+  <data name="Menu_EditProfileToolTip" xml:space="preserve">
+    <value>Customise the current set of controls using the profile designer</value>
+  </data>
+  <data name="Menu_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Menu_ExitToolTip" xml:space="preserve">
+    <value>Exit the program</value>
+  </data>
+  <data name="Menu_MessageLog" xml:space="preserve">
+    <value>Message log</value>
+  </data>
+  <data name="Menu_MessageLogToolTip" xml:space="preserve">
+    <value>Show any errors or messages that have been logged</value>
+  </data>
+  <data name="Menu_OpenMenuToolTip" xml:space="preserve">
+    <value>Open the program menu</value>
+  </data>
+  <data name="Menu_OpenProfilesFolder" xml:space="preserve">
+    <value>Open profiles folder</value>
+  </data>
+  <data name="Menu_OpenProfilesFolderToolTip" xml:space="preserve">
+    <value>Open the folder containing your profiles</value>
+  </data>
+  <data name="Menu_ProgramOptions" xml:space="preserve">
+    <value>Program options</value>
+  </data>
+  <data name="Menu_ProgramOptionsToolTip" xml:space="preserve">
+    <value>View and edit program options</value>
+  </data>
+  <data name="Menu_ProgramUpdates" xml:space="preserve">
+    <value>Program updates</value>
+  </data>
+  <data name="Menu_ProgramUpdatesToolTip" xml:space="preserve">
+    <value>View available program updates</value>
+  </data>
+  <data name="Menu_RecentProfiles" xml:space="preserve">
+    <value>Recent profiles</value>
+  </data>
+  <data name="Menu_SaveAs" xml:space="preserve">
+    <value>Save as</value>
+  </data>
+  <data name="Menu_SaveAsToolTip" xml:space="preserve">
+    <value>Choose where to save the current profile</value>
+  </data>
+  <data name="Menu_SaveThisProfile" xml:space="preserve">
+    <value>Save this profile</value>
+  </data>
+  <data name="Menu_SaveThisProfileToolTip" xml:space="preserve">
+    <value>Save changes to the current profile</value>
+  </data>
+  <data name="Menu_ViewControls" xml:space="preserve">
+    <value>View controls</value>
+  </data>
+  <data name="Menu_ViewControlsToolTip" xml:space="preserve">
+    <value>Open or activate the controller window</value>
+  </data>
+  <data name="Menu_ViewHelp" xml:space="preserve">
+    <value>Online help</value>
+  </data>
+  <data name="Menu_ViewHelpToolTip" xml:space="preserve">
+    <value>View the online help</value>
+  </data>
+  <data name="MouseButtonAction_Label" xml:space="preserve">
+    <value>Mouse button:</value>
+  </data>
+  <data name="MovePointerAction_AbsoluteToolTip" xml:space="preserve">
+    <value>To absolute screen / window position</value>
+  </data>
+  <data name="MovePointerAction_RelativeToolTip" xml:space="preserve">
+    <value>Relative to the current pointer position</value>
+  </data>
+  <data name="MovePointerAction_TypeOfMove" xml:space="preserve">
+    <value>Type of move:</value>
+  </data>
+  <data name="MovePointerAction_UnitsLabel" xml:space="preserve">
+    <value>Units:</value>
+  </data>
+  <data name="MovePointerAction_WithRespectToLabel" xml:space="preserve">
+    <value>With respect to:</value>
+  </data>
+  <data name="MovePointerAction_XValueLabel" xml:space="preserve">
+    <value>X value:</value>
+  </data>
+  <data name="MovePointerAction_YValueLabel" xml:space="preserve">
+    <value>Y value:</value>
+  </data>
+  <data name="NavigateCellsAction_AllowWrap" xml:space="preserve">
+    <value>Allow wrap around?</value>
+  </data>
+  <data name="NavigateCellsAction_MoveOneCell" xml:space="preserve">
+    <value>Move 1 cell:</value>
+  </data>
+  <data name="NoKeyboard_AddKeyboard" xml:space="preserve">
+    <value>Add a keyboard</value>
+  </data>
+  <data name="NoKeyboard_AddKeyboardToolTip" xml:space="preserve">
+    <value>Add a keyboard to this control set</value>
+  </data>
+  <data name="NoKeyboard_Info" xml:space="preserve">
+    <value>This control set doesn't have a keyboard view</value>
+  </data>
+  <data name="Options_ColoursTab" xml:space="preserve">
+    <value>Colours</value>
+  </data>
+  <data name="Options_FoldersTab" xml:space="preserve">
+    <value>Folders</value>
+  </data>
+  <data name="Options_Folders_ChooseFolderToolTip" xml:space="preserve">
+    <value>Choose folder</value>
+  </data>
+  <data name="Options_Folders_ProfilesFolderLabel" xml:space="preserve">
+    <value>Profiles folder:</value>
+  </data>
+  <data name="Options_GeneralTab" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Options_InputTab" xml:space="preserve">
+    <value>Input</value>
+  </data>
+  <data name="Options_Input_OverrideDeadZones" xml:space="preserve">
+    <value>_Override dead zones</value>
+  </data>
+  <data name="Options_Input_StickAxisDeadZoneLabel" xml:space="preserve">
+    <value>Stick / axis dead zone:</value>
+  </data>
+  <data name="Options_Input_TriggerSliderDeadZoneLabel" xml:space="preserve">
+    <value>Trigger / slider dead zone:</value>
+  </data>
+  <data name="Options_MessagesTab" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="Options_Messages_ApplyingActions" xml:space="preserve">
+    <value>_Applying actions</value>
+  </data>
+  <data name="Options_Messages_AskLabel" xml:space="preserve">
+    <value>Ask me before:</value>
+  </data>
+  <data name="Options_Messages_ClearingActions" xml:space="preserve">
+    <value>_Clearing actions</value>
+  </data>
+  <data name="Options_Messages_DeletingControls" xml:space="preserve">
+    <value>De_leting controls</value>
+  </data>
+  <data name="Options_Messages_DeletingControlSetPages" xml:space="preserve">
+    <value>D_eleting control set pages</value>
+  </data>
+  <data name="Options_Messages_DeletingControlSets" xml:space="preserve">
+    <value>_Deleting control sets</value>
+  </data>
+  <data name="Options_Messages_DeletingKeyboards" xml:space="preserve">
+    <value>Deleting _keyboards</value>
+  </data>
+  <data name="Options_Messages_DeletingPlayers" xml:space="preserve">
+    <value>Dele_ting players</value>
+  </data>
+  <data name="Options_OutputTab" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="Options_Output_ClickLengthLabel" xml:space="preserve">
+    <value>Mouse click length (s):</value>
+  </data>
+  <data name="Options_Output_EmulationType" xml:space="preserve">
+    <value>Type of key emulation:</value>
+  </data>
+  <data name="Options_Output_KeyStrokeLengthLabel" xml:space="preserve">
+    <value>Key stroke length (s):</value>
+  </data>
+  <data name="Options_Output_PointerAccelerationLabel" xml:space="preserve">
+    <value>Mouse pointer acceleration:</value>
+  </data>
+  <data name="Options_Output_PointerSpeedLabel" xml:space="preserve">
+    <value>Mouse pointer speed:</value>
+  </data>
+  <data name="Options_Output_ScanCodes" xml:space="preserve">
+    <value>_Scan codes</value>
+  </data>
+  <data name="Options_Output_VirtualKeys" xml:space="preserve">
+    <value>_Virtual keys</value>
+  </data>
+  <data name="Options_PredictionTab" xml:space="preserve">
+    <value>Prediction</value>
+  </data>
+  <data name="Options_Prediction_AddLanguageButton" xml:space="preserve">
+    <value>Add language...</value>
+  </data>
+  <data name="Options_Prediction_AddLanguages" xml:space="preserve">
+    <value>Add languages</value>
+  </data>
+  <data name="Options_Prediction_AddLanguageToolTip" xml:space="preserve">
+    <value>Add word prediction language</value>
+  </data>
+  <data name="Options_Prediction_AutoSpace" xml:space="preserve">
+    <value>_Auto-insert spaces after words</value>
+  </data>
+  <data name="Options_Prediction_EnablePrediction" xml:space="preserve">
+    <value>_Enable word prediction</value>
+  </data>
+  <data name="Options_Prediction_LearnWords" xml:space="preserve">
+    <value>Add _new words to dictionary</value>
+  </data>
+  <data name="Options_ResetButton" xml:space="preserve">
+    <value>Reset all</value>
+  </data>
+  <data name="Options_ResetToolTip" xml:space="preserve">
+    <value>Reset all program options to their default values</value>
+  </data>
+  <data name="Options_SecurityTab" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="Options_Security_ActionColumn" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Options_Security_CommandColumn" xml:space="preserve">
+    <value>Command (exact or ^regex)</value>
+  </data>
+  <data name="Options_Security_DisallowDangerousControls" xml:space="preserve">
+    <value>D_isallow potentially harmful controls</value>
+  </data>
+  <data name="Options_Security_DisallowShiftDelete" xml:space="preserve">
+    <value>_Disallow Shift+Delete</value>
+  </data>
+  <data name="Options_Security_MaxActionsLabel" xml:space="preserve">
+    <value>Maximum action list length:</value>
+  </data>
+  <data name="Options_Security_RulesLabel" xml:space="preserve">
+    <value>Rules for 'Start program' commands:</value>
+  </data>
+  <data name="Options_StyleTab" xml:space="preserve">
+    <value>Style</value>
+  </data>
+  <data name="Options_Style_AnimateControls" xml:space="preserve">
+    <value>_Animate controls when used</value>
+  </data>
+  <data name="Options_Style_CompactController" xml:space="preserve">
+    <value>_Compact controller window</value>
+  </data>
+  <data name="Options_Style_KeepOnTop" xml:space="preserve">
+    <value>_Keep controller window on top</value>
+  </data>
+  <data name="Options_Style_Magnification" xml:space="preserve">
+    <value>Window magnification (%):</value>
+  </data>
+  <data name="Options_Style_ShowFooter" xml:space="preserve">
+    <value>S_how keyboard window footer</value>
+  </data>
+  <data name="Options_Style_ShowTitleBar" xml:space="preserve">
+    <value>_Show keyboard window title bar</value>
+  </data>
+  <data name="Options_Title" xml:space="preserve">
+    <value>Program options - Keysticks</value>
+  </data>
+  <data name="Preview_Title" xml:space="preserve">
+    <value>Profile Preview - Keysticks</value>
+  </data>
+  <data name="ProfileBrowser_Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="ProfileBrowser_AddedByColumn" xml:space="preserve">
+    <value>Added By</value>
+  </data>
+  <data name="ProfileBrowser_DonwloadCountToolTip" xml:space="preserve">
+    <value>Number of downloads</value>
+  </data>
+  <data name="ProfileBrowser_DownloadArea" xml:space="preserve">
+    <value>_Download Area</value>
+  </data>
+  <data name="ProfileBrowser_DownloadMoreInfo" xml:space="preserve">
+    <value>To download more profiles, use the Download Area</value>
+  </data>
+  <data name="ProfileBrowser_DownloadToolTip" xml:space="preserve">
+    <value>Download this profile</value>
+  </data>
+  <data name="ProfileBrowser_EnterDownloadArea" xml:space="preserve">
+    <value>Enter Download Area</value>
+  </data>
+  <data name="ProfileBrowser_LastModifiedColumn" xml:space="preserve">
+    <value>Last Modified</value>
+  </data>
+  <data name="ProfileBrowser_LastUpdatedColumn" xml:space="preserve">
+    <value>Last Updated</value>
+  </data>
+  <data name="ProfileBrowser_LoadProfileToolTip" xml:space="preserve">
+    <value>Load this profile</value>
+  </data>
+  <data name="ProfileBrowser_Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="ProfileBrowser_LoginDetails" xml:space="preserve">
+    <value>Login details</value>
+  </data>
+  <data name="ProfileBrowser_LoginToShareInfo" xml:space="preserve">
+    <value>To share profiles, please log in</value>
+  </data>
+  <data name="ProfileBrowser_Log_in" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="ProfileBrowser_Log_out" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="ProfileBrowser_MyProfiles" xml:space="preserve">
+    <value>_My Profiles</value>
+  </data>
+  <data name="ProfileBrowser_NameColumn" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ProfileBrowser_NewUserEllipsis" xml:space="preserve">
+    <value>New user...</value>
+  </data>
+  <data name="ProfileBrowser_PasswordLabel" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="ProfileBrowser_PreviewEllipsis" xml:space="preserve">
+    <value>Preview...</value>
+  </data>
+  <data name="ProfileBrowser_PreviewToolTip" xml:space="preserve">
+    <value>Open the preview window</value>
+  </data>
+  <data name="ProfileBrowser_RefColumn" xml:space="preserve">
+    <value>Ref</value>
+  </data>
+  <data name="ProfileBrowser_RememberMeLabel" xml:space="preserve">
+    <value>Remember me:</value>
+  </data>
+  <data name="ProfileBrowser_Title" xml:space="preserve">
+    <value>Profile Browser - Keysticks</value>
+  </data>
+  <data name="ProfileBrowser_UsernameLabel" xml:space="preserve">
+    <value>Username / email:</value>
+  </data>
+  <data name="ProfileBrowser_WebsiteLinkToolTip" xml:space="preserve">
+    <value>Go to Keysticks.net (opens in browser)</value>
+  </data>
+  <data name="ProfileSummary_ActivatesControlsLabel" xml:space="preserve">
+    <value>Activates controls for:</value>
+  </data>
+  <data name="ProfileSummary_GameLabel" xml:space="preserve">
+    <value>For game / app:</value>
+  </data>
+  <data name="ProfileSummary_Header" xml:space="preserve">
+    <value>Profile summary</value>
+  </data>
+  <data name="ProfileSummary_KeyboardTypesLabel" xml:space="preserve">
+    <value>Keyboard types:</value>
+  </data>
+  <data name="ProfileSummary_NotesLabel" xml:space="preserve">
+    <value>Notes:</value>
+  </data>
+  <data name="ProfileSummary_NumPlayersLabel" xml:space="preserve">
+    <value>Number of players:</value>
+  </data>
+  <data name="ProfileSummary_ProgramsLabel" xml:space="preserve">
+    <value>Starts programs:</value>
+  </data>
+  <data name="ProfileSummary_URLLabel" xml:space="preserve">
+    <value>Game / app website:</value>
+  </data>
+  <data name="ProfileViewer_AddPlayerToolTip" xml:space="preserve">
+    <value>Add a new player</value>
+  </data>
+  <data name="ProfileViewer_InputMappings" xml:space="preserve">
+    <value>Input mappings</value>
+  </data>
+  <data name="ProfileViewer_PlayerLabel" xml:space="preserve">
+    <value>Player:</value>
+  </data>
+  <data name="ProfileViewer_RemoveKeyboard" xml:space="preserve">
+    <value>Remove keyboard</value>
+  </data>
+  <data name="ProfileViewer_RemoveKeyboardToolTip" xml:space="preserve">
+    <value>Remove the keyboard from this control set</value>
+  </data>
+  <data name="ProfileViewer_RemovePlayerToolTip" xml:space="preserve">
+    <value>Remove the last player</value>
+  </data>
+  <data name="Q_AddLanguage" xml:space="preserve">
+    <value>Add language?</value>
+  </data>
+  <data name="Q_AddLanguageMessage" xml:space="preserve">
+    <value>Download and add {0} dictionary for word predictions?</value>
+  </data>
+  <data name="Q_ApplyTemplate" xml:space="preserve">
+    <value>Apply template?</value>
+  </data>
+  <data name="Q_ApplyTemplateMessage" xml:space="preserve">
+    <value>Apply '{0}' template to '{1}' in control set '{2}'?</value>
+  </data>
+  <data name="Q_ClearActions" xml:space="preserve">
+    <value>Clear these actions?</value>
+  </data>
+  <data name="Q_ClearActionsMessage" xml:space="preserve">
+    <value>Clear these actions for '{0}' in control set '{1}'?</value>
+  </data>
+  <data name="Q_ClearSetting" xml:space="preserve">
+    <value>Clear this setting?</value>
+  </data>
+  <data name="Q_ClearSettingMessage" xml:space="preserve">
+    <value>Clear this setting for '{0}' in control set '{1}'?</value>
+  </data>
+  <data name="Q_CreateProfilesFolder" xml:space="preserve">
+    <value>Create Profiles folder?</value>
+  </data>
+  <data name="Q_CreateProfilesFolderMessage" xml:space="preserve">
+    <value>The specified Profiles folder doesn't exist. Do you want to create it?</value>
+  </data>
+  <data name="Q_DeleteControl" xml:space="preserve">
+    <value>Delete control?</value>
+  </data>
+  <data name="Q_DeleteControlMessage" xml:space="preserve">
+    <value>Delete this control?</value>
+  </data>
+  <data name="Q_DeleteControlSet" xml:space="preserve">
+    <value>Delete control set?</value>
+  </data>
+  <data name="Q_DeleteControlSetMessage" xml:space="preserve">
+    <value>Delete this control set?</value>
+  </data>
+  <data name="Q_DeletePage" xml:space="preserve">
+    <value>Delete page?</value>
+  </data>
+  <data name="Q_DeletePageMessage" xml:space="preserve">
+    <value>Delete this page of controls?</value>
+  </data>
+  <data name="Q_DeleteProfile" xml:space="preserve">
+    <value>Delete profile?</value>
+  </data>
+  <data name="Q_DeleteProfileMessage" xml:space="preserve">
+    <value>Delete profile '{0}' from your computer?</value>
+  </data>
+  <data name="Q_DisableSecurityFeature" xml:space="preserve">
+    <value>Disable security feature (not recommended)?</value>
+  </data>
+  <data name="Q_DisableSecurityFeatureMessage" xml:space="preserve">
+    <value>This is a security feature to protect you against creating or using potentially harmful controls.{0}{0}Do you want to disable this security feature?</value>
+  </data>
+  <data name="Q_DownloadProfile" xml:space="preserve">
+    <value>Download profile?</value>
+  </data>
+  <data name="Q_DownloadProfileMessage" xml:space="preserve">
+    <value>You already have this profile. Do you want to download it again and replace your current version?</value>
+  </data>
+  <data name="Q_GoToWebsite" xml:space="preserve">
+    <value>Go to the website now?</value>
+  </data>
+  <data name="Q_GoToX" xml:space="preserve">
+    <value>Go to {0}?</value>
+  </data>
+  <data name="Q_InstallUpdates" xml:space="preserve">
+    <value>Install {0} updates?</value>
+  </data>
+  <data name="Q_InstallUpdatesMessage" xml:space="preserve">
+    <value>Do you want to install it now?</value>
+  </data>
+  <data name="Q_RemoveKeyboard" xml:space="preserve">
+    <value>Remove keyboard?</value>
+  </data>
+  <data name="Q_RemoveKeyboardMessage" xml:space="preserve">
+    <value>Remove the keyboard view from control set '{0}'?</value>
+  </data>
+  <data name="Q_RemovePlayer" xml:space="preserve">
+    <value>Remove player?</value>
+  </data>
+  <data name="Q_RemovePlayerMessage" xml:space="preserve">
+    <value>Remove player {0} from this profile?</value>
+  </data>
+  <data name="Q_RemoveProfile" xml:space="preserve">
+    <value>Remove profile?</value>
+  </data>
+  <data name="Q_RemoveProfileMessage" xml:space="preserve">
+    <value>Remove profile '{0}' from the Download Area?</value>
+  </data>
+  <data name="Q_ResetBackground" xml:space="preserve">
+    <value>Reset default background?</value>
+  </data>
+  <data name="Q_ResetBackgroundMessage" xml:space="preserve">
+    <value>Reset the default controller background to be the original controller image?</value>
+  </data>
+  <data name="Q_ResetProgramOptions" xml:space="preserve">
+    <value>Reset all options?</value>
+  </data>
+  <data name="Q_ResetProgramOptionsMessage" xml:space="preserve">
+    <value>Reset all program options to their original values?</value>
+  </data>
+  <data name="Q_RunCommand" xml:space="preserve">
+    <value>Run command?</value>
+  </data>
+  <data name="Q_RunCommandMessage" xml:space="preserve">
+    <value>Do you want to allow {0} to run this command?{1}{1}{2}{1}{1}If you are unsure what this command does, choose No.</value>
+  </data>
+  <data name="Q_SaveProfile" xml:space="preserve">
+    <value>Save profile?</value>
+  </data>
+  <data name="Q_SaveProfileMessage" xml:space="preserve">
+    <value>Save changes to the current profile?</value>
+  </data>
+  <data name="Q_SetDefaultBackground" xml:space="preserve">
+    <value>Set default background?</value>
+  </data>
+  <data name="Q_SetDefaultBackgroundMessage" xml:space="preserve">
+    <value>Set this background to be the default controller background for all profiles?</value>
+  </data>
+  <data name="Q_ShareNewVersion" xml:space="preserve">
+    <value>Share new version?</value>
+  </data>
+  <data name="Q_ShareNewVersionMessage" xml:space="preserve">
+    <value>You can't update profile {0} because it was created by another user. Do you want to share a new version of this profile?</value>
+  </data>
+  <data name="Q_ShareProfile" xml:space="preserve">
+    <value>Share profile?</value>
+  </data>
+  <data name="Q_ShareProfileAgainMessage" xml:space="preserve">
+    <value>Another profile already has the reference number {0}. Do you still want to share this profile?</value>
+  </data>
+  <data name="Q_ShareProfileMessage" xml:space="preserve">
+    <value>Share profile '{0}' by uploading it to the Download Area?</value>
+  </data>
+  <data name="Q_TestCommand" xml:space="preserve">
+    <value>Check and test command</value>
+  </data>
+  <data name="Q_TestCommandMessage" xml:space="preserve">
+    <value>The command that will be run with these settings {2}is:{0}{0}{1}{0}{0}Do you want to run it now?</value>
+  </data>
+  <data name="Q_UpdateProfile" xml:space="preserve">
+    <value>Update profile?</value>
+  </data>
+  <data name="Q_UpdateProfileMessage" xml:space="preserve">
+    <value>Update profile '{0}' in the Download Area?</value>
+  </data>
+  <data name="Reorder_Title" xml:space="preserve">
+    <value>Re-order items</value>
+  </data>
+  <data name="StartProgram_ArgumentsLabel" xml:space="preserve">
+    <value>Arguments:</value>
+  </data>
+  <data name="StartProgram_CheckIfRunning" xml:space="preserve">
+    <value>_Check if running</value>
+  </data>
+  <data name="StartProgram_CheckIfRunningToolTip" xml:space="preserve">
+    <value>Check whether the program is already running</value>
+  </data>
+  <data name="StartProgram_ChooseFilesToolTip" xml:space="preserve">
+    <value>Choose files or documents if applicable</value>
+  </data>
+  <data name="StartProgram_ChooseProgramToolTip" xml:space="preserve">
+    <value>Choose a program</value>
+  </data>
+  <data name="StartProgram_FolderLabel" xml:space="preserve">
+    <value>Folder:</value>
+  </data>
+  <data name="StartProgram_ProgramNameLabel" xml:space="preserve">
+    <value>Program name:</value>
+  </data>
+  <data name="StartProgram_TestAction" xml:space="preserve">
+    <value>Check and test...</value>
+  </data>
+  <data name="StartProgram_TestActionToolTip" xml:space="preserve">
+    <value>Check the command that will be run</value>
+  </data>
+  <data name="StartProgram_TryBothFolders" xml:space="preserve">
+    <value>_Try both folders</value>
+  </data>
+  <data name="StartProgram_TryBothFoldersToolTip" xml:space="preserve">
+    <value>If a 'Program Files' folder is specified but the program isn't found, look in 'Program Files (x86)' instead, and vice versa</value>
+  </data>
+  <data name="String_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="String_Absolute" xml:space="preserve">
+    <value>Absolute</value>
+  </data>
+  <data name="String_ActionMouseButton" xml:space="preserve">
+    <value>{0} {1} mouse button</value>
+    <comment>E.g. Click left mouse button</comment>
+  </data>
+  <data name="String_ActionsForLabel" xml:space="preserve">
+    <value>Actions for:</value>
+  </data>
+  <data name="String_ActivateControlSet" xml:space="preserve">
+    <value>Activate control set</value>
+  </data>
+  <data name="String_ActivateWindow" xml:space="preserve">
+    <value>Activate window</value>
+  </data>
+  <data name="String_ActivateX" xml:space="preserve">
+    <value>Activate '{0}'</value>
+  </data>
+  <data name="String_ActivateXControls" xml:space="preserve">
+    <value>Activate '{0}' controls automatically for these windows:</value>
+  </data>
+  <data name="String_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="String_AddANewX" xml:space="preserve">
+    <value>Add a new {0}</value>
+  </data>
+  <data name="String_AddNewPageToX" xml:space="preserve">
+    <value>Add a new page to '{0}'...</value>
+  </data>
+  <data name="String_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="String_AllFiles" xml:space="preserve">
+    <value>All files</value>
+  </data>
+  <data name="String_allow_wrap" xml:space="preserve">
+    <value>allow wrap</value>
+  </data>
+  <data name="String_AlreadyRunning" xml:space="preserve">
+    <value>Already running</value>
+  </data>
+  <data name="String_Alt" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="String_Any" xml:space="preserve">
+    <value>Any</value>
+  </data>
+  <data name="String_AnyCell" xml:space="preserve">
+    <value>Any cell</value>
+  </data>
+  <data name="String_AnyControlSet" xml:space="preserve">
+    <value>Any control set</value>
+  </data>
+  <data name="String_AnyKey" xml:space="preserve">
+    <value>Any key</value>
+  </data>
+  <data name="String_AnyPage" xml:space="preserve">
+    <value>Any page</value>
+  </data>
+  <data name="String_AppChange" xml:space="preserve">
+    <value>App change</value>
+  </data>
+  <data name="String_Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="String_ArcadeStick" xml:space="preserve">
+    <value>Arcade stick</value>
+  </data>
+  <data name="String_AskMe" xml:space="preserve">
+    <value>Ask me</value>
+  </data>
+  <data name="String_AtTheBeginning" xml:space="preserve">
+    <value>(At the beginning)</value>
+  </data>
+  <data name="String_AutoRepeat" xml:space="preserve">
+    <value>Auto-repeat</value>
+  </data>
+  <data name="String_AutoRepeatKey" xml:space="preserve">
+    <value>Auto-repeat key</value>
+  </data>
+  <data name="String_Axis" xml:space="preserve">
+    <value>Axis</value>
+  </data>
+  <data name="String_AxisStyle" xml:space="preserve">
+    <value>Axis-style</value>
+  </data>
+  <data name="String_Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="String_Background" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="String_BothDifferent" xml:space="preserve">
+    <value>Both different</value>
+  </data>
+  <data name="String_BothTheSame" xml:space="preserve">
+    <value>Both the same</value>
+  </data>
+  <data name="String_BottomCentre" xml:space="preserve">
+    <value>Bottom centre</value>
+  </data>
+  <data name="String_BottomLeft" xml:space="preserve">
+    <value>Bottom left</value>
+  </data>
+  <data name="String_BottomRight" xml:space="preserve">
+    <value>Bottom right</value>
+  </data>
+  <data name="String_Button" xml:space="preserve">
+    <value>Button</value>
+  </data>
+  <data name="String_ButtonDiamond" xml:space="preserve">
+    <value>Direction buttons</value>
+  </data>
+  <data name="String_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="String_CancelSuggestions" xml:space="preserve">
+    <value>Cancel suggestions</value>
+  </data>
+  <data name="String_CapsLock" xml:space="preserve">
+    <value>Caps Lock</value>
+  </data>
+  <data name="String_Cell" xml:space="preserve">
+    <value>Cell</value>
+  </data>
+  <data name="String_Centre" xml:space="preserve">
+    <value>Centre</value>
+  </data>
+  <data name="String_Centred" xml:space="preserve">
+    <value>Centred</value>
+  </data>
+  <data name="String_CentreLeft" xml:space="preserve">
+    <value>Centre left</value>
+  </data>
+  <data name="String_CentreRight" xml:space="preserve">
+    <value>Centre right</value>
+  </data>
+  <data name="String_ChangeControlSet" xml:space="preserve">
+    <value>Change control set</value>
+  </data>
+  <data name="String_check_if_running" xml:space="preserve">
+    <value>check if running</value>
+  </data>
+  <data name="String_Choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="String_ChooseAFolder" xml:space="preserve">
+    <value>Choose a folder</value>
+  </data>
+  <data name="String_ChooseAnImageFile" xml:space="preserve">
+    <value>Choose an image file</value>
+  </data>
+  <data name="String_ChooseAProfileFile" xml:space="preserve">
+    <value>Choose a profile file</value>
+  </data>
+  <data name="String_ChooseController" xml:space="preserve">
+    <value>(Choose controller)</value>
+  </data>
+  <data name="String_ChooseFilesOrDocuments" xml:space="preserve">
+    <value>Choose files or documents</value>
+  </data>
+  <data name="String_ClearActions" xml:space="preserve">
+    <value>Clear actions</value>
+  </data>
+  <data name="String_Click" xml:space="preserve">
+    <value>Click</value>
+  </data>
+  <data name="String_ClickMouseButton" xml:space="preserve">
+    <value>Click mouse button</value>
+  </data>
+  <data name="String_ClickOrDragToolTip" xml:space="preserve">
+    <value>(Click to select, drag to reposition)</value>
+  </data>
+  <data name="String_ClickOrRightClickToolTip" xml:space="preserve">
+    <value>(Click to select, right-click for quick-edit options)</value>
+  </data>
+  <data name="String_ClickToView" xml:space="preserve">
+    <value>Click to view</value>
+  </data>
+  <data name="String_Colour" xml:space="preserve">
+    <value>Colour</value>
+  </data>
+  <data name="String_CommandError" xml:space="preserve">
+    <value>Command error</value>
+  </data>
+  <data name="String_CommandErrorMessage" xml:space="preserve">
+    <value>The command ran but this error occurred:</value>
+  </data>
+  <data name="String_CommandSucceeded" xml:space="preserve">
+    <value>Command succeeded</value>
+  </data>
+  <data name="String_CommandSucceededMessage" xml:space="preserve">
+    <value>The command ran successfully.</value>
+  </data>
+  <data name="String_Continuous" xml:space="preserve">
+    <value>Continuous</value>
+  </data>
+  <data name="String_Control" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="String_ControlLabel" xml:space="preserve">
+    <value>Control:</value>
+  </data>
+  <data name="String_Controller" xml:space="preserve">
+    <value>Controller</value>
+  </data>
+  <data name="String_ControlMousePointer" xml:space="preserve">
+    <value>Control the mouse pointer</value>
+  </data>
+  <data name="String_Controls" xml:space="preserve">
+    <value>Controls</value>
+  </data>
+  <data name="String_ControlSet" xml:space="preserve">
+    <value>Control set</value>
+  </data>
+  <data name="String_ControlSetLabel" xml:space="preserve">
+    <value>Control set:</value>
+  </data>
+  <data name="String_ControlThePointer" xml:space="preserve">
+    <value>Control the pointer</value>
+  </data>
+  <data name="String_control_sets" xml:space="preserve">
+    <value>control sets</value>
+  </data>
+  <data name="String_CopyEllipsis" xml:space="preserve">
+    <value>Copy...</value>
+  </data>
+  <data name="String_Copyright" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
+  <data name="String_CopyX" xml:space="preserve">
+    <value>Copy '{0}'</value>
+  </data>
+  <data name="String_Ctrl" xml:space="preserve">
+    <value>Ctrl</value>
+  </data>
+  <data name="String_CustomActions" xml:space="preserve">
+    <value>Custom actions</value>
+  </data>
+  <data name="String_DancePad" xml:space="preserve">
+    <value>Dance pad</value>
+  </data>
+  <data name="String_Debug" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="String_DefaultControlSetName" xml:space="preserve">
+    <value>My controls</value>
+  </data>
+  <data name="String_DefaultProfileName" xml:space="preserve">
+    <value>New profile</value>
+  </data>
+  <data name="String_DefaultSettings" xml:space="preserve">
+    <value>Default settings</value>
+  </data>
+  <data name="String_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="String_DeleteEllipsis" xml:space="preserve">
+    <value>Delete...</value>
+  </data>
+  <data name="String_DeleteX" xml:space="preserve">
+    <value>Delete '{0}'</value>
+  </data>
+  <data name="String_Desktop" xml:space="preserve">
+    <value>Desktop</value>
+  </data>
+  <data name="String_DesktopCoords" xml:space="preserve">
+    <value>desktop coords</value>
+  </data>
+  <data name="String_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="String_DetailsEllipsis" xml:space="preserve">
+    <value>Details...</value>
+  </data>
+  <data name="String_Directed" xml:space="preserve">
+    <value>Directed</value>
+  </data>
+  <data name="String_DirectionMode" xml:space="preserve">
+    <value>Direction mode</value>
+  </data>
+  <data name="String_DirectionModeLabel" xml:space="preserve">
+    <value>Direction mode:</value>
+  </data>
+  <data name="String_Direction_buttons" xml:space="preserve">
+    <value>Direction buttons</value>
+  </data>
+  <data name="String_Disable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="String_Disconnected" xml:space="preserve">
+    <value>Disconnected</value>
+  </data>
+  <data name="String_DoNothing" xml:space="preserve">
+    <value>Do nothing</value>
+  </data>
+  <data name="String_DontRun" xml:space="preserve">
+    <value>Don't run</value>
+    <comment>Sense: Prevent a command from being run</comment>
+  </data>
+  <data name="String_DontShowAgain" xml:space="preserve">
+    <value>_Don't show this again</value>
+  </data>
+  <data name="String_DoubleClickMouseButton" xml:space="preserve">
+    <value>Double-click mouse button</value>
+  </data>
+  <data name="String_Double_click" xml:space="preserve">
+    <value>Double-click</value>
+  </data>
+  <data name="String_Down" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="String_DownLeft" xml:space="preserve">
+    <value>Down-left</value>
+  </data>
+  <data name="String_Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="String_Downloaded" xml:space="preserve">
+    <value>Downloaded</value>
+  </data>
+  <data name="String_DownRight" xml:space="preserve">
+    <value>Down-right</value>
+  </data>
+  <data name="String_DPad" xml:space="preserve">
+    <value>DPad</value>
+  </data>
+  <data name="String_DPadAbbrev" xml:space="preserve">
+    <value>DP</value>
+  </data>
+  <data name="String_DrumKit" xml:space="preserve">
+    <value>Drum kit</value>
+  </data>
+  <data name="String_DwellRepeat" xml:space="preserve">
+    <value>{0}s / {1}s</value>
+  </data>
+  <data name="String_EditActions" xml:space="preserve">
+    <value>Edit actions</value>
+  </data>
+  <data name="String_EditEllipsis" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="String_EightWay" xml:space="preserve">
+    <value>8-way</value>
+  </data>
+  <data name="String_Enable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="String_Enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="String_ending" xml:space="preserve">
+    <value>ending</value>
+  </data>
+  <data name="String_Ends" xml:space="preserve">
+    <value>Ends</value>
+  </data>
+  <data name="String_EnterTextHint" xml:space="preserve">
+    <value>(Enter text)</value>
+  </data>
+  <data name="String_ErrorDetails" xml:space="preserve">
+    <value>Error details</value>
+  </data>
+  <data name="String_ErrorMessage" xml:space="preserve">
+    <value>Error message</value>
+  </data>
+  <data name="String_Errors_and_info" xml:space="preserve">
+    <value>Errors and info</value>
+  </data>
+  <data name="String_Errors_only" xml:space="preserve">
+    <value>Errors only</value>
+  </data>
+  <data name="String_ExecutableFiles" xml:space="preserve">
+    <value>Executable files</value>
+  </data>
+  <data name="String_fixed_speed" xml:space="preserve">
+    <value>fixed speed</value>
+  </data>
+  <data name="String_FlightStick" xml:space="preserve">
+    <value>Flight stick</value>
+  </data>
+  <data name="String_FourWay" xml:space="preserve">
+    <value>4-way</value>
+  </data>
+  <data name="String_Gamepad" xml:space="preserve">
+    <value>Gamepad</value>
+  </data>
+  <data name="String_GoToX" xml:space="preserve">
+    <value>Go to {0}</value>
+  </data>
+  <data name="String_Guitar" xml:space="preserve">
+    <value>Guitar</value>
+  </data>
+  <data name="String_HeightLabel" xml:space="preserve">
+    <value>Height:</value>
+  </data>
+  <data name="String_Highlights" xml:space="preserve">
+    <value>Highlights</value>
+  </data>
+  <data name="String_HoldKey" xml:space="preserve">
+    <value>Hold key</value>
+  </data>
+  <data name="String_HoldRepeat" xml:space="preserve">
+    <value>Hold / auto-repeat</value>
+  </data>
+  <data name="String_IconLabel" xml:space="preserve">
+    <value>Icon:</value>
+  </data>
+  <data name="String_IfNotRunningOption" xml:space="preserve">
+    <value>(if the program isn't already running)</value>
+  </data>
+  <data name="String_ImageFiles" xml:space="preserve">
+    <value>Image files</value>
+  </data>
+  <data name="String_Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="String_ImportControlSets" xml:space="preserve">
+    <value>Import control sets</value>
+  </data>
+  <data name="String_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="String_Inputs" xml:space="preserve">
+    <value>Inputs</value>
+  </data>
+  <data name="String_InputsAndDesign" xml:space="preserve">
+    <value>Inputs and controller design</value>
+  </data>
+  <data name="String_Insert" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="String_InsertAfterLabel" xml:space="preserve">
+    <value>Insert after:</value>
+  </data>
+  <data name="String_InsertSuggestion" xml:space="preserve">
+    <value>Insert suggestion</value>
+  </data>
+  <data name="String_Internal" xml:space="preserve">
+    <value>Internal</value>
+  </data>
+  <data name="String_InThisControlSet" xml:space="preserve">
+    <value>In this control set</value>
+  </data>
+  <data name="String_InvalidLink" xml:space="preserve">
+    <value>Invalid link</value>
+  </data>
+  <data name="String_InvalidSettings" xml:space="preserve">
+    <value>Invalid settings</value>
+  </data>
+  <data name="String_InvalidSettingsMessage" xml:space="preserve">
+    <value>Please enter some settings to test.</value>
+  </data>
+  <data name="String_Inverted" xml:space="preserve">
+    <value>Inverted</value>
+  </data>
+  <data name="String_Joystick" xml:space="preserve">
+    <value>Joystick</value>
+  </data>
+  <data name="String_Key" xml:space="preserve">
+    <value>Key</value>
+  </data>
+  <data name="String_Keyboard" xml:space="preserve">
+    <value>Keyboard</value>
+  </data>
+  <data name="String_KeyboardBackground" xml:space="preserve">
+    <value>Keyboard background</value>
+  </data>
+  <data name="String_KeyboardLayoutChange" xml:space="preserve">
+    <value>Keyboard layout change</value>
+  </data>
+  <data name="String_KeyboardState" xml:space="preserve">
+    <value>Keyboard state</value>
+  </data>
+  <data name="String_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="String_LanguagePackages" xml:space="preserve">
+    <value>Language packages</value>
+  </data>
+  <data name="String_Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="String_LeftOrRight" xml:space="preserve">
+    <value>(left/right)</value>
+  </data>
+  <data name="String_LeftShoulder" xml:space="preserve">
+    <value>Left shoulder</value>
+  </data>
+  <data name="String_LeftThumb" xml:space="preserve">
+    <value>Left thumb</value>
+  </data>
+  <data name="String_LeftTrigger" xml:space="preserve">
+    <value>Left trigger</value>
+  </data>
+  <data name="String_Left_stick" xml:space="preserve">
+    <value>Left stick</value>
+  </data>
+  <data name="String_Load" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="String_LoadedX" xml:space="preserve">
+    <value>Loaded {0}</value>
+  </data>
+  <data name="String_LoadNewProfile" xml:space="preserve">
+    <value>Load a new profile</value>
+  </data>
+  <data name="String_LoadProfile" xml:space="preserve">
+    <value>Load profile</value>
+  </data>
+  <data name="String_LoadProfileX" xml:space="preserve">
+    <value>Load '{0}' profile</value>
+  </data>
+  <data name="String_LogMessage" xml:space="preserve">
+    <value>Log message</value>
+  </data>
+  <data name="String_Long" xml:space="preserve">
+    <value>Long</value>
+  </data>
+  <data name="String_MaximiseOrRestoreWindow" xml:space="preserve">
+    <value>Maximise/restore window</value>
+  </data>
+  <data name="String_MaximiseWindow" xml:space="preserve">
+    <value>Maximise / restore window</value>
+  </data>
+  <data name="String_MenuBar" xml:space="preserve">
+    <value>Menu bar</value>
+  </data>
+  <data name="String_Middle" xml:space="preserve">
+    <value>Middle</value>
+  </data>
+  <data name="String_minimise" xml:space="preserve">
+    <value>minimise</value>
+  </data>
+  <data name="String_MinimiseWindow" xml:space="preserve">
+    <value>Minimise window</value>
+  </data>
+  <data name="String_Mouse" xml:space="preserve">
+    <value>Mouse</value>
+  </data>
+  <data name="String_MouseButtonState" xml:space="preserve">
+    <value>Mouse button state</value>
+  </data>
+  <data name="String_MouseWheelDown" xml:space="preserve">
+    <value>Mouse wheel down</value>
+  </data>
+  <data name="String_MouseWheelUp" xml:space="preserve">
+    <value>Mouse wheel up</value>
+  </data>
+  <data name="String_MoveBy" xml:space="preserve">
+    <value>Move by</value>
+  </data>
+  <data name="String_Moved" xml:space="preserve">
+    <value>Moved</value>
+  </data>
+  <data name="String_MoveDownPriorityToolTip" xml:space="preserve">
+    <value>Move down (lower priority)</value>
+  </data>
+  <data name="String_MovePointerBy" xml:space="preserve">
+    <value>Move the pointer by</value>
+  </data>
+  <data name="String_MovePointerTo" xml:space="preserve">
+    <value>Move the pointer to</value>
+  </data>
+  <data name="String_MoveThePointer" xml:space="preserve">
+    <value>Move the pointer</value>
+  </data>
+  <data name="String_MoveTo" xml:space="preserve">
+    <value>Move to</value>
+  </data>
+  <data name="String_MoveUpPriorityToolTip" xml:space="preserve">
+    <value>Move up (higher priority)</value>
+  </data>
+  <data name="String_MoveXOneCell" xml:space="preserve">
+    <value>Move {0} 1 cell</value>
+    <comment>E.g. Move left 1 cell</comment>
+  </data>
+  <data name="String_Navigate" xml:space="preserve">
+    <value>Navigate</value>
+  </data>
+  <data name="String_NavigateCells" xml:space="preserve">
+    <value>Navigate cells</value>
+  </data>
+  <data name="String_NavigateUsingLabel" xml:space="preserve">
+    <value>Navigate using:</value>
+  </data>
+  <data name="String_NegativeSide" xml:space="preserve">
+    <value>Negative side</value>
+  </data>
+  <data name="String_NewProfileOption" xml:space="preserve">
+    <value>(New profile)</value>
+  </data>
+  <data name="String_NewVersionAvailable" xml:space="preserve">
+    <value>A new version of {0} is available (v{1}):</value>
+  </data>
+  <data name="String_NewXName" xml:space="preserve">
+    <value>New {0} name:</value>
+  </data>
+  <data name="String_Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="String_NextSuggestion" xml:space="preserve">
+    <value>Next suggestion</value>
+  </data>
+  <data name="String_NextX" xml:space="preserve">
+    <value>Next {0}</value>
+    <comment>E.g. Next mode, Next page</comment>
+  </data>
+  <data name="String_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="String_NoChange" xml:space="preserve">
+    <value>(No change)</value>
+  </data>
+  <data name="String_NoControlSelected" xml:space="preserve">
+    <value>(No control selected)</value>
+  </data>
+  <data name="String_NoControlSetSelected" xml:space="preserve">
+    <value>(No control set selected)</value>
+  </data>
+  <data name="String_Nondirectional" xml:space="preserve">
+    <value>Non-directional</value>
+  </data>
+  <data name="String_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="String_NoProfileSelected" xml:space="preserve">
+    <value>(No profile selected)</value>
+  </data>
+  <data name="String_NotApplicableAbbrev" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="String_NotKnownAbbrev" xml:space="preserve">
+    <value>N/K</value>
+  </data>
+  <data name="String_Not_downloaded" xml:space="preserve">
+    <value>Not downloaded</value>
+  </data>
+  <data name="String_NumLock" xml:space="preserve">
+    <value>Num Lock</value>
+  </data>
+  <data name="String_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="String_On_your_computer" xml:space="preserve">
+    <value>On your computer</value>
+  </data>
+  <data name="String_or_later" xml:space="preserve">
+    <value>or later</value>
+  </data>
+  <data name="String_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="String_Page" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="String_Percent" xml:space="preserve">
+    <value>Percent</value>
+  </data>
+  <data name="String_PerformActionsForCellToolTip" xml:space="preserve">
+    <value>Perform actions for selected keyboard cell</value>
+  </data>
+  <data name="String_Pixels" xml:space="preserve">
+    <value>Pixels</value>
+  </data>
+  <data name="String_Player" xml:space="preserve">
+    <value>Player</value>
+  </data>
+  <data name="String_Player1" xml:space="preserve">
+    <value>Player 1</value>
+  </data>
+  <data name="String_Player2" xml:space="preserve">
+    <value>Player 2</value>
+  </data>
+  <data name="String_Player3" xml:space="preserve">
+    <value>Player 3</value>
+  </data>
+  <data name="String_Player4" xml:space="preserve">
+    <value>Player 4</value>
+  </data>
+  <data name="String_PlayerXInputs" xml:space="preserve">
+    <value>Player {0} inputs</value>
+  </data>
+  <data name="String_POV" xml:space="preserve">
+    <value>POV</value>
+  </data>
+  <data name="String_Press" xml:space="preserve">
+    <value>Press</value>
+  </data>
+  <data name="String_PressDownKey" xml:space="preserve">
+    <value>Press down key</value>
+  </data>
+  <data name="String_PressDownMouseButton" xml:space="preserve">
+    <value>Press down mouse button</value>
+  </data>
+  <data name="String_Pressed" xml:space="preserve">
+    <value>Pressed</value>
+  </data>
+  <data name="String_Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="String_Previously_downloaded" xml:space="preserve">
+    <value>Previously downloaded</value>
+  </data>
+  <data name="String_PreviousSuggestion" xml:space="preserve">
+    <value>Previous suggestion</value>
+  </data>
+  <data name="String_PreviousX" xml:space="preserve">
+    <value>Previous {0}</value>
+    <comment>E.g. Previous mode, previous page</comment>
+  </data>
+  <data name="String_primary" xml:space="preserve">
+    <value>primary</value>
+  </data>
+  <data name="String_Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="String_ProfileFiles" xml:space="preserve">
+    <value>Profile files</value>
+  </data>
+  <data name="String_profiles" xml:space="preserve">
+    <value>profiles</value>
+  </data>
+  <data name="String_ProgramAlreadyRunningMessage" xml:space="preserve">
+    <value>The program is already running.</value>
+  </data>
+  <data name="String_Relative" xml:space="preserve">
+    <value>Relative</value>
+  </data>
+  <data name="String_Release" xml:space="preserve">
+    <value>Release</value>
+  </data>
+  <data name="String_Released" xml:space="preserve">
+    <value>Released</value>
+  </data>
+  <data name="String_ReleaseKey" xml:space="preserve">
+    <value>Release key</value>
+  </data>
+  <data name="String_ReleaseMouseButton" xml:space="preserve">
+    <value>Release mouse button</value>
+  </data>
+  <data name="String_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="String_RemoveEllipsis" xml:space="preserve">
+    <value>Remove...</value>
+  </data>
+  <data name="String_RenameEllipsis" xml:space="preserve">
+    <value>Rename...</value>
+  </data>
+  <data name="String_RenameX" xml:space="preserve">
+    <value>Rename '{0}'</value>
+  </data>
+  <data name="String_ReorderPagesForX" xml:space="preserve">
+    <value>Re-order pages for '{0}'...</value>
+  </data>
+  <data name="String_RepeatKey" xml:space="preserve">
+    <value>Repeat key</value>
+  </data>
+  <data name="String_restore" xml:space="preserve">
+    <value>restore</value>
+  </data>
+  <data name="String_Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="String_RightShoulder" xml:space="preserve">
+    <value>Right shoulder</value>
+  </data>
+  <data name="String_RightStick" xml:space="preserve">
+    <value>Right stick</value>
+  </data>
+  <data name="String_RightThumb" xml:space="preserve">
+    <value>Right thumb</value>
+  </data>
+  <data name="String_RightTrigger" xml:space="preserve">
+    <value>Right trigger</value>
+  </data>
+  <data name="String_right_click_to_edit" xml:space="preserve">
+    <value>right-click to edit</value>
+  </data>
+  <data name="String_Run" xml:space="preserve">
+    <value>Run</value>
+    <comment>Sense: Run a command</comment>
+  </data>
+  <data name="String_RunningInBackground" xml:space="preserve">
+    <value>Running in the background</value>
+  </data>
+  <data name="String_Saved" xml:space="preserve">
+    <value>Saved</value>
+  </data>
+  <data name="String_SaveProfile" xml:space="preserve">
+    <value>Save profile</value>
+  </data>
+  <data name="String_SaveTemplate" xml:space="preserve">
+    <value>Save template</value>
+  </data>
+  <data name="String_ScrollLock" xml:space="preserve">
+    <value>Scroll Lock</value>
+  </data>
+  <data name="String_secondary" xml:space="preserve">
+    <value>secondary</value>
+  </data>
+  <data name="String_Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="String_Selections" xml:space="preserve">
+    <value>Selections</value>
+  </data>
+  <data name="String_SelectUsingLabel" xml:space="preserve">
+    <value>Select using:</value>
+  </data>
+  <data name="String_SetAsDefault" xml:space="preserve">
+    <value>Set as default</value>
+  </data>
+  <data name="String_SetDirectionMode" xml:space="preserve">
+    <value>Set direction mode</value>
+  </data>
+  <data name="String_SetDwellAndAutorepeat" xml:space="preserve">
+    <value>Set hold / auto-repeat timing</value>
+  </data>
+  <data name="String_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="String_SetToDwellRepeat" xml:space="preserve">
+    <value>Set to {0}s / {1}s</value>
+  </data>
+  <data name="String_ShareEllipsis" xml:space="preserve">
+    <value>Share...</value>
+  </data>
+  <data name="String_Shift" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="String_Short" xml:space="preserve">
+    <value>Short</value>
+  </data>
+  <data name="String_ShowInDownloadArea" xml:space="preserve">
+    <value>Show in Download Area</value>
+  </data>
+  <data name="String_ShowInMyProfiles" xml:space="preserve">
+    <value>Show in My Profiles</value>
+  </data>
+  <data name="String_ShowOrHideControls" xml:space="preserve">
+    <value>Show/hide controls</value>
+  </data>
+  <data name="String_Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="String_Slider" xml:space="preserve">
+    <value>Slider</value>
+  </data>
+  <data name="String_Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="String_speed" xml:space="preserve">
+    <value>speed</value>
+  </data>
+  <data name="String_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="String_starting" xml:space="preserve">
+    <value>starting</value>
+  </data>
+  <data name="String_StartProgram" xml:space="preserve">
+    <value>Start program</value>
+  </data>
+  <data name="String_Starts" xml:space="preserve">
+    <value>Starts</value>
+  </data>
+  <data name="String_StateChange" xml:space="preserve">
+    <value>State change</value>
+  </data>
+  <data name="String_Stick" xml:space="preserve">
+    <value>Stick</value>
+  </data>
+  <data name="String_SuggestionsList" xml:space="preserve">
+    <value>Suggestions list</value>
+  </data>
+  <data name="String_Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="String_template" xml:space="preserve">
+    <value>template</value>
+  </data>
+  <data name="String_templates" xml:space="preserve">
+    <value>templates</value>
+  </data>
+  <data name="String_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="String_TextFiles" xml:space="preserve">
+    <value>Text files</value>
+  </data>
+  <data name="String_TextLabel" xml:space="preserve">
+    <value>Text:</value>
+  </data>
+  <data name="String_then" xml:space="preserve">
+    <value>then</value>
+  </data>
+  <data name="String_TimeHeld" xml:space="preserve">
+    <value>Time held:</value>
+  </data>
+  <data name="String_TitleBar" xml:space="preserve">
+    <value>Title bar</value>
+  </data>
+  <data name="String_Toggle" xml:space="preserve">
+    <value>Toggle</value>
+  </data>
+  <data name="String_ToggleControls" xml:space="preserve">
+    <value>Toggle controls</value>
+  </data>
+  <data name="String_ToggleControlsWindow" xml:space="preserve">
+    <value>Show / hide controls</value>
+  </data>
+  <data name="String_ToggleKey" xml:space="preserve">
+    <value>Toggle key</value>
+  </data>
+  <data name="String_ToggleMouseButton" xml:space="preserve">
+    <value>Toggle mouse button</value>
+  </data>
+  <data name="String_toggle_controls" xml:space="preserve">
+    <value>toggle controls</value>
+  </data>
+  <data name="String_TopCentre" xml:space="preserve">
+    <value>Top centre</value>
+  </data>
+  <data name="String_TopLeft" xml:space="preserve">
+    <value>Top left</value>
+  </data>
+  <data name="String_TopRight" xml:space="preserve">
+    <value>Top right</value>
+  </data>
+  <data name="String_Trigger" xml:space="preserve">
+    <value>Trigger</value>
+  </data>
+  <data name="String_try_both_folders" xml:space="preserve">
+    <value>try both folders</value>
+  </data>
+  <data name="String_TwoWay" xml:space="preserve">
+    <value>2-way</value>
+  </data>
+  <data name="String_Type" xml:space="preserve">
+    <value>Type</value>
+    <comment>Sense: Type a key on the keyboard</comment>
+  </data>
+  <data name="String_TypeKey" xml:space="preserve">
+    <value>Type key</value>
+  </data>
+  <data name="String_TypeText" xml:space="preserve">
+    <value>Type text</value>
+  </data>
+  <data name="String_Uncentred" xml:space="preserve">
+    <value>Uncentred</value>
+  </data>
+  <data name="String_Undirected" xml:space="preserve">
+    <value>Undirected</value>
+  </data>
+  <data name="String_Up" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="String_Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="String_UpLeft" xml:space="preserve">
+    <value>Up-left</value>
+  </data>
+  <data name="String_UpRight" xml:space="preserve">
+    <value>Up-right</value>
+  </data>
+  <data name="String_UseXDirections" xml:space="preserve">
+    <value>Use {0} directions</value>
+    <comment>E.g. Use 4-way directions</comment>
+  </data>
+  <data name="String_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="String_Wait" xml:space="preserve">
+    <value>Wait</value>
+  </data>
+  <data name="String_WaitFor" xml:space="preserve">
+    <value>Wait for</value>
+  </data>
+  <data name="String_WebServiceErrorMessage" xml:space="preserve">
+    <value>Web service error ({0}). Please try again later.</value>
+  </data>
+  <data name="String_Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="String_Wheel" xml:space="preserve">
+    <value>Wheel</value>
+  </data>
+  <data name="String_When" xml:space="preserve">
+    <value>When</value>
+  </data>
+  <data name="String_WidthLabel" xml:space="preserve">
+    <value>Width:</value>
+  </data>
+  <data name="String_Win" xml:space="preserve">
+    <value>Win</value>
+  </data>
+  <data name="String_Window" xml:space="preserve">
+    <value>Window</value>
+  </data>
+  <data name="String_WindowCoords" xml:space="preserve">
+    <value>window coords</value>
+  </data>
+  <data name="String_WordPrediction" xml:space="preserve">
+    <value>Word prediction</value>
+  </data>
+  <data name="String_X1" xml:space="preserve">
+    <value>X1</value>
+  </data>
+  <data name="String_X2" xml:space="preserve">
+    <value>X2</value>
+  </data>
+  <data name="String_XName" xml:space="preserve">
+    <value>{0} name:</value>
+  </data>
+  <data name="String_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Stromg_MinimiseWindow" xml:space="preserve">
+    <value>Minimise window</value>
+  </data>
+  <data name="Summary_ClickToViewToolTip" xml:space="preserve">
+    <value>Click to view this control set</value>
+  </data>
+  <data name="Summary_EditToolTip" xml:space="preserve">
+    <value>Add or edit actions for this control</value>
+  </data>
+  <data name="Summary_InheritedFromLabel" xml:space="preserve">
+    <value>Inherited from:</value>
+  </data>
+  <data name="Summary_OverrideEllipsis" xml:space="preserve">
+    <value>Override...</value>
+  </data>
+  <data name="Summary_OverrideToolTip" xml:space="preserve">
+    <value>Override inherited actions for this control</value>
+  </data>
+  <data name="Summary_QuickEdit" xml:space="preserve">
+    <value>Quick edit</value>
+  </data>
+  <data name="Summary_QuickEditToolTip" xml:space="preserve">
+    <value>Apply ready-made actions to this control</value>
+  </data>
+  <data name="TemplateGroup_ArrowKey" xml:space="preserve">
+    <value>Arrow key</value>
+  </data>
+  <data name="TemplateGroup_BrowserKey" xml:space="preserve">
+    <value>Browser key</value>
+  </data>
+  <data name="TemplateGroup_ChangeControlSet" xml:space="preserve">
+    <value>Change control set</value>
+  </data>
+  <data name="TemplateGroup_Combination" xml:space="preserve">
+    <value>Combination</value>
+  </data>
+  <data name="TemplateGroup_ControlSets" xml:space="preserve">
+    <value>Control sets</value>
+  </data>
+  <data name="TemplateGroup_DirectionMode" xml:space="preserve">
+    <value>Direction mode</value>
+  </data>
+  <data name="TemplateGroup_FunctionKey" xml:space="preserve">
+    <value>Function key</value>
+  </data>
+  <data name="TemplateGroup_LetterKey" xml:space="preserve">
+    <value>Letter key</value>
+  </data>
+  <data name="TemplateGroup_MediaKey" xml:space="preserve">
+    <value>Media key</value>
+  </data>
+  <data name="TemplateGroup_Mouse" xml:space="preserve">
+    <value>Mouse</value>
+  </data>
+  <data name="TemplateGroup_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="TemplateGroup_NumberKey" xml:space="preserve">
+    <value>Number key</value>
+  </data>
+  <data name="TemplateGroup_NumpadKey" xml:space="preserve">
+    <value>Numpad key</value>
+  </data>
+  <data name="TemplateGroup_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="TemplateGroup_OtherKey" xml:space="preserve">
+    <value>Other key</value>
+  </data>
+  <data name="TemplateGroup_ShiftedLetterKey" xml:space="preserve">
+    <value>Shifted letter key</value>
+  </data>
+  <data name="TemplateGroup_ShiftedNumberKey" xml:space="preserve">
+    <value>Shifted number key</value>
+  </data>
+  <data name="TemplateGroup_ShiftedSymbolKey" xml:space="preserve">
+    <value>Shifted symbol key</value>
+  </data>
+  <data name="TemplateGroup_SymbolKey" xml:space="preserve">
+    <value>Symbol key</value>
+  </data>
+  <data name="TemplateGroup_Timing" xml:space="preserve">
+    <value>Timing</value>
+  </data>
+  <data name="TemplateGroup_ToggleKey" xml:space="preserve">
+    <value>Toggle key</value>
+  </data>
+  <data name="TemplateGroup_WindowAction" xml:space="preserve">
+    <value>Window action</value>
+  </data>
+  <data name="TemplateGroup_WindowsShortcut" xml:space="preserve">
+    <value>Windows shortcut</value>
+  </data>
+  <data name="TemplateGroup_WordPrediction" xml:space="preserve">
+    <value>Word prediction</value>
+  </data>
+  <data name="Template_GridTypeLabel" xml:space="preserve">
+    <value>Grid type:</value>
+  </data>
+  <data name="Template_NavigationTypeLabel" xml:space="preserve">
+    <value>Navigation type:</value>
+  </data>
+  <data name="Template_RestrictionsLabel" xml:space="preserve">
+    <value>Restrictions:</value>
+  </data>
+  <data name="Template_SelectionTypeLabel" xml:space="preserve">
+    <value>Selection type:</value>
+  </data>
+  <data name="Template_TemplateGroupLabel" xml:space="preserve">
+    <value>Template group:</value>
+  </data>
+  <data name="Template_TemplateNameLabel" xml:space="preserve">
+    <value>Template name:</value>
+  </data>
+  <data name="Template_Title" xml:space="preserve">
+    <value>Create a new template</value>
+  </data>
+  <data name="TypeTextAction_Label" xml:space="preserve">
+    <value>Text to type:</value>
+  </data>
+  <data name="WaitAction_Label" xml:space="preserve">
+    <value>Wait for (s):</value>
+  </data>
+  <data name="WordPrediction_ActionLabel" xml:space="preserve">
+    <value>Action:</value>
+  </data>
+</root>

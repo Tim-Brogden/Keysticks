@@ -1,0 +1,8 @@
+﻿<Window x:Class="Keysticks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:local="clr-namespace:Keysticks.UserControls" WindowStyle="None" Icon="/Keysticks;component/KeysticksLogo.ico" ShowInTaskbar="False" ShowActivated="False" AllowsTransparency="True" Background="Transparent" BorderThickness="0" 
+        Loaded="Window_Loaded" Closing="Window_Closing" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Width="0" Height="0">
+    <Grid>        
+    </Grid>
+</Window>

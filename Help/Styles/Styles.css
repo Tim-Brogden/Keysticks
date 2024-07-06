@@ -1,0 +1,341 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body   
+{
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #000000;
+}
+
+a:link
+{
+    color: #4682b4;
+}
+
+a:visited
+{
+    color: #4682b4;
+}
+
+a:hover
+{
+    color: #EB9B26;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #87ceeb;
+}
+
+p
+{
+    margin: 3px 0px 12px 0px;
+}
+
+hr
+{
+    border: 0;
+    margin: 3px 0px;
+    padding:0;
+    background-color: #EB9B26;
+    color: #EB9B26;
+    width: 100%;
+    height: 1px;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    color: #EB9B26;
+    text-transform: none;
+    margin-bottom: 0px;
+    font-weight: normal;
+    line-height: normal;
+}
+
+h1, h2
+{
+    font-size: 1.6em;
+}
+
+h3
+{
+    font-size: 1.4em;
+}
+
+h4
+{
+    font-size: 1.2em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.header
+{
+    margin: 0px;
+    padding: 0px;
+    background-color: #87ceeb;
+    width: 100%;
+    height: 94px;
+}
+
+.controllerImage
+{
+    position:absolute;        
+    top:5px;
+    right:5px;
+}
+
+.logo
+{
+    margin: 15px;
+    float:left;
+    text-decoration: none;
+    vertical-align:middle;
+}
+
+.title
+{
+    margin: 20px 0px 0px 0px;
+    color: #4682b4;
+    border: none;
+    font-size: 2.5em;
+    vertical-align:middle;
+    float:left;
+}
+
+a.noDecoration
+{
+    text-decoration: none;
+}
+
+.mainArea
+{
+    background-image: url('../Images/grey_bg.jpg');    
+    min-height: 440px;
+    padding: 0px 200px 20px 200px;
+}
+
+.centreCol
+{
+    background-color: #FFFFFF;
+    margin: -1px 0px 0px 0px;
+    padding: 0px 20px 10px 20px;
+    min-height: 390px;
+}
+
+.headingText
+{
+    font-size: 1.4em;
+    color: #EB9B26;
+    text-transform: none;
+    font-weight: 300;
+    vertical-align: middle;
+}
+
+.headingImage
+{
+    vertical-align: middle;
+    margin: 2px 2px 0px 0px;
+}
+
+.downloadButton
+{
+    text-decoration: none; 
+    color: #ffffff;
+}
+
+div.footer
+{
+    background-color: #3a4f63;
+    color: #dddddd;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+    min-height: 60px;
+}
+
+div.footer div a:link, div.footer div a:visited
+{
+    color: #dddddd;
+}
+
+div.footer div a:hover
+{
+    color: #EB9B26;
+    text-decoration: none;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color:#3a4f63;
+    width:100%;
+    line-height: 0;
+}
+
+div.menu
+{
+    padding: 8px 0px 0px 200px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #4682b4;
+    border: 1px #3a4f63 solid;
+    color: #ffffff;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #EB9B26;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*
+div.menu ul li a:active
+{
+    background-color: #87ceeb;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+*/
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}

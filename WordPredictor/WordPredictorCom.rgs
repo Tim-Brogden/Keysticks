@@ -1,0 +1,16 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {F9692587-91D6-443D-8040-EAFE087847F3} = s 'WordPredictorCom Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{C20FC9D9-1924-4357-A1CB-03BD9C246BED}'
+			Version = s '1.0'
+		}
+	}
+}

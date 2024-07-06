@@ -1,0 +1,183 @@
+﻿<Application x:Class="Keysticks.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             StartupUri="MainWindow.xaml" Startup="Application_Startup" Exit="Application_Exit">
+    <Application.Resources>
+        <BitmapImage x:Key="image_klogo" UriSource="Images/KLogo.png" />
+        <BitmapImage x:Key="image_keysticks_logo_48" UriSource="Images/KeysticksLogo48.png"/>
+        <BitmapImage x:Key="image_dont_show" UriSource="Images/dont_show.png" />
+        <BitmapImage x:Key="image_accept" UriSource="famfamfam_silk_icons_v013/icons/accept.png" />
+        <BitmapImage x:Key="image_add" UriSource="famfamfam_silk_icons_v013/icons/add.png" />
+        <BitmapImage x:Key="image_application_add" UriSource="famfamfam_silk_icons_v013/icons/application_add.png" />
+        <BitmapImage x:Key="image_application_delete" UriSource="famfamfam_silk_icons_v013/icons/application_delete.png" />
+        <BitmapImage x:Key="image_application_go" UriSource="famfamfam_silk_icons_v013/icons/application_go.png" />        
+        <BitmapImage x:Key="image_application_double" UriSource="famfamfam_silk_icons_v013/icons/application_double.png" />
+        <BitmapImage x:Key="image_application_form_edit" UriSource="famfamfam_silk_icons_v013/icons/application_form_edit.png" />
+        <BitmapImage x:Key="image_arrow_down" UriSource="famfamfam_silk_icons_v013/icons/arrow_down.png" />
+        <BitmapImage x:Key="image_arrow_left" UriSource="famfamfam_silk_icons_v013/icons/arrow_left.png" />
+        <BitmapImage x:Key="image_arrow_out" UriSource="famfamfam_silk_icons_v013/icons/arrow_out.png" />
+        <BitmapImage x:Key="image_arrow_right" UriSource="famfamfam_silk_icons_v013/icons/arrow_right.png" />
+        <BitmapImage x:Key="image_arrow_up" UriSource="famfamfam_silk_icons_v013/icons/arrow_up.png" />
+        <BitmapImage x:Key="image_basket_go" UriSource="famfamfam_silk_icons_v013/icons/basket_go.png" />
+        <BitmapImage x:Key="image_browser" UriSource="Images/browser.png" />
+        <BitmapImage x:Key="image_browser_back" UriSource="Images/browser_back.png" />
+        <BitmapImage x:Key="image_browser_favourites" UriSource="Images/browser_favourites.png" />
+        <BitmapImage x:Key="image_browser_forward" UriSource="Images/browser_forward.png" />
+        <BitmapImage x:Key="image_browser_home" UriSource="Images/browser_home.png" />
+        <BitmapImage x:Key="image_browser_refresh" UriSource="Images/browser_refresh.png" />
+        <BitmapImage x:Key="image_browser_search" UriSource="Images/browser_search.png" />
+        <BitmapImage x:Key="image_browser_stop" UriSource="Images/browser_stop.png" />
+        <BitmapImage x:Key="image_bullet_arrow_up" UriSource="famfamfam_silk_icons_v013/icons/bullet_arrow_up.png" />
+        <BitmapImage x:Key="image_bullet_yellow" UriSource="famfamfam_silk_icons_v013/icons/bullet_yellow.png" />
+        <BitmapImage x:Key="image_bullet_green" UriSource="famfamfam_silk_icons_v013/icons/bullet_green.png" />
+        <BitmapImage x:Key="image_bullet_blue" UriSource="famfamfam_silk_icons_v013/icons/bullet_blue.png" />
+        <BitmapImage x:Key="image_bullet_star" UriSource="famfamfam_silk_icons_v013/icons/bullet_star.png" />
+        <BitmapImage x:Key="image_calculator" UriSource="famfamfam_silk_icons_v013/icons/calculator.png" />
+        <BitmapImage x:Key="image_cancel" UriSource="famfamfam_silk_icons_v013/icons/cancel.png" />
+        <BitmapImage x:Key="image_cog" UriSource="famfamfam_silk_icons_v013/icons/cog.png" />
+        <BitmapImage x:Key="image_cog_go" UriSource="famfamfam_silk_icons_v013/icons/cog_go.png" />
+        <BitmapImage x:Key="image_clock" UriSource="famfamfam_silk_icons_v013/icons/clock.png" />
+        <BitmapImage x:Key="image_combinations" UriSource="Images/combinations.png" />
+        <BitmapImage x:Key="image_control_end_blue" UriSource="famfamfam_silk_icons_v013/icons/control_end_blue.png" />
+        <BitmapImage x:Key="image_control_fastforward_blue" UriSource="famfamfam_silk_icons_v013/icons/control_fastforward_blue.png" />
+        <BitmapImage x:Key="image_control_play_blue" UriSource="famfamfam_silk_icons_v013/icons/control_play_blue.png" />
+        <BitmapImage x:Key="image_control_rewind_blue" UriSource="famfamfam_silk_icons_v013/icons/control_rewind_blue.png" />
+        <BitmapImage x:Key="image_control_start_blue" UriSource="famfamfam_silk_icons_v013/icons/control_start_blue.png" />
+        <BitmapImage x:Key="image_control_stop_blue" UriSource="famfamfam_silk_icons_v013/icons/control_stop_blue.png" />
+        <BitmapImage x:Key="image_controller" UriSource="famfamfam_silk_icons_v013/icons/controller.png" />
+        <BitmapImage x:Key="image_cross" UriSource="famfamfam_silk_icons_v013/icons/cross.png" />
+        <BitmapImage x:Key="image_cursor" UriSource="famfamfam_silk_icons_v013/icons/cursor.png" />
+        <BitmapImage x:Key="image_cursor_absolute" UriSource="Images/cursor_green.png" />
+        <BitmapImage x:Key="image_cursor_fixed_speed" UriSource="Images/cursor_yellow.png" />
+        <BitmapImage x:Key="image_cursor_relative" UriSource="Images/cursor_blue.png" />
+        <BitmapImage x:Key="image_delete" UriSource="famfamfam_silk_icons_v013/icons/delete.png" />
+        <BitmapImage x:Key="image_direction_mode" UriSource="Images/direction_mode.png" />
+        <BitmapImage x:Key="image_disk" UriSource="famfamfam_silk_icons_v013/icons/disk.png" />
+        <BitmapImage x:Key="image_download" UriSource="Images/download.png" />
+        <BitmapImage x:Key="image_email" UriSource="famfamfam_silk_icons_v013/icons/email.png" />
+        <BitmapImage x:Key="image_emoticon" UriSource="famfamfam_silk_icons_v013/icons/emoticon_smile.png" />
+        <BitmapImage x:Key="image_error" UriSource="famfamfam_silk_icons_v013/icons/error.png" />
+        <BitmapImage x:Key="image_folder" UriSource="famfamfam_silk_icons_v013/icons/folder.png" />
+        <BitmapImage x:Key="image_folder_explore" UriSource="famfamfam_silk_icons_v013/icons/folder_explore.png" />
+        <BitmapImage x:Key="image_folder_page" UriSource="famfamfam_silk_icons_v013/icons/folder_page.png" />
+        <BitmapImage x:Key="image_help" UriSource="famfamfam_silk_icons_v013/icons/help.png" />
+        <BitmapImage x:Key="image_hourglass" UriSource="famfamfam_silk_icons_v013/icons/hourglass.png" />
+        <BitmapImage x:Key="image_house_go" UriSource="famfamfam_silk_icons_v013/icons/house_go.png" />
+        <BitmapImage x:Key="image_indicator" UriSource="Images/indicator_green.gif" />
+        <BitmapImage x:Key="image_information" UriSource="famfamfam_silk_icons_v013/icons/information.png" />
+        <BitmapImage x:Key="image_image_edit" UriSource="famfamfam_silk_icons_v013/icons/image_edit.png" />
+        <BitmapImage x:Key="image_layout_edit" UriSource="famfamfam_silk_icons_v013/icons/layout_edit.png" />
+        <BitmapImage x:Key="image_lock" UriSource="famfamfam_silk_icons_v013/icons/lock.png" />
+        <BitmapImage x:Key="image_note_edit" UriSource="famfamfam_silk_icons_v013/icons/note_edit.png" />
+        <BitmapImage x:Key="image_minimise" UriSource="Images/minimise.png" />
+        <BitmapImage x:Key="image_minimise_window" UriSource="Images/minimise_window.png" />
+        <BitmapImage x:Key="image_maximise_window" UriSource="Images/maximise_window.png" />
+        <BitmapImage x:Key="image_mode_next" UriSource="Images/mode_next.png" />
+        <BitmapImage x:Key="image_mode_previous" UriSource="Images/mode_previous.png" />
+        <BitmapImage x:Key="image_mode_star" UriSource="Images/mode_star.png" />
+        <BitmapImage x:Key="image_mouse" UriSource="famfamfam_silk_icons_v013/icons/mouse.png" />
+        <BitmapImage x:Key="image_music_notes" UriSource="Images/music_notes.png" />
+        <BitmapImage x:Key="image_page" UriSource="famfamfam_silk_icons_v013/icons/page.png" />
+        <BitmapImage x:Key="image_page_add" UriSource="famfamfam_silk_icons_v013/icons/page_add.png" />
+        <BitmapImage x:Key="image_page_copy" UriSource="famfamfam_silk_icons_v013/icons/page_copy.png" />
+        <BitmapImage x:Key="image_page_white_copy" UriSource="famfamfam_silk_icons_v013/icons/page_white_copy.png" />
+        <BitmapImage x:Key="image_page_white_stack" UriSource="famfamfam_silk_icons_v013/icons/page_white_stack.png" />
+        <BitmapImage x:Key="image_page_delete" UriSource="famfamfam_silk_icons_v013/icons/page_delete.png" />
+        <BitmapImage x:Key="image_page_go" UriSource="famfamfam_silk_icons_v013/icons/page_go.png" />
+        <BitmapImage x:Key="image_page_save" UriSource="famfamfam_silk_icons_v013/icons/page_save.png" />
+        <BitmapImage x:Key="image_page_white_go" UriSource="famfamfam_silk_icons_v013/icons/page_white_go.png" />
+        <BitmapImage x:Key="image_page_white_star" UriSource="famfamfam_silk_icons_v013/icons/page_white_star.png" />
+        <BitmapImage x:Key="image_page_white_previous" UriSource="Images/page_white_previous.png" />
+        <BitmapImage x:Key="image_page_white_text" UriSource="famfamfam_silk_icons_v013/icons/page_white_text.png" />
+        <BitmapImage x:Key="image_page_white_reorder" UriSource="Images/page_white_reorder.png" />
+        <BitmapImage x:Key="image_shape_group" UriSource="famfamfam_silk_icons_v013/icons/shape_group.png" />
+        <BitmapImage x:Key="image_start_button" UriSource="Images/start_button.png"/>
+        <BitmapImage x:Key="image_start_program" UriSource="Images/start_program.png"/>
+        <BitmapImage x:Key="image_shield_go" UriSource="famfamfam_silk_icons_v013/icons/shield_go.png" />
+        <BitmapImage x:Key="image_sound" UriSource="famfamfam_silk_icons_v013/icons/sound.png" />
+        <BitmapImage x:Key="image_sound_low" UriSource="famfamfam_silk_icons_v013/icons/sound_low.png" />
+        <BitmapImage x:Key="image_sound_mute" UriSource="famfamfam_silk_icons_v013/icons/sound_mute.png" />
+        <BitmapImage x:Key="image_apps_key" UriSource="Images/apps_key.png"/>
+        <BitmapImage x:Key="image_left_cursor" UriSource="Images/left_cursor.png"/>
+        <BitmapImage x:Key="image_right_cursor" UriSource="Images/right_cursor.png"/>
+        <BitmapImage x:Key="image_up_cursor" UriSource="Images/up_cursor.png"/>
+        <BitmapImage x:Key="image_down_cursor" UriSource="Images/down_cursor.png"/>
+        
+        <BitmapImage x:Key="image_hold_letter_key" UriSource="Images/a_key_black.png"/>
+        <BitmapImage x:Key="image_hold_number_key" UriSource="Images/1_key_black.png"/>
+        <BitmapImage x:Key="image_hold_symbol_key" UriSource="Images/symbol_key_black.png"/>
+        <BitmapImage x:Key="image_hold_arrow_key" UriSource="Images/arrow_key_black.png"/>
+        <BitmapImage x:Key="image_hold_function_key" UriSource="Images/function_key.png"/>
+        <BitmapImage x:Key="image_hold_num_pad_key" UriSource="Images/num_pad_black.png"/>
+        <BitmapImage x:Key="image_hold_other_key" UriSource="Images/common_key_black.png"/>
+
+        <BitmapImage x:Key="image_type_letter_key" UriSource="Images/a_key_blue_lower.png"/>
+        <BitmapImage x:Key="image_type_shifted_letter_key" UriSource="Images/a_key_blue.png"/>
+        <BitmapImage x:Key="image_type_number_key" UriSource="Images/1_key_blue.png"/>
+        <BitmapImage x:Key="image_type_shifted_number_key" UriSource="Images/number_key_shifted_blue.png"/>
+        <BitmapImage x:Key="image_type_symbol_key" UriSource="Images/symbol_key_blue.png"/>
+        <BitmapImage x:Key="image_type_shifted_symbol_key" UriSource="Images/symbol_key_shifted_blue.png"/>
+        <BitmapImage x:Key="image_type_arrow_key" UriSource="Images/arrow_key_blue.png"/>
+        <BitmapImage x:Key="image_type_function_key" UriSource="Images/function_key_blue.png"/>
+        <BitmapImage x:Key="image_type_num_pad_key" UriSource="Images/num_pad_blue.png"/>
+        <BitmapImage x:Key="image_type_other_key" UriSource="Images/common_key_blue.png"/>
+
+        <BitmapImage x:Key="image_autorepeat_letter_key" UriSource="Images/a_key_black_underline.png"/>
+        <BitmapImage x:Key="image_autorepeat_number_key" UriSource="Images/1_key_black_underline.png"/>
+        <BitmapImage x:Key="image_autorepeat_symbol_key" UriSource="Images/symbol_key_black_underline.png"/>
+        <BitmapImage x:Key="image_autorepeat_arrow_key" UriSource="Images/arrow_key_black_underline.png"/>
+        <BitmapImage x:Key="image_autorepeat_function_key" UriSource="Images/function_key_black_underline.png"/>
+        <BitmapImage x:Key="image_autorepeat_num_pad_key" UriSource="Images/num_pad_black_underline.png"/>
+        <BitmapImage x:Key="image_autorepeat_other_key" UriSource="Images/common_key_black_underline.png"/>
+
+        <BitmapImage x:Key="image_toggle_key" UriSource="Images/toggle_key.png"/>
+        
+        <BitmapImage x:Key="image_table_edit" UriSource="famfamfam_silk_icons_v013/icons/table_edit.png" />
+        <BitmapImage x:Key="image_table_lightning" UriSource="famfamfam_silk_icons_v013/icons/table_lightning.png" />
+        <BitmapImage x:Key="image_table_multiple" UriSource="famfamfam_silk_icons_v013/icons/table_multiple.png" />
+        <BitmapImage x:Key="image_textfield_add" UriSource="famfamfam_silk_icons_v013/icons/textfield_add.png" />
+        <BitmapImage x:Key="image_textfield_delete" UriSource="famfamfam_silk_icons_v013/icons/textfield_delete.png" />
+        <BitmapImage x:Key="image_textfield_key" UriSource="famfamfam_silk_icons_v013/icons/textfield_key.png" />
+        <BitmapImage x:Key="image_textfield_rename" UriSource="famfamfam_silk_icons_v013/icons/textfield_rename.png" />
+        <BitmapImage x:Key="image_tick" UriSource="famfamfam_silk_icons_v013/icons/tick.png" />
+        <BitmapImage x:Key="image_trademark" UriSource="Images/trademark.png" />
+        <BitmapImage x:Key="image_yellow_arrow_centre" UriSource="Images/yellow_arrow_centre.png" />
+        <BitmapImage x:Key="image_yellow_arrow_left" UriSource="Images/yellow_arrow_left.png" />
+        <BitmapImage x:Key="image_yellow_arrow_right" UriSource="Images/yellow_arrow_right.png" />
+        <BitmapImage x:Key="image_yellow_arrow_up" UriSource="Images/yellow_arrow_up.png" />
+        <BitmapImage x:Key="image_yellow_arrow_down" UriSource="Images/yellow_arrow_down.png" />
+        <BitmapImage x:Key="image_yellow_arrow_up_left" UriSource="Images/yellow_arrow_up_left.png" />
+        <BitmapImage x:Key="image_yellow_arrow_up_right" UriSource="Images/yellow_arrow_up_right.png" />
+        <BitmapImage x:Key="image_yellow_arrow_down_left" UriSource="Images/yellow_arrow_down_left.png" />
+        <BitmapImage x:Key="image_yellow_arrow_down_right" UriSource="Images/yellow_arrow_down_right.png" />
+        <BitmapImage x:Key="image_yellow_arrow_other" UriSource="Images/yellow_arrow_other.png" />
+        <BitmapImage x:Key="image_mouse_left_click" UriSource="Images/mouse_left_click.png" />
+        <BitmapImage x:Key="image_mouse_middle_click" UriSource="Images/mouse_middle_click.png" />
+        <BitmapImage x:Key="image_mouse_right_click" UriSource="Images/mouse_right_click.png" />
+        <BitmapImage x:Key="image_mouse_X1_click" UriSource="Images/mouse_X1_click.png" />
+        <BitmapImage x:Key="image_mouse_X2_click" UriSource="Images/mouse_X2_click.png" />
+        <BitmapImage x:Key="image_mouse_wheel_up" UriSource="Images/mouse_wheel_up.png" />
+        <BitmapImage x:Key="image_mouse_wheel_down" UriSource="Images/mouse_wheel_down.png" />
+        <BitmapImage x:Key="image_suggestion_next" UriSource="Images/suggestion_next.png" />
+        <BitmapImage x:Key="image_suggestion_previous" UriSource="Images/suggestion_previous.png" />
+        <BitmapImage x:Key="image_suggestion_insert" UriSource="Images/suggestion_insert.png" />
+        <BitmapImage x:Key="image_suggestion_cancel" UriSource="Images/suggestion_cancel.png" />
+        <BitmapImage x:Key="image_world_add" UriSource="famfamfam_silk_icons_v013/icons/world_add.png" />
+        <BitmapImage x:Key="image_world_delete" UriSource="famfamfam_silk_icons_v013/icons/world_delete.png" />
+        <BitmapImage x:Key="image_xbox_controller" UriSource="Images/Xbox360Controller.png" />
+        <Style x:Key="NoFocusBorder" TargetType="Panel">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        </Style>
+        <Style x:Key="HyperlinkButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <TextBlock TextDecorations="Underline">
+                            <ContentPresenter />
+                        </TextBlock>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>

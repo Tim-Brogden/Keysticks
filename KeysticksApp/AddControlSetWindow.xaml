@@ -1,0 +1,41 @@
+﻿<Window x:Class="Keysticks.AddControlSetWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" WindowStartupLocation="CenterOwner"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="CanMinimize"
+        xmlns:local="clr-namespace:Keysticks.UserControls" 
+        xmlns:p="clr-namespace:Keysticks.Properties"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        Loaded="Window_Loaded" Icon="/Keysticks;component/KeysticksLogo.ico" 
+        Title="{x:Static p:Resources.AddControlSet_Title}"
+        mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Height="150" Width="320">
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        <TextBlock Name="CreateItemNameLabel" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.AddControlSet_NameLabel}"></TextBlock>
+        <TextBox Name="CreateItemNameTextBox" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" MaxLength="50" LostKeyboardFocus="CreateItemNameTextBox_LostKeyboardFocus"></TextBox>
+        <TextBlock Name="InsertPosLabel" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"  Text="{x:Static p:Resources.String_InsertAfterLabel}"></TextBlock>
+        <ComboBox Name="InsertPosCombo" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" SelectedValuePath="ID" DisplayMemberPath="Name" SelectionChanged="InsertPosCombo_SelectionChanged"/>
+        <local:ErrorMessageControl x:Name="ErrorMessage" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" MaxWidth="320"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button Name="OKButton" Width="70" Margin="5,0" Click="OKButton_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource image_accept}" Stretch="None" />
+                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_OK}"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="CancelButton" Width="70" IsCancel="True" Click="CancelButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource image_cancel}" Stretch="None" />
+                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_Cancel}"></TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

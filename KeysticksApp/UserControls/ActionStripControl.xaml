@@ -1,0 +1,43 @@
+﻿<local:BaseGridControl x:Class="Keysticks.UserControls.ActionStripControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:Keysticks.Properties"
+             xmlns:local="clr-namespace:Keysticks.UserControls" Loaded="UserControl_Loaded"
+             mc:Ignorable="d" d:DesignHeight="100" d:DesignWidth="620">
+    <UserControl.Resources>
+        <Color x:Key="BackgroundColor">LightSkyBlue</Color>
+    </UserControl.Resources>
+    <StackPanel Orientation="Vertical" Background="Transparent" Name="OuterPanel" Focusable="True" StackPanel.Style="{StaticResource NoFocusBorder}">
+        <Border BorderBrush="Gray" BorderThickness="1">
+            <Border.Background>
+                <SolidColorBrush Color="{DynamicResource BackgroundColor}"/>
+            </Border.Background>
+            <StackPanel Name="ActionStripPanel" Margin="5" Orientation="Horizontal">
+                <local:ControlAnnotationControl x:Name="A0" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A1" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A2" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A3" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A4" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A5" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A6" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A7" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A8" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A9" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A10" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A11" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A12" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A13" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A14" Width="35" Margin="1"/>
+                <local:ControlAnnotationControl x:Name="A15" Width="35" Margin="1"/>
+            </StackPanel>
+        </Border>
+        <GroupBox Name="OptionsGroupBox" Header="Options" Margin="0,30,0,0" HorizontalAlignment="Left" Visibility="Collapsed">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock VerticalAlignment="Center" Text="{x:Static p:Resources.ActionStrip_NumberOfCellsLabel}"></TextBlock>
+                <ComboBox Name="NumCellsComboBox" Width="50" Margin="10,0" SelectedValuePath="ID" DisplayMemberPath="Name" SelectionChanged="NumCellsComboBox_SelectionChanged"/>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</local:BaseGridControl>

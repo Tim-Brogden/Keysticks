@@ -1,0 +1,18 @@
+﻿<local:KxUserControl x:Class="Keysticks.UserControls.NoKeyboardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:Keysticks.Properties"
+             xmlns:local="clr-namespace:Keysticks.UserControls"
+             mc:Ignorable="d" Loaded="UserControl_Loaded"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Name="OuterPanel">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="{x:Static p:Resources.NoKeyboard_Info}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Grid.Row="1" Name="AddKeyboardButton" Style="{StaticResource HyperlinkButtonStyle}" Foreground="Blue" Content="{x:Static p:Resources.NoKeyboard_AddKeyboard}" ToolTip="{x:Static p:Resources.NoKeyboard_AddKeyboardToolTip}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AddKeyboardButton_Click"/>
+    </Grid>
+</local:KxUserControl>

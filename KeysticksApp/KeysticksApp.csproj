@@ -1,0 +1,987 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76980B16-ECD7-4A6A-88D4-0DA6C6C95152}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Keysticks</RootNamespace>
+    <AssemblyName>Keysticks</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>KeysticksLogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Keysticks.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="SlimDX, Version=4.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Actions\ActivateWindowAction.cs" />
+    <Compile Include="Actions\BaseAction.cs" />
+    <Compile Include="Actions\BaseKeyAction.cs" />
+    <Compile Include="Actions\LoadProfileAction.cs" />
+    <Compile Include="Actions\ChangeSituationAction.cs" />
+    <Compile Include="Actions\ControlThePointerAction.cs" />
+    <Compile Include="Actions\MoveThePointerAction.cs" />
+    <Compile Include="Actions\ShowCurrentWindowAction.cs" />
+    <Compile Include="Actions\MouseWheelAction.cs" />
+    <Compile Include="Actions\DoNothingAction.cs" />
+    <Compile Include="Actions\MouseButtonAction.cs" />
+    <Compile Include="Actions\NavigateCellsAction.cs" />
+    <Compile Include="Actions\PressDownKeyAction.cs" />
+    <Compile Include="Actions\ReleaseKeyAction.cs" />
+    <Compile Include="Actions\SetDirectionModeAction.cs" />
+    <Compile Include="Actions\SetDwellAndAutorepeatAction.cs" />
+    <Compile Include="Actions\ToggleControlsWindowAction.cs" />
+    <Compile Include="Actions\StartProgramAction.cs" />
+    <Compile Include="Actions\ToggleKeyAction.cs" />
+    <Compile Include="Actions\TypeKeyAction.cs" />
+    <Compile Include="Actions\TypeTextAction.cs" />
+    <Compile Include="Actions\WaitAction.cs" />
+    <Compile Include="Actions\WordPredictionAction.cs" />
+    <Compile Include="AppConfigWindow.xaml.cs">
+      <DependentUpon>AppConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Config\ActionSetCollection.cs" />
+    <Compile Include="Config\AutoActivation.cs" />
+    <Compile Include="Config\AutoActivationList.cs" />
+    <Compile Include="Config\StateCollection.cs" />
+    <Compile Include="Core\GeometryUtils.cs" />
+    <Compile Include="Core\MessageItem.cs" />
+    <Compile Include="Config\MetaDataTable.cs" />
+    <Compile Include="Core\PlayerColourScheme.cs" />
+    <Compile Include="Core\PlayersColourItem.cs" />
+    <Compile Include="Config\SymmetricCrypto.cs" />
+    <Compile Include="EditActivationsWindow.xaml.cs">
+      <DependentUpon>EditActivationsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\WordPredictorCom.cs" />
+    <Compile Include="Event\KxErrorMessageEventArgs.cs" />
+    <Compile Include="Event\KxGenericEventArgs.cs" />
+    <Compile Include="Event\KxLogMessageEventArgs.cs" />
+    <Compile Include="Event\KxSourceEventArgs.cs" />
+    <Compile Include="ImportWindow.xaml.cs">
+      <DependentUpon>ImportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Input\SlimAxisReader.cs" />
+    <Compile Include="Input\SlimDirectInputDevice.cs" />
+    <Compile Include="Input\SlimSliderReader.cs" />
+    <Compile Include="Input\SlimXInputDevice.cs" />
+    <Compile Include="ProfileDesignerWindow.xaml.cs">
+      <DependentUpon>ProfileDesignerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Config\ActionList.cs" />
+    <Compile Include="Config\ActionMappingTable.cs" />
+    <Compile Include="Config\ActionSet.cs" />
+    <Compile Include="Config\ActionSetAnnotation.cs" />
+    <Compile Include="Config\AnnotationData.cs" />
+    <Compile Include="Config\AppConfig.cs" />
+    <Compile Include="Config\AxisValue.cs" />
+    <Compile Include="Config\ControlsDefinition.cs" />
+    <Compile Include="Config\DisplayData.cs" />
+    <Compile Include="Config\GeneralisedControl.cs" />
+    <Compile Include="EditBackgroundWindow.xaml.cs">
+      <DependentUpon>EditBackgroundWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Event\KxToggleControlsEventArgs.cs" />
+    <Compile Include="Input\BaseInputDevice.cs" />
+    <Compile Include="Input\PhysicalControl.cs" />
+    <Compile Include="Input\PhysicalInput.cs" />
+    <Compile Include="Config\GridBinding.cs" />
+    <Compile Include="Config\GridConfig.cs" />
+    <Compile Include="Config\Profile.cs" />
+    <Compile Include="Config\ProfileActionEditor.cs" />
+    <Compile Include="Config\ProfileBuilder.cs" />
+    <Compile Include="Config\ProfileSituationEditor.cs" />
+    <Compile Include="Config\ProfileSummariser.cs" />
+    <Compile Include="Config\ProfileUpgrader.cs" />
+    <Compile Include="Config\SourceUtils.cs" />
+    <Compile Include="Config\StateVector.cs" />
+    <Compile Include="ControllerWindow.xaml.cs">
+      <DependentUpon>ControllerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseControl.cs" />
+    <Compile Include="Controls\ControllerButton.cs" />
+    <Compile Include="Controls\ControllerButtonDiamond.cs" />
+    <Compile Include="Controls\DirectionalControl.cs" />
+    <Compile Include="Controls\ControllerDPad.cs" />
+    <Compile Include="Controls\ControllerStick.cs" />
+    <Compile Include="Controls\ControllerTrigger.cs" />
+    <Compile Include="Core\AnnotationBinding.cs" />
+    <Compile Include="Core\AnnotationBindingsLookup.cs" />
+    <Compile Include="Core\CellUtils.cs" />
+    <Compile Include="Core\ColourScheme.cs" />
+    <Compile Include="Core\ColourUtils.cs" />
+    <Compile Include="Core\CommandRuleManager.cs" />
+    <Compile Include="Core\CompressionUtils.cs" />
+    <Compile Include="Core\Constants.cs" />
+    <Compile Include="Core\Delegates.cs" />
+    <Compile Include="Core\DoubleValItem.cs" />
+    <Compile Include="Core\Enums.cs" />
+    <Compile Include="Core\Interfaces.cs" />
+    <Compile Include="Core\KeyboardLayoutData.cs" />
+    <Compile Include="Core\KeyUtils.cs" />
+    <Compile Include="Core\KxException.cs" />
+    <Compile Include="Core\MessageLogger.cs" />
+    <Compile Include="Core\NamedItem.cs" />
+    <Compile Include="Core\NamedItemList.cs" />
+    <Compile Include="Core\ParamDefinition.cs" />
+    <Compile Include="Core\ParamValue.cs" />
+    <Compile Include="Core\OptionalNamedItem.cs" />
+    <Compile Include="Core\ProcessManager.cs" />
+    <Compile Include="Core\CommandRuleItem.cs" />
+    <Compile Include="Event\KxKeyboardChangeEventArgs.cs" />
+    <Compile Include="Input\InputManager.cs" />
+    <Compile Include="Input\InputMapping.cs" />
+    <Compile Include="LogWindow.xaml.cs">
+      <DependentUpon>LogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\IdentityManager.cs" />
+    <Compile Include="UI\KxIntValRoutedEventArgs.cs" />
+    <Compile Include="UI\CustomBindingItem.cs" />
+    <Compile Include="UI\DateTimeBindingConverter.cs" />
+    <Compile Include="UI\DateBindingConverter.cs" />
+    <Compile Include="UI\FloatValBindingConverter.cs" />
+    <Compile Include="UI\GUIEvents.cs" />
+    <Compile Include="UI\ImageBindingConverter.cs" />
+    <Compile Include="UI\InvertBooleanBindingConverter.cs" />
+    <Compile Include="UI\KxErrorRoutedEventArgs.cs" />
+    <Compile Include="UI\KxInputControlRoutedEventArgs.cs" />
+    <Compile Include="UI\KxStateRoutedEventArgs.cs" />
+    <Compile Include="UI\PhysicalControlItem.cs" />
+    <Compile Include="UI\PhysicalInputItem.cs" />
+    <Compile Include="UI\ProfileDisplayItem.cs" />
+    <Compile Include="UI\ProfileDisplayList.cs" />
+    <Compile Include="Core\StateManager.cs" />
+    <Compile Include="Core\ThreadManager.cs" />
+    <Compile Include="Core\TimeoutMonitor.cs" />
+    <Compile Include="Core\StringUtils.cs" />
+    <Compile Include="Core\VirtualKeyData.cs" />
+    <Compile Include="Core\WordPredictionEngine.cs" />
+    <Compile Include="Core\WordPredictionManager.cs" />
+    <Compile Include="Core\WordPredictionResponse.cs" />
+    <Compile Include="CreateTemplateWindow.xaml.cs">
+      <DependentUpon>CreateTemplateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMessageBox.xaml.cs">
+      <DependentUpon>CustomMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\KxDoubleValRoutedEventArgs.cs" />
+    <Compile Include="Event\EventReportingBuffer.cs" />
+    <Compile Include="Event\KxControlEventArgs.cs" />
+    <Compile Include="Event\KxEventArgs.cs" />
+    <Compile Include="Event\KxSourceEventFactory.cs" />
+    <Compile Include="Event\KxKeyboardStateEventArgs.cs" />
+    <Compile Include="Event\KxKeyEventArgs.cs" />
+    <Compile Include="Event\KxMouseButtonStateEventArgs.cs" />
+    <Compile Include="Event\KxPredictionEventArgs.cs" />
+    <Compile Include="Event\KxLoadProfileEventArgs.cs" />
+    <Compile Include="Event\KxRepeatKeyEventArgs.cs" />
+    <Compile Include="Event\KxStartProgramEventArgs.cs" />
+    <Compile Include="Event\KxStateChangeEventArgs.cs" />
+    <Compile Include="Event\KxTextEventArgs.cs" />
+    <Compile Include="HelpAboutWindow.xaml.cs">
+      <DependentUpon>HelpAboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\BaseSource.cs" />
+    <Compile Include="UI\TrayManager.cs" />
+    <Compile Include="UI\VisibilityBindingConverter.cs" />
+    <Compile Include="UserControls\ActionsSummaryControl.xaml.cs">
+      <DependentUpon>ActionsSummaryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AutoActivationControl.xaml.cs">
+      <DependentUpon>AutoActivationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseControllerControl.cs" />
+    <Compile Include="UserControls\ControllerDesignControl.xaml.cs">
+      <DependentUpon>ControllerDesignControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditActionsContextMenu.xaml.cs">
+      <DependentUpon>EditActionsContextMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InputConfigControl.xaml.cs">
+      <DependentUpon>InputConfigControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InputsListControl.xaml.cs">
+      <DependentUpon>InputsListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\KxUserControl.cs" />
+    <Compile Include="UserControls\MoveThePointerControl.xaml.cs">
+      <DependentUpon>MoveThePointerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NoKeyboardControl.xaml.cs">
+      <DependentUpon>NoKeyboardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProfileSummaryControl.xaml.cs">
+      <DependentUpon>ProfileSummaryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Core\WebServiceMessageData.cs" />
+    <Compile Include="WebService\WebServiceUtils.cs" />
+    <Compile Include="OpenProfileWindow.xaml.cs">
+      <DependentUpon>OpenProfileWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilePreviewWindow.xaml.cs">
+      <DependentUpon>ProfilePreviewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReorderItemsWindow.xaml.cs">
+      <DependentUpon>ReorderItemsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddControlSetWindow.xaml.cs">
+      <DependentUpon>AddControlSetWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddKeyboardWindow.xaml.cs">
+      <DependentUpon>AddKeyboardWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditActionWindow.xaml.cs">
+      <DependentUpon>EditActionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseNameWindow.xaml.cs">
+      <DependentUpon>ChooseNameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AnnotationGroup.cs" />
+    <Compile Include="UI\GUIUtils.cs" />
+    <Compile Include="HoldStateWindow.xaml.cs">
+      <DependentUpon>HoldStateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridsWindow.xaml.cs">
+      <DependentUpon>GridsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sys\KeyPressManager.cs" />
+    <Compile Include="Sys\MouseManager.cs" />
+    <Compile Include="Sys\ShortCutManager.cs" />
+    <Compile Include="Sys\WindowsAPI.cs" />
+    <Compile Include="UserControls\ActivateWindowControl.xaml.cs">
+      <DependentUpon>ActivateWindowControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ChangeSituationControl.xaml.cs">
+      <DependentUpon>ChangeSituationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ColourPickerControl.xaml.cs">
+      <DependentUpon>ColourPickerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ControllerActionsControl.xaml.cs">
+      <DependentUpon>ControllerActionsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ActionStripControl.xaml.cs">
+      <DependentUpon>ActionStripControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProfileViewerTabControl.xaml.cs">
+      <DependentUpon>ProfileViewerTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ControlThePointerControl.xaml.cs">
+      <DependentUpon>ControlThePointerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditSituationsContextMenu.xaml.cs">
+      <DependentUpon>EditSituationsContextMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseGridControl.cs" />
+    <Compile Include="UserControls\IconPickerControl.xaml.cs">
+      <DependentUpon>IconPickerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\KeyboardControl.xaml.cs">
+      <DependentUpon>KeyboardControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LoadProfileControl.xaml.cs">
+      <DependentUpon>LoadProfileControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavigateCellsControl.xaml.cs">
+      <DependentUpon>NavigateCellsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SituationSettingsControl.xaml.cs">
+      <DependentUpon>SituationSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InfoMessageControl.xaml.cs">
+      <DependentUpon>InfoMessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SetDwellAndAutorepeatControl.xaml.cs">
+      <DependentUpon>SetDwellAndAutorepeatControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SetDirectionModeControl.xaml.cs">
+      <DependentUpon>SetDirectionModeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SquareGridControl.xaml.cs">
+      <DependentUpon>SquareGridControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StartProgramControl.xaml.cs">
+      <DependentUpon>StartProgramControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WordPredictionControl.xaml.cs">
+      <DependentUpon>WordPredictionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CustomSliderControl.xaml.cs">
+      <DependentUpon>CustomSliderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ErrorMessageControl.xaml.cs">
+      <DependentUpon>ErrorMessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MouseButtonActionControl.xaml.cs">
+      <DependentUpon>MouseButtonActionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StateTreeControl.xaml.cs">
+      <DependentUpon>StateTreeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseKeyControl.xaml.cs">
+      <DependentUpon>BaseKeyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TypeTextControl.xaml.cs">
+      <DependentUpon>TypeTextControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WaitControl.xaml.cs">
+      <DependentUpon>WaitControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SuggestionListControl.xaml.cs">
+      <DependentUpon>SuggestionListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ControlAnnotationControl.xaml.cs">
+      <DependentUpon>ControlAnnotationControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AppConfigWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EditActivationsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileDesignerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ControllerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CreateTemplateWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditBackgroundWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HelpAboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OpenProfileWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfilePreviewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReorderItemsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AddControlSetWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AddKeyboardWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EditActionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChooseNameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HoldStateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GridsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ActionsSummaryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ActivateWindowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AutoActivationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ChangeSituationControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ColourPickerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ControllerActionsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ActionStripControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ControllerDesignControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EditActionsContextMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\InputConfigControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\MoveThePointerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\NoKeyboardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ProfileViewerTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ControlThePointerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EditSituationsContextMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\IconPickerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\InputsListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\KeyboardControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\LoadProfileControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\NavigateCellsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ProfileSummaryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SituationSettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\InfoMessageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SetDwellAndAutorepeatControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SetDirectionModeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SquareGridControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\StartProgramControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\WordPredictionControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CustomSliderControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ErrorMessageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MouseButtonActionControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\StateTreeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaseKeyControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\TypeTextControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\WaitControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SuggestionListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UserControls\ControlAnnotationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Keysticks EULA.rtf" />
+    <None Include="Keysticks.pfx" />
+    <None Include="Web References\WebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebService\service.wsdl" />
+    <Resource Include="Images\a_key_black_underline.png" />
+    <Resource Include="Images\1_key_black_underline.png" />
+    <Resource Include="Images\1_key_blue.png" />
+    <Resource Include="Images\a_key_blue_lower.png" />
+    <Resource Include="Images\mouse_wheel_down.png" />
+    <Resource Include="Images\mouse_wheel_up.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\folder_explore.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\calculator.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\control_end_blue.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\control_fastforward_blue.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\control_play_blue.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\control_rewind_blue.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\control_start_blue.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\control_stop_blue.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\email.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\sound.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\sound_low.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\sound_mute.png" />
+    <Resource Include="Images\browser.png" />
+    <Resource Include="Images\browser_back.png" />
+    <Resource Include="Images\browser_forward.png" />
+    <Resource Include="Images\browser_home.png" />
+    <Resource Include="Images\browser_refresh.png" />
+    <Resource Include="Images\browser_search.png" />
+    <Resource Include="Images\browser_stop.png" />
+    <Resource Include="Images\music_notes.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\folder.png" />
+    <Resource Include="Images\browser_favourites.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\cancel.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\cog.png" />
+    <Resource Include="Images\common_key_black.png" />
+    <Resource Include="Images\common_key_black_underline.png" />
+    <Resource Include="Images\common_key_blue.png" />
+    <Resource Include="Images\function_key_blue.png" />
+    <Resource Include="Images\arrow_key_black.png" />
+    <Resource Include="Images\arrow_key_black_underline.png" />
+    <Resource Include="Images\arrow_key_blue.png" />
+    <Resource Include="Images\cursor_blue.png" />
+    <Resource Include="Images\cursor_green.png" />
+    <Resource Include="Images\cursor_yellow.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\table_edit.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\table_multiple.png" />
+    <Resource Include="Images\start_program.png" />
+    <Resource Include="Images\maximise_window.png" />
+    <Resource Include="Images\minimise_window.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\page_white_copy.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\page_go.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\page_copy.png" />
+    <Resource Include="Images\download.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\world_add.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\world_delete.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\bullet_blue.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\bullet_green.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\bullet_yellow.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\shield_go.png" />
+    <Resource Include="Images\function_key_black_underline.png" />
+    <Resource Include="Images\symbol_key_black.png" />
+    <Resource Include="Images\symbol_key_black_underline.png" />
+    <Resource Include="Images\symbol_key_blue.png" />
+    <Resource Include="Images\toggle_key.png" />
+    <Resource Include="Images\num_pad_black.png" />
+    <Resource Include="Images\num_pad_black_underline.png" />
+    <Resource Include="Images\num_pad_blue.png" />
+    <Resource Include="Images\symbol_key_shifted_blue.png" />
+    <Resource Include="Images\number_key_shifted_blue.png" />
+    <EmbeddedResource Include="AutoUpgrade\Upgrade to v1.9.xsl" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\image_edit.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\shape_group.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\cog_go.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\page_white_stack.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\layout_edit.png" />
+    <Resource Include="Images\1_key_black.png" />
+    <Resource Include="Images\a_key_blue.png" />
+    <Resource Include="Images\combinations.png" />
+    <None Include="famfamfam_silk_icons_v013\readme.html" />
+    <None Include="famfamfam_silk_icons_v013\readme.txt" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Resource Include="famfamfam_silk_icons_v013\icons\page_white_text.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\bullet_star.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\emoticon_smile.png" />
+    <Resource Include="Images\trademark.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\help.png" />
+    <Resource Include="Images\indicator_green.gif" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\clock.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\mouse.png" />
+    <Resource Include="Images\a_key_black.png" />
+    <Resource Include="Images\function_key.png" />
+    <Resource Include="Images\direction_mode.png" />
+    <Resource Include="Images\KeysticksLogo48.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\basket_go.png" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="KLogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\XBox360Controller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\accept.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\add.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\application_double.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\application_form_edit.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\arrow_down.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\arrow_left.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\arrow_out.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\arrow_right.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\bullet_arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\cross.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\delete.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\folder_page.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\house_go.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\page.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\page_save.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\textfield_rename.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\application_add.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\application_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\application_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\hourglass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\page_add.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\page_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\textfield_add.png" />
+    <Resource Include="famfamfam_silk_icons_v013\icons\textfield_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\textfield_key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\yellow_arrow_down.png" />
+    <Resource Include="Images\yellow_arrow_down_left.png" />
+    <Resource Include="Images\yellow_arrow_down_right.png" />
+    <Resource Include="Images\yellow_arrow_left.png" />
+    <Resource Include="Images\yellow_arrow_right.png" />
+    <Resource Include="Images\yellow_arrow_up.png" />
+    <Resource Include="Images\yellow_arrow_up_left.png" />
+    <Resource Include="Images\yellow_arrow_up_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\yellow_arrow_centre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouse_left_click.png" />
+    <Resource Include="Images\mouse_middle_click.png" />
+    <Resource Include="Images\mouse_right_click.png" />
+    <Resource Include="Images\mouse_X1_click.png" />
+    <Resource Include="Images\mouse_X2_click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\controller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\minimise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\page_white_reorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\page_white_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\page_white_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mode_next.png" />
+    <Resource Include="Images\mode_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\page_white_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mode_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\yellow_arrow_other.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\suggestion_cancel.png" />
+    <Resource Include="Images\suggestion_insert.png" />
+    <Resource Include="Images\suggestion_next.png" />
+    <Resource Include="Images\suggestion_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\table_lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\start_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\apps_key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\down_cursor.png" />
+    <Resource Include="Images\left_cursor.png" />
+    <Resource Include="Images\right_cursor.png" />
+    <Resource Include="Images\up_cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dont_show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\note_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="famfamfam_silk_icons_v013\icons\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\KLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="KeysticksLogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/keysticks/webservices/service%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebService\</RelPath>
+      <UpdateFromURL>http://localhost/keysticks/webservices/service%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Keysticks_KeysticksWebService_KeysticksWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(SolutionDir)WordPredictor\KPTUnicodeData.bin" "$(TargetDir)";
+copy "$(SolutionDir)WordPredictor\kptframeworkv2DMD.dll" "$(TargetDir)";
+REM "$(FrameworkSDKDir)bin\signtool.exe" sign /t http://timestamp.comodoca.com/authenticode /a "$(ProjectDir)obj\$(PlatformName)\$(ConfigurationName)\$(TargetFileName)";
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

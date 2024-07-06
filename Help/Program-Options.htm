@@ -1,0 +1,214 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="Styles/Styles.css" rel="stylesheet" type="text/css" />
+    <title>Keysticks - Program options</title>
+</head>
+<body>
+    <div class="header">
+        <img src="Images/KeysticksLogo64.png" alt="Keysticks logo" border="none" class="logo" />
+        <div class="title">KEYSTICKS</div>
+    </div>
+    <div style="margin: 20px;">
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Program options</span>
+        </div>
+        <hr />
+        <p>
+            Keysticks provides a number of options to let you customise its behaviour and appearance. To view or edit the program options, click
+            the cog-shaped button in the controller window, or select "Program options..." from the Keysticks program menu.
+            With most of the options, like colours, mouse pointer speed etc., your changes are applied immediately so you can see the difference. If you don't like your changes, you can just select Cancel.
+        </p>
+        <div style="text-align: center;">
+            <img alt="Program options menu item" src="Images/Program-options.jpg" style="margin: 5px;" />
+        </div>
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">General options</span>
+        </div>        
+        <hr />
+        <div style="text-align: center;">
+            <img alt="General options" src="Images/General-options.jpg" style="margin: 5px;" />
+        </div>
+        <ul>
+            <li>Start when Windows starts: Whether to start Keysticks automatically when you start your computer.</li>
+            <li>Load last-used profile: When Keysticks starts, whether to load the profile you last used.</li>
+            <li>Allow running in the background: Whether Keysticks should continue running (as <img alt="Keysticks icon" src="Images/KLogo.png" style="margin:2px; vertical-align:middle;" /> icon in the system tray) when the (last) controller window is closed, or whether the program should just exit.</li>
+            <li>Show tray notifications: Whether Keysticks should show popup notifications in the system tray e.g. when a profile is loaded, when changes are applied.</li>
+            <li>Open controller windows automatically: Whether to open the controller-shaped window(s) when a profile is loaded. You can also open this window manually by choosing the "View controls..." option on the program menu.</li>
+            <li>Show held modifier keys graphic: Whether Keysticks should show a small graphic when any modifier keys (Alt, Ctrl, Shift, Win) are being held down by Keysticks.</li>
+            <li>Show held mouse buttons graphic: Whether Keysticks should show a small graphic when any mouse buttons are being held down by Keysticks.</li>
+            <li>Check for program updates: Whether Keysticks should check for new versions of the software when it starts.</li>
+        </ul>
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Colour options</span>
+        </div>
+        <hr />
+        <div style="text-align: center;">
+            <img alt="Colour options" src="Images/Colour-options.jpg" style="margin: 5px;" />
+        </div>
+        <ul>
+            <li>Controller window opacity: How see-through the controller window is.</li>
+            <li>Keyboard window opacity: How see-through the keyboard window is.</li>
+            <li>Colours table: For changing the colours of the keyboard backgrounds and selected or highlighted items.</li>
+        </ul>
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Style options</span>
+        </div>
+        <hr />
+        <div style="text-align: center;">
+            <img alt="Style options" src="Images/Style-options.jpg" style="margin: 5px;" />
+        </div>
+        <ul>
+            <li>Window magnification: Allows you to magnify the controller and keyboard windows (useful for viewing on a TV).</li>
+            <li>Compact controller window: Makes the controller window more compact so that it takes up less screen space.</li>
+            <li>Keep controller window on top: Whether the window should be shown above other desktop windows. Note: does not apply to programs or games in full-screen mode.</li>
+            <li>Animate controls when they are used: Whether the controls shown in Keysticks windows should change colour to highlight when they are being used.</li>
+            <li>Show keyboard window title bar: Whether to show the title bar in the keyboard window.</li>
+            <li>Show keyboard window footer: Whether to show the footer in the keyboard window.</li>
+        </ul>
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Input options</span>
+        </div>
+        <hr />
+        <div style="text-align: center;">
+            <img alt="Input options" src="Images/Input-options.jpg" style="margin: 5px;" />
+        </div>
+<p>
+The override dead zones options allow you to apply global dead zone values which override the dead zones specified in each profile.
+</p>
+        <ul>
+            <li>Trigger / slider dead zone: How much you have to press trigger / slider controls before a press is registered.</li>
+            <li>Stick / axis dead zone: How much you have to move stick controls away from the centre before a press or movement is registered.</li>
+        </ul>
+        <p>
+            Take care not to use dead zone values that are too small for your controller hardware because it may cause unwanted presses or movements to be registered even when you are not pressing the controls.
+        </p>
+        <div id="OutputOptions">
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Output options</span>
+        </div>
+        <hr />
+        <div style="text-align: center;">
+            <img alt="Output options" src="Images/Output-options.jpg" style="margin: 5px;" />
+        </div>
+        <ul>
+            <li>Mouse pointer speed: How fast the mouse pointer moves when you are controlling it using an analogue stick control. This is applied independently of (i.e. in addition to) the Windows Control Panel pointer speed options.</li>
+            <li>Mouse pointer acceleration: How much the pointer speed is amplified for large stick movements relative to small movements.</li>
+            <li>Mouse click length: How long Keysticks holds down a mouse button for, when emulating a click or double-click.</li>
+            <li>Key stroke length: How long Keysticks holds down a key for, when emulating a key stroke.</li>
+            <li>Type of key emulation: Which method of keyboard emulation to use.</li>
+        </ul>
+        <p>
+            Keysticks is able to use two different types of emulated key stroke: virtual keys and scan codes. Virtual key mode is used to create keypress actions that are independent of the active keyboard layout (as set in the Windows Language Bar), whereas scan code mode is used to create keypress actions that change dynamically according to the active keyboard layout. For gaming, you often need to use the scan code method.
+        </p>       
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Prediction options</span>
+        </div>
+        <hr />
+        <div style="text-align: center;">
+            <img alt="Prediction options" src="Images/Word-prediction-options.jpg" style="margin: 5px;" />
+        </div>
+        <ul>
+            <li>Enable word prediction: Whether to display word suggestions when you are using a screen keyboard and one or more word prediction actions are active.</li>
+            <li>Auto-insert spaces after words: Whether to automatically enter a space after a suggested word is selected.</li>
+            <li>Add words to dictionary: Whether to add new words that you type to the word prediction engine's dictionary.</li>
+        </ul>
+        <p>
+            Keysticks can provide word suggestions in multiple languages. By default, English (UK) is enabled.
+            You can use the "Add language" button to add other languages. (This downloads a dictionary file for the chosen language from Keysticks.net.) 
+            If you have more than one language enabled, those higher up the list are given higher priority.
+        </p>
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Message options</span>
+        </div>
+        <hr />
+        <div style="text-align: center;">
+            <img alt="Message options" src="Images/Message-options.jpg" style="margin: 5px;" />
+        </div>
+        <p>
+            By default, the Keysticks Profile Designer asks for confirmation before doing things like applying or clearing actions for a control,
+            and deleting control sets. These confirmation message boxes allow you to select "Don't show this again" so that you can use the 
+            designer without unnecessary interruptions. The "Messages" tab in the Program Options lets you select which messages you want, 
+            all in one place, and re-enable any messages that you turned off.
+        </p>
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Folder options</span>
+        </div>
+        <hr />
+        <div style="text-align: center;">
+            <img alt="Folder options" src="Images/Folder-options.jpg" style="margin: 5px;" />
+        </div>
+        <p>
+            Here, you can choose which folder you want to keep your Keysticks profiles in.
+        </p>
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Security options</span>
+        </div>
+        <hr />
+        <div style="text-align: center;">
+            <img alt="Security options" src="Images/Security-options.jpg" style="margin: 5px;" />
+        </div>
+        <p>
+            The following options help to protect you from accidentally performing unwanted actions when you are using Keysticks controls.
+        </p>
+       <ul>
+          <li>Disallow Shift+Delete: prevents Keysticks from performing a Delete key press while it is holding a Shift key down.</li>
+          <li>Disallow potentially harmful controls: prevents various combinations of actions that could potentially harm your computer e.g. performing a long list of actions for a single button press.</li>
+       </ul>
+               <p>
+            The rules table specifies a list of rules for deciding which commands can be executed by "Start program" actions, and whether or not you are asked to confirm the action first.
+            You should not normally need to edit this table. 
+            Entries in the table specify an exact command, or a pattern for matching multiple commands, 
+            plus the action to take: Run, Ask me, or Don't run.
+        </p>
+        <ul>
+            <li>"Run" means run the command without asking you for confirmation.</li>
+            <li>"Ask me" means pop up a message box so that you can decide (see first picture below).</li>
+            <li>"Don't run" means that Keysticks will not run the command (see second picture below).</li>
+        </ul>
+        <div style="width:40%; text-align:center; float:left;">
+            <img alt="Security options" src="Images/Command-ask-me.jpg" style="max-width:100%;" />
+        </div>
+        <div style="width:40%; text-align:center; float:right;">
+            <img alt="Security options" src="Images/Command-disallowed.jpg" style="max-width:100%;" />
+        </div>
+        <p class="clear">
+            By default, Keysticks will ask you before running commands. When a command is blocked, or when you are asked to decide and you tick "Don't show this again", Keysticks will automatically add an entry for the command in the rules table so that you can easily change the action to take if you need to. 
+        </p>
+        <p>
+            If a command value begins with "^", it is interpretted as a regular expression ("regex") pattern for matching multiple commands. Otherwise, the value is treated as an exact command string. The order or precedence in which the rules are applied is: exact match rules first, then "Run" rules, then "Ask me" rules, then "Don't run" rules,
+until a match is found. If no rule matches a command, the default is "Ask me" i.e. you will be prompted to decide.
+        </p>
+        <p>
+            If you choose to allow commands to run without asking for confirmation, it is a good idea to do so
+            on an individual basis i.e. only select "Run" for exact command strings, not regular expressions.
+            In any case, you should only specify "Run" for commands that you know are safe to run. 
+        </p>        
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Reset all</span>
+        </div>
+        <hr />
+        <p>
+            The Program options window also provides a "Reset all" button. This resets the options shown in all the tabs to their original values. However, the changes are only applied when you click OK to close the Program options window. If you click Cancel in the Program options window, no changes will be made, even if you have clicked "Reset all". So there's no need to be nervous about using this button: there is chance to change your mind!
+        </p>
+        <hr />
+        <p>
+            <b>Next topic:</b> <a href="Creating-Your-Own-Controls.htm" title="Creating your own controls">Creating your own controls</a>
+        </p>
+        <br />
+        <p style="font-size:smaller;">
+            Microsoft, Windows, Xbox and Xbox 360 are either registered trademarks or trademarks of Microsoft Corporation 
+            in the United States and/or other countries. Keysticks.net is not affiliated with Microsoft.
+        </p>
+    </div>
+</body>
+</html>

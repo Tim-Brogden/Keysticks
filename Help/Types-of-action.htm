@@ -1,0 +1,245 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="Styles/Styles.css" rel="stylesheet" type="text/css" />
+    <title>Keysticks - Types of action</title>
+</head>
+<body>
+    <div class="header">
+        <img src="Images/KeysticksLogo64.png" alt="Keysticks logo" border="none" class="logo" />
+        <div class="title">
+            KEYSTICKS</div>
+    </div>
+    <div style="margin: 20px;">
+        <div>
+            <img alt="Keysticks icon" src="Images/KLogo.png" class="headingImage" />
+            <span class="headingText">Types of action</span>
+        </div>
+        <hr />
+        <p>
+            These are the types of action that you can assign to your controller's controls in the "Edit actions" window.
+            Many of the action types also have ready-made templates that you can apply using the Quick-edit menu in the Profile Designer.
+        </p>
+        <p>
+            <b>Type key</b><br />
+            Presses a key and releases it a short time later (by default 0.1 seconds). Use this
+            action for pressing a key where the length of key stroke is not particularly important
+            (e.g. for entering text). If you want the key to be held down for the length of
+            time you hold the control down for, use a pair of "Press down key" and "Release
+            key" actions, as per the "Hold key" templates.
+        </p>
+        <p>
+            <b>Press down key</b><br />
+            Presses down a key but doesn't release it. Use this action when you want control
+            over how long a key is held down for. Remember to include a "Release key" action
+            to release the key at a later time! Note: in case you accidentally end up holding
+            down a key without an action to release it, physically typing the key on your keyboard
+            will release it, as far as Windows is concerned.
+        </p>
+        <p>
+            <b>Release key</b><br />
+            Releases a key if Keysticks has previously pressed it down (otherwise does nothing).
+            Use this action to release a key that you have previously pressed down using your
+            controller.
+        </p>
+        <p>
+            <b>Toggle key</b><br />
+            Flips whether or not a key is pressed. I.e. Presses the key if it is not currently
+            pressed down, and releases it if it is. Use this action when you want to hold and
+            later release a key without having to hold down a control on your controller for
+            the duration.
+        </p>
+        <hr />
+        <p>
+            <i>Notes for key actions</i>
+        </p>
+        <p>
+            The type/press down/release/toggle key actions all have a "Treat as virtual key" option.
+            This forces the keystroke to be generated using a virtual key code instead of a scan code,
+            overriding the global choice which can be set in the Output tab of the Program options.
+            Virtual key codes are useful when you want to perform an action which is independent of
+            the current keyboard layout (as set using the Windows Language Bar). For example,
+           if we create an action to perform the command Ctrl+A, we probably want the same action to occur
+          (usually "select all"), regardless of which physical key on the keyboard is used to type "A".
+          On the other hand, if we are creating a virtual keyboard layout, we want the actions to correspond
+          to physical keys on the keyboard so that our layout automatically updates according to
+         the active keyboard layout in Windows. The "Treat as virtual key" is an advanced option and most users           
+         will not need to change it.
+        </p>
+        <hr />
+        <p>
+            <b>Type text</b><br />
+            Types the specified text in the active window. The text can include special characters
+            (unicode) as well as regular ASCII text.
+        </p>
+        <p>
+            <b>Click mouse button</b><br />
+            Presses a mouse button and releases it a short time later (by default 0.1 seconds).
+            Use this action for clicking when the length of click is not particularly important
+            (e.g. clicking where holding down to drag isn't required). If you want the button
+            to be held down for the length of time you hold the control down for (e.g. for dragging
+            objects), use a pair of "Press down mouse button" and "Release mouse button" actions.
+        </p>
+        <p>
+            <b>Double-click mouse button</b><br />
+            Double-clicks a mouse button.
+        </p>
+        <p>
+            <b>Press down mouse button</b><br />
+            Presses down a mouse button (if Keysticks hasn't already pressed it down), but doesn't
+            release it. Use this action when you want control over how long the mouse button
+            is held down for (e.g. when dragging objects). Remember to include a "Release mouse
+            button" action to release the button at a later time! Note: in case you accidentally
+            end up holding down a mouse button without an action to release it, physically clicking
+            the button on your mouse will release it, as far as Windows is concerned.
+        </p>
+        <p>
+            <b>Release mouse button</b><br />
+            Releases a mouse button if Keysticks has previously pressed it down (otherwise does
+            nothing). Use this action to release a mouse button that you have previously pressed
+            down using your controller.
+        </p>
+        <p>
+            <b>Toggle mouse button</b><br />
+            Flips whether or not a mouse button is pressed. I.e. Presses the button if it is
+            not currently pressed down, and releases it if it is. Use this action when you want
+            to hold and later release a mouse button without having to hold down a control on
+            your controller for the duration. This is sometimes called "Drag lock".
+        </p>
+        <p>
+            <b>Mouse wheel up/down</b><br />
+            Emulates moving the mouse wheel up or down by one notch.
+        </p>
+        <p>
+            <b>Control the mouse pointer</b><br />
+            Moves the mouse pointer around the screen as you move a stick control. You can choose
+            whether you want the stick position to control the speed or the position
+            of the pointer. 
+        </p>
+        <p>
+            Speed mode is the default, with larger stick movements causing faster
+            movements. Tick "Fixed speed" if you want the speed to be independent of the amount
+            of stick movement. In position mode, you can choose whether you want the stick position
+            to correspond to the full screen area ("Absolute" option), or to a circular region around
+            the initial pointer position ("Relative" option). The Relative option makes the stick
+            behave like a catapult, with a radius of movement specified as a percentage of the screen width.
+        </p>
+        <p>
+            <b>Move the mouse pointer</b><br />
+            Moves the mouse pointer to a new position. You can choose to move the pointer either by an
+            amount relative to its current location, or to move it to an absolute screen position. 
+            You can specify the X (horizontal) and Y (vertical) amounts or positions either in pixels
+            or as a percentage of the desktop or active window size. Where applicable, you can choose whether the
+            coordinates are relative to the desktop or the active window. X coordinates are measured
+            from left to right and Y coordinates from top to bottom, so (0, 0) represents the top-left corner
+            of the desktop or active window.
+        </p>
+        <p>
+            <b>Change control set</b><br />
+            Switches to a different control set in your profile. Use this to change which controls
+            currently apply to your controller.
+        </p>
+        <ul>
+            <li>Tip: If you combine a Change control set action with other actions, make sure it
+                is the last action in the list, because any actions after it will not be performed.</li>
+            <li>Tip: If you are adding actions for navigating around the virtual keyboard, you can
+                use "Navigate cells" actions instead.</li>
+        </ul>
+        <p>
+            <b>Navigate cells</b><br />
+            Moves left / right / up / down by one cell in the virtual
+                keyboard window. You can choose whether or not you want to wrap around when
+            the edge of the keyboard is reached.
+        </p>
+        <p>
+            <b>Word prediction</b><br />
+            When the virtual keyboard is open and word prediction is enabled, moves up or down
+            the word suggestion list, inserts the current suggestion, or temporarily cancels
+            the suggestions while the current word is typed. 
+        </p>
+        <p>
+            <b>Load profile</b><br />
+            Loads a different profile, or a blank one. Use this action if you want to quickly
+            switch between two or more profiles. This action won't be performed if the current
+            profile has unsaved changes or if the Profile Designer is open.
+        </p>
+        <p>
+            <b>Start program</b><br />
+            Executes a command to start a program. You can also open folders or documents by
+            leaving the program name blank.
+        </p>
+        <ul>
+            <li>If Windows knows where to find the program, you can leave the folder blank.</li>
+            <li>If you just specify a folder in the Folder field, it will open the folder in Windows
+                Explorer.</li>
+            <li>If you just specify a file or document in the Arguments field, it will open with
+                the default program for that type of file.</li>
+            <li>It doesn't matter whether you include the ".exe" at the end of the program name
+                or not.</li>
+        </ul>
+        <p>
+            If "Check if running" is ticked, the program will only be started if it isn't already
+            running. If "Try both folders" is ticked, when a "Program Files" folder is specified,
+            the action will look in "Program Files (x86)" if it doesn't find the program, and
+            vice versa.
+        </p>
+        <p>
+            For your security, the first time you run a new command, Keysticks will prompt you
+            to confirm that you want to run it. The confirmation message includes a "Don't show
+            this again" option, so you can choose whether you want to be asked every time the
+            command is run or just the first time.
+        </p>
+        <p>
+            <b>Activate window</b><br />
+            Switches to the first window that matches the specified title. You can match the
+            exact window title, or just the start or end portion of it. The "Starts" and "Ends"
+            options are useful because the window title often depends on the current document or context. The title matching is not case sensitive.
+        </p>
+        <p>
+            To help you create these actions, you can choose a running program from the drop-down
+            menu and then choose one of its windows. If you know the details, you can also type them in directly. The required program name is the name of the program's process, which does not include ".exe". If you need to refresh the program and window lists, click the Refresh button next to the Program drop-down.
+        </p>
+        <p>
+            If "Restore if minimised" is ticked, when the window is activated, it will also
+            be restored (i.e. "unminimised"). If "Minimise if active" is ticked, the action
+            will minimise the window if it's already active. This lets you activate a window,
+            then switch back to the previous window when you've finished using it, using a single
+            action.
+        </p>
+        <p>
+            <b>Maximise / restore window</b><br />
+            Toggles the currently active window between maximised and normal size, provided
+            the window is capable of being maximised.
+        </p>
+        <p>
+            <b>Minimise window</b><br />
+            Minimises the currently active window, provided it is capable of being minimised.
+        </p>
+        <p>
+            <b>Show / hide controls</b><br />
+            Toggles between opening / showing the controller window (for the player who triggered the action),
+            and minimising it. This action lets you pop up the controls when you need a reminder,
+            but then minimise them out of the way again.
+        </p>
+        <p>
+            <b>Wait</b><br />
+            Waits for the specified number of seconds. Use this action to perform two other
+            actions separated by a specific time interval. E.g. Press down Space, wait 1 second,
+            release Space.
+        </p>
+        <p>
+            <b>Do nothing</b><br />
+            Performs no action. Use this if you want to prevent actions inherited from a parent control set 
+higher up the control set tree from occuring when a lower level control set is active.
+        </p>
+        <hr />
+        <p>
+            <b>Next topic:</b> <a href="Diagnosing-Issues.htm" title="Diagnosing issues">Diagnosing issues</a>
+        </p>
+        <br />
+        <p style="font-size:smaller;">
+            Microsoft, Windows, Xbox and Xbox 360 are either registered trademarks or trademarks of Microsoft Corporation 
+            in the United States and/or other countries. Keysticks.net is not affiliated with Microsoft.
+        </p>
+    </div>
+</body>
+</html>

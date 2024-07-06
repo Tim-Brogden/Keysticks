@@ -1,0 +1,52 @@
+﻿<local:KxUserControl x:Class="Keysticks.UserControls.ActionsSummaryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="clr-namespace:Keysticks.Properties"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Keysticks.UserControls"
+             mc:Ignorable="d" Loaded="KxUserControl_Loaded"
+             d:DesignHeight="115" d:DesignWidth="600">
+    <Grid>
+        <GroupBox Name="ActionsGroupBox" Header="">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.Column="0">
+                    <TextBlock Name="ActionsSummaryText" TextWrapping="Wrap" />
+                </ScrollViewer>
+                <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Right">
+                    <Button Name="QuickEditButton" ToolTip="{x:Static p:Resources.Summary_QuickEditToolTip}" Width="95" Click="QuickEditButton_Click" IsEnabled="False" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                            <Image Source="{StaticResource image_bullet_arrow_up}" Stretch="None" />
+                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.Summary_QuickEdit}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="EditButton" ToolTip="{x:Static p:Resources.Summary_EditToolTip}" Width="95" Click="EditButton_Click" IsEnabled="False" Margin="0,5" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                            <Image Source="{StaticResource image_table_edit}" Stretch="None" />
+                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_EditEllipsis}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="OverrideButton" ToolTip="{x:Static p:Resources.Summary_OverrideToolTip}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="95" Click="OverrideButton_Click" IsEnabled="False" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                            <Image Source="{StaticResource image_table_multiple}" Stretch="None" />
+                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.Summary_OverrideEllipsis}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Name="InheritedActionsPanel" Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="Hidden">
+                    <Image Source="{StaticResource image_information}" Stretch="None"  VerticalAlignment="Center"/>
+                    <TextBlock Margin="3,0" VerticalAlignment="Center" Text="{x:Static p:Resources.Summary_InheritedFromLabel}"></TextBlock>
+                    <Button Name="InheritedActionsButton" Style="{StaticResource HyperlinkButtonStyle}" Content="{x:Static p:Resources.String_ControlSet}" ToolTip="{x:Static p:Resources.Summary_ClickToViewToolTip}" VerticalAlignment="Center" Foreground="Blue" Click="InheritedActionsButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</local:KxUserControl>

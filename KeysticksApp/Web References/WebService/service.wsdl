@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://keysticks.net/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="https://keysticks.net/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="https://keysticks.net/">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckForumUser">
+    <wsdl:part name="request" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckForumUserResponse">
+    <wsdl:part name="CheckForumUserResult" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramUpdates">
+    <wsdl:part name="request" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramUpdatesResponse">
+    <wsdl:part name="GetProgramUpdatesResult" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilesList">
+    <wsdl:part name="request" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilesListResponse">
+    <wsdl:part name="GetProfilesListResult" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileData">
+    <wsdl:part name="request" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileDataResponse">
+    <wsdl:part name="GetProfileDataResult" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWordPredictionLanguagePack">
+    <wsdl:part name="request" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWordPredictionLanguagePackResponse">
+    <wsdl:part name="GetWordPredictionLanguagePackResult" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SubmitProfile">
+    <wsdl:part name="request" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="SubmitProfileResponse">
+    <wsdl:part name="SubmitProfileResult" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProfile">
+    <wsdl:part name="request" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProfileResponse">
+    <wsdl:part name="DeleteProfileResult" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="KeysticksWebServicePortType">
+    <wsdl:operation name="CheckForumUser">
+      <wsdl:input message="tns:CheckForumUser" />
+      <wsdl:output message="tns:CheckForumUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramUpdates">
+      <wsdl:input message="tns:GetProgramUpdates" />
+      <wsdl:output message="tns:GetProgramUpdatesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilesList">
+      <wsdl:input message="tns:GetProfilesList" />
+      <wsdl:output message="tns:GetProfilesListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileData">
+      <wsdl:input message="tns:GetProfileData" />
+      <wsdl:output message="tns:GetProfileDataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWordPredictionLanguagePack">
+      <wsdl:input message="tns:GetWordPredictionLanguagePack" />
+      <wsdl:output message="tns:GetWordPredictionLanguagePackResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitProfile">
+      <wsdl:input message="tns:SubmitProfile" />
+      <wsdl:output message="tns:SubmitProfileResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfile">
+      <wsdl:input message="tns:DeleteProfile" />
+      <wsdl:output message="tns:DeleteProfileResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KeysticksWebServiceBinding" type="tns:KeysticksWebServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="CheckForumUser">
+      <soap:operation soapAction="http://localhost/keysticks/webservices/KxSoapServer.php/CheckForumUser" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramUpdates">
+      <soap:operation soapAction="http://localhost/keysticks/webservices/KxSoapServer.php/GetProgramUpdates" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilesList">
+      <soap:operation soapAction="http://localhost/keysticks/webservices/KxSoapServer.php/GetProfilesList" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileData">
+      <soap:operation soapAction="http://localhost/keysticks/webservices/KxSoapServer.php/GetProfileData" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWordPredictionLanguagePack">
+      <soap:operation soapAction="http://localhost/keysticks/webservices/KxSoapServer.php/GetWordPredictionLanguagePack" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitProfile">
+      <soap:operation soapAction="http://localhost/keysticks/webservices/KxSoapServer.php/SubmitProfile" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProfile">
+      <soap:operation soapAction="http://localhost/keysticks/webservices/KxSoapServer.php/DeleteProfile" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KeysticksWebService">
+    <wsdl:port name="KeysticksWebServicePort" binding="tns:KeysticksWebServiceBinding">
+      <soap:address location="http://localhost/keysticks/webservices/KxSoapServer.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

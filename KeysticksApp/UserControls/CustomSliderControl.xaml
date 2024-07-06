@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Keysticks.UserControls.CustomSliderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Keysticks.UserControls" mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="150" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox Name="ValueTextBox" VerticalAlignment="Center" Grid.Column="0" Width="50" MaxLength="16" LostKeyboardFocus="ValueTextBox_LostKeyboardFocus" />
+        <Slider Name="ValueSlider" Grid.Column="1" VerticalAlignment="Center" ValueChanged="ValueSlider_ValueChanged" />
+    </Grid>
+</UserControl>

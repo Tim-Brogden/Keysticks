@@ -1,0 +1,49 @@
+/******************************************************************************
+*
+* Copyright 2019 Tim Brogden
+* All rights reserved. The Keysticks software and accompanying materials
+* are made available under the terms of the Eclipse Public License v1.0
+* which accompanies this distribution, and is available at
+* http://www.eclipse.org/legal/epl-v10.html
+*
+* Contributors:
+* KeyPoint Technologies (UK) Ltd - OpenAdaptxt API and implementation
+* Tim Brogden - WordPredictor COM component with demo application
+*
+*****************************************************************************/
+// This file will be processed by the MIDL tool to
+// produce the type library (WordPredictor.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(68C3F820-D0A2-4CC1-87CD-BB5F1BAB974B),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IWordPredictorCom : IDispatch{
+	[id(1)] HRESULT Create([in] BSTR bstrBasePath);
+	[id(2)] HRESULT Destroy();
+	[id(3)] HRESULT ProcessRequest([in] SAFEARRAY(byte) requestMeta, [in] SAFEARRAY(BSTR) requestData, [out] SAFEARRAY(BSTR) *responseData, [out, retval] int *responseCode);
+	//[id(4)] HRESULT TestIn([in] SAFEARRAY(BSTR) input, [out, retval] int *result);
+	//[id(5)] HRESULT TestOut([out] SAFEARRAY(BSTR) *output);
+};
+[
+	uuid(C20FC9D9-1924-4357-A1CB-03BD9C246BED),
+	version(1.0),
+]
+library WordPredictorLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(F9692587-91D6-443D-8040-EAFE087847F3)		
+	]
+	coclass WordPredictorCom
+	{
+		[default] interface IWordPredictorCom;
+	};
+};
+

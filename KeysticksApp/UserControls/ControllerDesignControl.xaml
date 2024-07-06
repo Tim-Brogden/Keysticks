@@ -1,0 +1,88 @@
+﻿<local:BaseControllerControl x:Class="Keysticks.UserControls.ControllerDesignControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:Keysticks.Properties"
+             xmlns:local="clr-namespace:Keysticks.UserControls" Loaded="UserControl_Loaded" 
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="450">
+    <UserControl.CommandBindings>
+        <CommandBinding x:Name="DeleteCommand" Command="Delete" 
+                        Executed="DeleteCommand_Executed" 
+                        CanExecute="DeleteCommand_CanExecute" />
+    </UserControl.CommandBindings>
+    <UserControl.Resources>
+        <VisualBrush x:Key="DashedBrush">
+            <VisualBrush.Visual>
+                <Rectangle StrokeDashArray="10.0 10.0"
+                           Stroke="Gray"
+                           StrokeThickness="1"
+                           RadiusX="{Binding RelativeSource={RelativeSource AncestorType={x:Type Border}}, Path=CornerRadius.TopRight}"
+                           RadiusY="{Binding RelativeSource={RelativeSource AncestorType={x:Type Border}}, Path=CornerRadius.BottomLeft}"
+                           Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Border}}, Path=ActualWidth}"
+                           Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Border}}, Path=ActualHeight}"/>
+            </VisualBrush.Visual>
+        </VisualBrush>
+        <ContextMenu x:Key="DesignContextMenu" x:Shared="True">
+            <MenuItem Name="AddPOVButton" Header="{x:Static p:Resources.ControllerDesign_AddDPad}" Click="AddPOVButton_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_add}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="AddStickButton" Header="{x:Static p:Resources.ControllerDesign_AddStick}" Click="AddStickButton_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_add}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="AddSliderButton" Header="{x:Static p:Resources.ControllerDesign_AddSlider}" Click="AddSliderButton_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_add}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="AddButtonButton" Header="{x:Static p:Resources.ControllerDesign_AddButton}" Click="AddButtonButton_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_add}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="RemoveControlButton" Header="{x:Static p:Resources.ControllerDesign_RemoveControl}" InputGestureText="Del" Click="RemoveControlButton_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_delete}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <Separator/>
+            <MenuItem Name="EditBackgroundButton" Header="{x:Static p:Resources.ControllerDesign_ChooseBackground}" Click="EditBackgroundButton_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_image_edit}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="ImportButton" Header="{x:Static p:Resources.ControllerDesign_ImportDesign}" Click="ImportButton_Click">
+                <MenuItem.Icon>
+                    <Image Source="{StaticResource image_layout_edit}" Stretch="None" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+    </UserControl.Resources>
+    <Grid Background="Transparent" Name="OuterPanel" Focusable="True" Grid.Style="{StaticResource NoFocusBorder}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Border Name="LayoutBorder" BorderThickness="0" BorderBrush="{StaticResource DashedBrush}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Canvas Name="DesignCanvas" Background="Transparent" Width="400" Height="300" ContextMenu="{StaticResource DesignContextMenu}" ContextMenuOpening="ContextMenu_ContextMenuOpening">
+                    <Canvas Name="ControllerCanvas" Background="Transparent">
+                    </Canvas>
+                </Canvas>
+            </Border>
+        </ScrollViewer>
+        <StackPanel Name="DesignOptionsPanel" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Name="DesignOptionsButton" ToolTip="{x:Static p:Resources.ControllerDesign_OptionsToolTip}" Width="120" Click="DesignOptionsButton_Click" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal" Margin="5,0">
+                    <Image Source="{StaticResource image_bullet_arrow_up}" Stretch="None" />
+                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.ControllerDesign_Options}"></TextBlock>
+                </StackPanel>            
+            </Button>
+        </StackPanel>
+    </Grid>
+</local:BaseControllerControl>

@@ -1,0 +1,49 @@
+﻿<local:KxUserControl x:Class="Keysticks.UserControls.InputConfigControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:Keysticks.Properties"
+             xmlns:local="clr-namespace:Keysticks.UserControls" Loaded="KxUserControl_Loaded"
+             mc:Ignorable="d" 
+             d:DesignHeight="140" d:DesignWidth="550">
+    <Grid>
+        <GroupBox Name="MappingsGroupBox" Grid.Row="0" Header="{x:Static p:Resources.InputConfig_ControlSettings}">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="190"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="ControlNameTextBlock" Grid.Row="0" Grid.Column="0" Text="{x:Static p:Resources.InputConfig_NameLabel}" VerticalAlignment="Center"/>
+                <TextBox Name="ControlNameTextBox" Grid.Row="0" Grid.Column="1"  Margin="5,0" MaxLength="16" VerticalAlignment="Center" LostKeyboardFocus="ControlNameTextBox_LostKeyboardFocus"/>
+                <TextBlock Name="InputTextBlock" Grid.Row="1" Grid.Column="0" Text="{x:Static p:Resources.InputConfig_InputLabel}" VerticalAlignment="Center"/>
+                <ComboBox Name="InputComboBox" Grid.Row="1" Grid.Column="1" Margin="5,0" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="ID" SelectionChanged="InputComboBox_SelectionChanged" />
+                <CheckBox Name="OptionCheckBox" Grid.Row="1" Grid.Column="2" Margin="5,0" VerticalAlignment="Center" Content="Inverted" Checked="OptionCheckBox_Changed" Unchecked="OptionCheckBox_Changed" />
+                <Grid Name="ButtonDirectionalityGrid"  Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Margin="5,0" HorizontalAlignment="Left">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <local:ControlAnnotationControl x:Name="UpAnnotation" Tag="Up" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" CurrentText="{x:Static p:Resources.String_Up}"  />
+                    <local:ControlAnnotationControl x:Name="LeftAnnotation" Tag="Left" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" CurrentText="{x:Static p:Resources.String_Left}" />
+                    <local:ControlAnnotationControl x:Name="NoneAnnotation" Tag="None" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" CurrentText="{x:Static p:Resources.String_None}" />
+                    <local:ControlAnnotationControl x:Name="RightAnnotation" Tag="Right" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" CurrentText="{x:Static p:Resources.String_Right}" />
+                    <local:ControlAnnotationControl x:Name="DownAnnotation" Tag="Down" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" CurrentText="{x:Static p:Resources.String_Down}" />
+                </Grid>
+            </Grid>
+        </GroupBox>            
+    </Grid>
+</local:KxUserControl>

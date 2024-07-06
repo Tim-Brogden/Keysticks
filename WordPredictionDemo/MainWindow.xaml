@@ -1,0 +1,43 @@
+﻿<Window x:Class="WordPredictionDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="CanMinimize" Loaded="Window_Loaded" Closing="Window_Closing"
+        Title="Word Prediction Demo" Icon="/WordPredictionDemo;component/WordPredictor.ico" mc:Ignorable="d" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        d:DesignHeight="530" Width="350" SizeToContent="Height">
+    <StackPanel Orientation="Vertical">
+        <GroupBox Name="ConfigGroupBox" Header="Configuration" Margin="5">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Button Name="InstallButton" Width="110" Click="InstallButton_Click">I_nstall packages</Button>
+                    <Button Name="UninstallButton" Margin="5,0" Width="110"  Click="UninstallButton_Click">_Uninstall packages</Button>
+                </StackPanel>
+                <DataGrid Name="DictionariesTable" Height="100"  Margin="5,0" AutoGenerateColumns="False" ItemsSource="{Binding}"
+                            CanUserAddRows="False" CanUserDeleteRows="False" CanUserSortColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False"  SelectionMode="Single"
+                            HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD" CanUserResizeColumns="False" HeadersVisibility="Column">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Language" Binding="{Binding Path=Name}" Width="*">
+                        </DataGridTextColumn>
+                        <DataGridCheckBoxColumn Header="Enabled" Binding="{Binding Path=IsEnabled}" Width="60">
+                        </DataGridCheckBoxColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Grid Margin="5">
+                    <Button Name="SetDictionariesButton" HorizontalAlignment="Left" Width="110"  Click="SetDictionariesButton_Click">_Apply</Button>
+                    <CheckBox Name="EnableLearningCheckbox" Margin="5,0" HorizontalAlignment="Right" VerticalAlignment="Center" Content="_Learn new words"  Checked="LearningCheckbox_Changed" Unchecked="LearningCheckbox_Changed"/>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Name="InputGroupBox" Header="Input" Margin="5">
+            <StackPanel Orientation="Vertical" Margin="5">
+                <TextBlock>Enter some text:</TextBlock>
+                <TextBox Name="InputTextBox" Height="25" Margin="0,3" MaxLength="256"  VerticalAlignment="Center" TextChanged="InputTextBox_TextChanged" KeyUp="InputTextBox_KeyUp" PreviewMouseLeftButtonUp="InputTextBox_PreviewMouseLeftButtonUp"/>
+                <TextBlock>Suggestions:</TextBlock>
+                <ListBox Name="WordSuggestionsList" Height="120" Margin="0,3" MouseDoubleClick="WordSuggestionsList_MouseDoubleClick" />
+                <Button Name="InsertButton" HorizontalAlignment="Left" Width="110" IsEnabled="False" Click="InsertButton_Click">_Insert</Button>
+            </StackPanel>
+        </GroupBox>
+        <TextBlock Name="ErrorMessage" Margin="5" Foreground="Red" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap"/>
+        <Button Name="CloseButton" Width="110" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="CloseButton_Click">E_xit</Button>
+    </StackPanel>
+</Window>

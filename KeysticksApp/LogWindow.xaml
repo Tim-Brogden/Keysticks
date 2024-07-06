@@ -1,0 +1,100 @@
+﻿<Window x:Class="Keysticks.LogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:p="clr-namespace:Keysticks.Properties"
+        xmlns:kxui="clr-namespace:Keysticks.UI"
+        xmlns:local="clr-namespace:Keysticks.UserControls" 
+        ResizeMode="CanResize" Loaded="Window_Loaded" Closing="Window_Closing"
+        Title="{x:Static p:Resources.Log_Title}" Height="440" Width="600" Icon="/Keysticks;component/KeysticksLogo.ico" >
+    <Window.Resources>
+        <kxui:DateTimeBindingConverter x:Key="DateTimeConverter"/>
+        <Style x:Key="GridSplitterHorizontalGripStyle" TargetType="{x:Type GridSplitter}">
+                <Setter Property="HorizontalAlignment" Value="Stretch" />
+                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                <Setter Property="Cursor" Value="SizeNS" />
+                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                <Setter Property="Background"
+                    Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type GridSplitter}">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                Height="{TemplateBinding Height}">
+                                <Border Width="50" Height="4" HorizontalAlignment="Center"
+                                    BorderThickness="0 1" Background="White" BorderBrush="#A0A0A0">
+                                </Border>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="HorizontalGridSplitter" TargetType="{x:Type GridSplitter}"
+                BasedOn="{StaticResource GridSplitterHorizontalGripStyle}">
+                <Setter Property="Height" Value="6" />
+                <Setter Property="Margin" Value="0 5" />
+                <Setter Property="HorizontalAlignment" Value="Stretch" />
+            </Style>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <RadioButton Name="CurrentSessionRadioButton" Content="{x:Static p:Resources.Log_CurrentSession}" GroupName="LoggingTypeOptions" VerticalAlignment="Center" Checked="LoggingTypeRadioButton_Checked"></RadioButton>
+            <RadioButton Name="LogFileRadioButton" Content="{x:Static p:Resources.Log_ErrorHistory}" GroupName="LoggingTypeOptions" Margin="10,0" VerticalAlignment="Center" Checked="LoggingTypeRadioButton_Checked"></RadioButton>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Label Content="{x:Static p:Resources.Log_LoggingLevelLabel}"></Label>
+            <ComboBox Name="LoggingLevelComboBox" VerticalAlignment="Center" Width="120" SelectedValuePath="ID" DisplayMemberPath="Name" SelectionChanged="LoggingLevelComboBox_SelectionChanged" />
+        </StackPanel>
+            <DataGrid Name="MessagesTable" Grid.Row="1" Grid.Column="0" AutoGenerateColumns="False" ItemsSource="{Binding}"
+                          CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True" SelectionMode="Single"
+                           HorizontalGridLinesBrush="#FFDDDDDD" VerticalGridLinesBrush="#FFDDDDDD" CanUserResizeColumns="True" HeadersVisibility="Column"
+                  SelectionChanged="MessagesTable_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static p:Resources.Log_TimeColumn}" Binding="{Binding Path=Time, Mode=OneWay, Converter={StaticResource DateTimeConverter}}" Width="150">
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static p:Resources.Log_TypeColumn}" Binding="{Binding Path=Type}" Width="110">
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static p:Resources.Log_MessageColumn}" Binding="{Binding Path=Text}" Width="*">
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <GroupBox Header="{x:Static p:Resources.Log_MessageDetails}" Grid.Row="3">
+            <Grid Margin="5">
+                <TextBox Name="DetailsTextBox" Grid.Row="0" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+            </Grid>
+        </GroupBox>
+        <GridSplitter Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Center" Style="{StaticResource HorizontalGridSplitter}">
+        </GridSplitter>
+        <local:ErrorMessageControl x:Name="ErrorMessage" Grid.Row="4" MaxWidth="400" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Left">
+            <Button Name="SaveLogButton" ToolTip="{x:Static p:Resources.Log_SaveToolTip}" VerticalAlignment="Bottom" Width="80" Click="SaveLogButton_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource image_disk}" Stretch="None" />
+                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.Log_SaveEllipsis}"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="ClearLogButton" ToolTip="{x:Static p:Resources.Log_ClearToolTip}" VerticalAlignment="Bottom" Width="80" Margin="5,0" Click="ClearLogButton_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource image_table_lightning}" Stretch="None" />
+                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.Log_Clear}"></TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <Button Name="OKButton" Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="80" IsCancel="True" Click="OKButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{StaticResource image_accept}" Stretch="None" />
+                <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_OK}"></TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

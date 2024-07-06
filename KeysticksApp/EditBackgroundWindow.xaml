@@ -1,0 +1,67 @@
+﻿<Window x:Class="Keysticks.EditBackgroundWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:p="clr-namespace:Keysticks.Properties"
+        xmlns:local="clr-namespace:Keysticks.UserControls" ResizeMode="CanMinimize" Loaded="Window_Loaded" Closing="Window_Closing"
+        Title="{x:Static p:Resources.Background_Title}" Icon="/Keysticks;component/KeysticksLogo.ico" Width="350" Height="380">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <local:InfoMessageControl Grid.Row="0" Text="{x:Static p:Resources.Background_InfoLabel}"/>
+        <GroupBox Header="{x:Static p:Resources.String_Size}" Grid.Row="1" VerticalAlignment="Top" Margin="0,5">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{x:Static p:Resources.String_WidthLabel}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
+                <local:CustomSliderControl x:Name="WidthSlider" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" IsLogScale="False" Minimum="250" Maximum="600" Value="400" SmallChange="1" LargeChange="1" DecimalPlaces="0" ValueChanged="Slider_ValueChanged"/>
+                <TextBlock Text="{x:Static p:Resources.String_HeightLabel}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                <local:CustomSliderControl x:Name="HeightSlider" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" IsLogScale="False" Minimum="100" Maximum="500" Value="300" SmallChange="1" LargeChange="1" DecimalPlaces="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="{x:Static p:Resources.String_Background}" Grid.Row="2">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <RadioButton Name="DefaultRadioButton" Grid.Row="0" Margin="5,0" Content="{x:Static p:Resources.Background_DefaultBackground}" GroupName="BackgroundOptions" VerticalAlignment="Center" Checked="BackgroundRadioButton_Checked"/>
+                <RadioButton Name="ColourRadioButton" Grid.Row="1" Margin="5,0" Content="{x:Static p:Resources.Background_ColourBackground}" GroupName="BackgroundOptions" VerticalAlignment="Center" Checked="BackgroundRadioButton_Checked"/>
+                <local:ColourPickerControl x:Name="ColourPicker" Grid.Row="2" Margin="20,0" Width="60" SelectedColour="LightGray" IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Center" SelectedColourChanged="ColourPickerControl_SelectionChanged" />
+                <RadioButton Name="ImageRadioButton" Grid.Row="3" Margin="5,0" Content="{x:Static p:Resources.Background_ImageBackground}" GroupName="BackgroundOptions" VerticalAlignment="Center" Checked="BackgroundRadioButton_Checked"/>
+                <Grid Name="FileChoiceGrid" Grid.Row="4" Margin="20,0,0,0" IsEnabled="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Name="FilePathTextBox" Grid.Column="0" VerticalAlignment="Center"  LostKeyboardFocus="FilePathTextBox_LostKeyboardFocus" />
+                    <Button Name="BrowseButton" ToolTip="{x:Static p:Resources.Background_ChooseImageFileToolTip}" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Click="BrowseButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource image_folder_explore}" Stretch="None" />
+                        </StackPanel>
+                    </Button>
+                </Grid>
+                <local:ErrorMessageControl x:Name="ErrorMessage" Grid.Row="5" HorizontalAlignment="Left" MaxWidth="300" />
+                <Button Name="SetAsDefaultBackgroundButton" Grid.Row="6" ToolTip="{x:Static p:Resources.Background_SetAsDefaultToolTip}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="SetAsDefaultBackgroundButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{StaticResource image_cog_go}" Stretch="None" />
+                        <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_SetAsDefault}"></TextBlock>
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

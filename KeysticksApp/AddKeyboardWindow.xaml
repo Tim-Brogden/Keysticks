@@ -1,0 +1,62 @@
+﻿<Window x:Class="Keysticks.AddKeyboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:p="clr-namespace:Keysticks.Properties"
+        WindowStartupLocation="CenterOwner"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="CanResize"
+        xmlns:local="clr-namespace:Keysticks.UserControls" Loaded="Window_Loaded" Icon="/Keysticks;component/KeysticksLogo.ico" 
+        Title="{x:Static p:Resources.AddKeyboard_Title}" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Width="800" Height="600">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <local:InfoMessageControl Text="{x:Static p:Resources.AddKeyboard_Info}" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="25"/>
+                <RowDefinition Height="10"/>-->
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="TemplateLabel" Text="{x:Static p:Resources.AddKeyboard_KeyboardLabel}"  Grid.Row="0" Grid.Column="0" Margin="25,0,0,0" VerticalAlignment="Center"></TextBlock>
+            <ComboBox Name="TemplateCombo" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" SelectedValuePath="ID" DisplayMemberPath="Name" SelectionChanged="TemplateCombo_SelectionChanged" />
+            <TextBlock Name="NavigationControlLabel" Text="{x:Static p:Resources.String_NavigateUsingLabel}" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+            <ComboBox Name="NavigationControlCombo" Grid.Row="0" Grid.Column="4" VerticalAlignment="Center" SelectedValuePath="ID" DisplayMemberPath="Name" SelectionChanged="NavigationControlCombo_SelectionChanged" />
+            <TextBlock Name="SelectionControlLabel" Text="{x:Static p:Resources.String_SelectUsingLabel}" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"></TextBlock>
+            <ComboBox Name="SelectionControlCombo" Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" SelectedValuePath="ID" DisplayMemberPath="Name" SelectionChanged="SelectionControlCombo_SelectionChanged" />
+        </Grid>
+        <GroupBox Name="PreviewGroupBox" Margin="0,5" Header="Preview" Grid.Row="2">
+            <Grid Margin="5">
+                <TextBlock Name="InvalidSelectionTextBlock" Visibility="Collapsed" Text="{x:Static p:Resources.AddKeyboard_InvalidSelectionText}" />
+                <local:ProfileViewerTabControl x:Name="ProfileViewer" IsDesignMode="False" ShowUnusedControls="True" ShowOnlyActionTabs="True" ShowAutoActivations="False" KxError="HandleError" />
+            </Grid>
+        </GroupBox>
+        <local:ErrorMessageControl x:Name="ErrorMessage" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Row="4">
+            <Button Name="OKButton" Width="70" Margin="5,0" Click="OKButton_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource image_accept}" Stretch="None" />
+                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_OK}"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="CancelButton" Width="70" IsCancel="True" Click="CancelButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{StaticResource image_cancel}" Stretch="None" />
+                    <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_Cancel}"></TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

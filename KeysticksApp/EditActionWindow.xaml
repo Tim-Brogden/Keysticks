@@ -1,0 +1,151 @@
+﻿<Window x:Class="Keysticks.EditActionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:p="clr-namespace:Keysticks.Properties"
+        xmlns:local="clr-namespace:Keysticks.UserControls" ResizeMode="CanMinimize"
+        Title="{x:Static p:Resources.EditActions_Title}" Loaded="Window_Loaded" Closing="Window_Closing" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        Icon="/Keysticks;component/KeysticksLogo.ico" Height="600" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="155" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="70" />
+        </Grid.RowDefinitions>
+        <GroupBox Name="ActionsGroupBox" Grid.Row="0" Header="{x:Static p:Resources.String_ActionsForLabel}" Margin="5">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.String_ControlSetLabel}"/>
+                <TextBlock Name="SituationTextBlock" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.String_ControlLabel}"/>
+                <TextBlock Name="ControlTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.EditActions_WhenItIsLabel}"/>
+                <WrapPanel Orientation="Horizontal" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" VerticalAlignment="Top" Margin="0,5">
+                    <RadioButton Name="ReasonDirected" GroupName="Reason" Margin="0,0,10,0" Visibility="Collapsed" Checked="ReasonButtons_SelectionChanged" Content="{x:Static p:Resources.String_Directed}"></RadioButton>
+                    <RadioButton Name="ReasonPressed" GroupName="Reason" Margin="0,0,10,0" Visibility="Collapsed" Checked="ReasonButtons_SelectionChanged" Content="{x:Static p:Resources.String_Pressed}"></RadioButton>
+                    <RadioButton Name="ReasonUndirected" GroupName="Reason" Margin="0,0,10,0" Visibility="Collapsed" Checked="ReasonButtons_SelectionChanged" Content="{x:Static p:Resources.String_Undirected}"></RadioButton>
+                    <RadioButton Name="ReasonReleased" GroupName="Reason" Margin="0,0,10,0" Visibility="Collapsed" Checked="ReasonButtons_SelectionChanged" Content="{x:Static p:Resources.String_Released}"></RadioButton>
+                    <RadioButton Name="ReasonMoved" GroupName="Reason" Margin="0,0,10,0" Visibility="Collapsed" Checked="ReasonButtons_SelectionChanged" Content="{x:Static p:Resources.String_Moved}"></RadioButton>
+                    <RadioButton Name="ReasonActivated" GroupName="Reason" Margin="0,0,10,0" Visibility="Collapsed" Checked="ReasonButtons_SelectionChanged" Content="{x:Static p:Resources.String_InThisControlSet}"></RadioButton>                    
+                </WrapPanel>
+                <TextBlock Name="PressTypeTextBlock" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Visibility="Hidden" Text="{x:Static p:Resources.String_TimeHeld}"/>
+                <Grid Name="PressTypePanel" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Visibility="Hidden">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="55"/>
+                        <ColumnDefinition Width="55"/>
+                        <ColumnDefinition Width="55"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Name="PressTypeAny" GroupName="PressType" Grid.Column="0" Checked="PressTypeButtons_SelectionChanged" Content="{x:Static p:Resources.String_Any}"></RadioButton>
+                    <RadioButton Name="PressTypeShort" GroupName="PressType" Grid.Column="1" Checked="PressTypeButtons_SelectionChanged" Content="{x:Static p:Resources.String_Short}"></RadioButton>
+                    <RadioButton Name="PressTypeLong" GroupName="PressType" Grid.Column="2" Checked="PressTypeButtons_SelectionChanged" Content="{x:Static p:Resources.String_Long}"></RadioButton>
+                    <RadioButton Name="PressTypeAutoRepeat" GroupName="PressType" Grid.Column="3" Checked="PressTypeButtons_SelectionChanged" Content="{x:Static p:Resources.String_AutoRepeat}"></RadioButton>
+                </Grid>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Header="{x:Static p:Resources.EditActions_ActionsToPerformLabel}" Margin="5">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <ListBox Name="ActionsList" DisplayMemberPath="Name" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Stretch" SelectionChanged="ActionsList_SelectionChanged"/>
+                <Button Grid.Row="0" Grid.Column="1" Name="MoveUpButton" ToolTip="{x:Static p:Resources.EditActions_MoveUpToolTip}" Width="25" Height="25" IsEnabled="False" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Center" Click="MoveUpButton_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{StaticResource image_arrow_up}" Stretch="None" />
+                    </StackPanel>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="1" Name="MoveDownButton" ToolTip="{x:Static p:Resources.EditActions_MoveDownToolTip}" Width="25" Height="25" IsEnabled="False" Visibility="Collapsed" HorizontalAlignment="Right" VerticalAlignment="Center" Click="MoveDownButton_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{StaticResource image_arrow_down}" Stretch="None" />
+                    </StackPanel>
+                </Button>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="2" Name="DetailsGroupBox" Header="{x:Static p:Resources.String_Details}" Margin="5">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="{x:Static p:Resources.EditActions_TypeOfActionLabel}"></TextBlock>
+                <ComboBox Name="ActionTypeCombo" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="ID" SelectionChanged="ActionTypeCombo_SelectionChanged"></ComboBox>
+                <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,5,0,0">
+                    <local:BaseKeyControl x:Name="BaseKeyActionDetails" Visibility="Hidden"/>
+                    <local:TypeTextControl x:Name="TypeTextDetails" Visibility="Hidden"/>
+                    <local:MouseButtonActionControl x:Name="MouseButtonActionDetails" Visibility="Hidden"/>
+                    <local:ControlThePointerControl x:Name="ControlThePointerDetails" Visibility="Hidden"/>
+                    <local:MoveThePointerControl x:Name="MoveThePointerDetails" Visibility="Hidden"/>
+                    <local:ChangeSituationControl x:Name="ChangeSituationDetails" Visibility="Hidden"/>
+                    <local:NavigateCellsControl x:Name="NavigateCellsDetails" Visibility="Hidden"/>
+                    <local:StartProgramControl x:Name="StartProgramDetails" Visibility="Hidden" />
+                    <local:ActivateWindowControl x:Name="ActivateWindowDetails" Visibility="Hidden" />
+                    <local:LoadProfileControl x:Name="LoadProfileDetails" Visibility="Hidden" />
+                    <local:WaitControl x:Name="WaitDetails" Visibility="Hidden"/>
+                    <local:WordPredictionControl x:Name="WordPredictionDetails" Visibility="Hidden"/>
+                    <local:SetDirectionModeControl x:Name="SetDirectionModeDetails" Visibility="Hidden"/>
+                    <local:SetDwellAndAutorepeatControl x:Name="SetDwellAndAutorepeatDetails" Visibility="Hidden"/>
+                    <local:ErrorMessageControl x:Name="ErrorMessage" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                </Grid>
+                <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalAlignment="Bottom">
+                    <Button Name="NewActionButton" ToolTip="{x:Static p:Resources.EditActions_NewActionToolTip}" Width="70" Click="NewActionButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource image_add}" Stretch="None" />
+                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_Add}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="DeleteActionButton" ToolTip="{x:Static p:Resources.EditActions_DeleteActionToolTip}" IsEnabled="False" Width="70" Margin="5,0" Click="DeleteActionButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource image_delete}" Stretch="None" />
+                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_Delete}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Name="UpdateActionButton" ToolTip="{x:Static p:Resources.EditActions_UpdateActionToolTip}" IsEnabled="False" Width="150" Click="UpdateActionButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{StaticResource image_accept}" Stretch="None" />
+                            <TextBlock Margin="5,0" Text="{x:Static p:Resources.String_Update}"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="3" Header="{x:Static p:Resources.EditActions_DisplayAs}" Margin="5">
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Name="DisplayTextPanel" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="{x:Static p:Resources.String_TextLabel}"></TextBlock>
+                    <TextBox Name="DisplayText" Width="60" VerticalAlignment="Center" MaxLength="16" Margin="5,0" LostKeyboardFocus="DisplayText_LostKeyboardFocus"></TextBox>
+                </StackPanel>
+                <StackPanel Name="DisplayIconPanel" Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="{x:Static p:Resources.String_IconLabel}"></TextBlock>
+                    <local:IconPickerControl x:Name="DisplayIconPicker" Width="60" VerticalAlignment="Center" Margin="5,0" SelectionChanged="DisplayIconPicker_SelectionChanged" />
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

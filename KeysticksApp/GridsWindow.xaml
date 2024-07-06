@@ -1,0 +1,70 @@
+﻿<Window x:Class="Keysticks.GridsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Keysticks.UserControls"
+        Title="" WindowStyle="None" AllowsTransparency="True" Background="Transparent" 
+        Topmost="True" ResizeMode="CanMinimize" ShowActivated="False"
+        Loaded="Window_Loaded" Closing="Window_Closing" LocationChanged="Window_LocationChanged" SizeChanged="Window_SizeChanged"
+        mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        Icon="/Keysticks;component/KeysticksLogo.ico" d:DesignHeight="337" d:DesignWidth="474" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="TitleBarBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Color="#EEEEEE" Offset="0"/>
+            <GradientStop Color="#CCCCCC" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical" Background="Transparent">
+        <StackPanel.LayoutTransform>
+            <ScaleTransform x:Name="ApplicationScaleTransform"
+                        CenterX="0"
+                        CenterY="0"
+                        ScaleX="{Binding Path=ZoomFactor.Value}"
+                        ScaleY="{Binding Path=ZoomFactor.Value}" />
+        </StackPanel.LayoutTransform>
+        <Border Name="TitleBar" BorderBrush="Gray" Height="25" CornerRadius="5,5,0,0" Margin="0,0,110,-1" BorderThickness="1" Background="{StaticResource TitleBarBrush}" HorizontalAlignment="Stretch"
+            MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Image Name="KeysticksIconImage" Grid.Column="0" Source="{StaticResource image_klogo}" Stretch="None" MouseDown="KeysticksIconImage_MouseDown"/>
+                <!--<TextBlock Name="EvaluationTextBlock" Grid.Column="1" HorizontalAlignment="Right" Foreground="DarkGray" VerticalAlignment="Center" Text="Evaluation" />-->
+                <TextBlock Name="TitleTextBlock" Grid.Column="1" MaxWidth="250" HorizontalAlignment="Left" VerticalAlignment="Center" Text="" TextTrimming="CharacterEllipsis" />
+                <StackPanel Name="ButtonsPanel" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Button Name="MinimiseButton" Click="MinimiseButton_Click">
+                        <Image Source="{StaticResource image_minimise}" Stretch="None" />
+                    </Button>
+                    <Button Name="CloseButton" Click="CloseButton_Click">
+                        <Image  Source="{StaticResource image_cancel}" Stretch="None" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="110"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <Grid>
+                    <local:KeyboardControl x:Name="KeyboardViewer" Background="Transparent" Visibility="Collapsed"/>
+                    <local:ActionStripControl x:Name="ActionStripViewer" Background="Transparent" Visibility="Collapsed"/>
+                    <local:SquareGridControl x:Name="SquareGridViewer" Background="Transparent" Visibility="Collapsed"/>
+                </Grid>
+                <Border Name="Footer" Height="25" BorderBrush="Gray" CornerRadius="0,0,5,5" BorderThickness="1" Margin="0,-1,0,0" Background="{StaticResource TitleBarBrush}" HorizontalAlignment="Stretch">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="{StaticResource image_information}" Stretch="None"/>
+                        <TextBlock Grid.Column="1" Name="FooterTextBlock" Margin="0,0,5,0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+            <local:SuggestionListControl x:Name="SuggestionsControl" Grid.Column="1" VerticalAlignment="Top" Background="Transparent" Margin="-1,0,0,0"/>
+        </Grid>
+    </StackPanel>
+</Window>
